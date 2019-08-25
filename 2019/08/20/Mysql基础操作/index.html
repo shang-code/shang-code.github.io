@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="寿司卷code">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://shang-code.cn/images/mysql.png">
-<meta property="og:updated_time" content="2019-08-24T10:31:13.698Z">
+<meta property="og:updated_time" content="2019-08-25T01:55:22.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql基础操作">
 <meta name="twitter:image" content="http://shang-code.cn/images/mysql.png">
@@ -339,8 +339,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-24T18:31:13+08:00">
-                2019-08-24
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-25T09:55:22+08:00">
+                2019-08-25
               </time>
             
           </span>
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  745 字
+                  741 字
                 </span>
               
 
@@ -443,118 +443,119 @@
       
         <p><img src="/images/mysql.png" alt="mysql_basic"></p>
 <a id="more"></a>
-<h1 id="Mysql之开篇"><a href="#Mysql之开篇" class="headerlink" title="Mysql之开篇"></a>Mysql之开篇</h1><h2 id="安装Mysql"><a href="#安装Mysql" class="headerlink" title="安装Mysql"></a>安装Mysql</h2><p>网址：<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a><br>Linux请参考：<a href="https://www.runoob.com/mysql/mysql-install.html" target="_blank" rel="noopener">https://www.runoob.com/mysql/mysql-install.html</a></p>
-<pre><code>1. 查看mysql是否安装
-rpm -qa | grep mysql
 
-2. 删除
-    rpm -e mysql　　// 普通删除模式
-    rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除
-
-3. 下载、安装  
-    wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
-    rpm -ivh mysql-community-release-el7-5.noarch.rpm
-    yum update
-    yum install mysql-server
-
-4. 设置权限
-    chown mysql:mysql -R /var/lib/mysql
-
-5. 初始化
-    mysqld --initialize
-
-6. 启动服务
-    systemctl start mysqld
-
-7. 查看运行状态:
-    systemctl status mysqld
-
-8. 查看版本
-    mysqladmin --version
-
-9. 如果mysql版本为5.7以上，默认会生成一个随机密码
-    查看随机密码方式：
-        #grep password /var/log/myswld.log
-
-10. 设置root密码
-    mysqladmin -u root password &quot;new_password&quot;;</code></pre><h2 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h2><pre><code>1. 登陆
-    mysql -u root -p
-    如果显示找不到：
-        设置软连接
-            ln -s /usr/local/mysql/bin/mysql /usr/local/bin/
-
-2. 修改root密码
-
-    5.7.6以后的版本
-        ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;new_password&apos;;
-        或者
-        ALTER USER USER() IDENTIFIED BY &apos;shang&apos;;
-    5.7.6以前的版本
-        SET PASSWORD = PASSWORD(&apos;shang&apos;);
-
-3. 导入mysql文件
-    Macx下：
-        source + 文件路径（直接拖拽进入即可）;
-    Linux下：
-
-        wget https://downloads.mysql.com/docs/sakila-db.tar.gz
-        tar -xf sakila-db.tar.gz
-        cd sakila-db
-        在数据库中新建一个和要导入的数据库名称相同的数据库,然后退出Mysql
-        ***格式：mysql -u 用户名 -p  数据库名 &lt; 数据库名.sql;***
-        mysql -u root -p  sakila &lt; sakila-schema.sql;
-        mysql -u root -p  sakila &lt; sakila-data.sql;
+<h1 id="Mysql之开篇（大杂烩）"><a href="#Mysql之开篇（大杂烩）" class="headerlink" title="Mysql之开篇（大杂烩）"></a>Mysql之开篇（大杂烩）</h1><h3 id="安装Mysql"><a href="#安装Mysql" class="headerlink" title="安装Mysql"></a>安装Mysql</h3><p>网址：<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a><br>Linux请参考：<a href="https://www.runoob.com/mysql/mysql-install.html" target="_blank" rel="noopener">https://www.runoob.com/mysql/mysql-install.html</a></p>
+<ol>
+<li><p>查看mysql是否安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#rpm -qa | grep mysql</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#rpm -e mysql　　// 普通删除模式</span><br><span class="line">#rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载、安装  </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">#rpm -ivh mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">#yum update</span><br><span class="line">#yum install mysql-server</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置权限</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#chown mysql:mysql -R /var/lib/mysql</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mysqld --initialize</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动服务</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#systemctl start mysqld</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看运行状态:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#systemctl status mysqld</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看版本</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mysqladmin --version</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果mysql版本为5.7以上，默认会生成一个随机密码<br> 查看随机密码方式：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#grep password /var/log/myswld.log</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置root密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mysqladmin -u root password &quot;new_password&quot;;</span><br></pre></td></tr></table></figure>
 
 
-        或者
-        在数据库中新建一个和要导入的数据库名称相同的数据库，然后在Mysql中输入
-        source sql文件路径;</code></pre><h2 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h2><pre><code>1. 查看Mysql的版本
-    mysql --version
+</li>
+</ol>
+<h3 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h3><ol>
+<li><p>登陆</p>
+<pre><code>#mysql -u root -p</code></pre><p> 如果显示找不到：</p>
+<pre><code>设置软连接
 
-2. 查看所有database
-    show databases;
+#ln -s /usr/local/mysql/bin/mysql /usr/local/bin/</code></pre></li>
+<li><p>修改root密码</p>
+<p> 5.7.6以后的版本</p>
+<pre><code>ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;new_password&apos;;</code></pre><p> 或者</p>
+<pre><code>ALTER USER USER() IDENTIFIED BY &apos;shang&apos;;</code></pre></li>
+</ol>
+<pre><code>5.7.6以前的版本
 
-3. 查看所有table
-    首先要使用 use 数据库名选中数据库;
-    show tables;
+    SET PASSWORD = PASSWORD(&apos;shang&apos;);</code></pre><ol start="3">
+<li><p>导入mysql文件<br> Macx下： </p>
+<ul>
+<li><p>source + 文件路径（直接拖拽进入即可）;</p>
+<p>Linux下：</p>
+<p>  #wget <a href="https://downloads.mysql.com/docs/sakila-db.tar.gz" target="_blank" rel="noopener">https://downloads.mysql.com/docs/sakila-db.tar.gz</a><br>  #tar -xf sakila-db.tar.gz<br>  #cd sakila-db<br>在数据库中新建一个和要导入的数据库名称相同的数据库,然后退出Mysql</p>
+</li>
+<li><p><strong>格式：mysql -u 用户名 -p  数据库名 &lt; 数据库名.sql;*</strong></p>
+<p>   #mysql -u root -p  sakila &lt; sakila-schema.sql;<br>   #mysql -u root -p  sakila &lt; sakila-data.sql;</p>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>或者
+在数据库中新建一个和要导入的数据库名称相同的数据库（或者可以不用新建吧，忘记了），然后在Mysql中输入
 
-4. 显示数据库表的属性等
-    show columns from 表名;
+*     source sql文件路径;</code></pre><h3 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h3><ol>
+<li><p>查看Mysql的版本</p>
+<pre><code>mysql --version</code></pre></li>
+<li><p>查看所有database<br> show databases;</p>
+</li>
+<li><p>查看所有table<br> 首先要使用 use 数据库名选中数据库;</p>
+<pre><code>show tables;</code></pre></li>
+<li><p>显示数据库表的属性等</p>
+<pre><code>show columns from 表名;</code></pre></li>
+<li><p>显示数据表的详细索引信息</p>
+<pre><code>show index from 表名;</code></pre></li>
+<li><p>显示Mysql数据库的管理系统的性能和统计信息。</p>
+<ul>
+<li><p>show table status from 数据库名;</p>
+<p>例子：</p>
+<p>show table status from test_db;     //所有表的信息</p>
+<p>show table status from test_db like ‘test%’;   //以test开头的表的信息</p>
+<p>show table status from test_db like ‘test%’\G;  //查询结果按列打印</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="Mysql常用命令"><a href="#Mysql常用命令" class="headerlink" title="Mysql常用命令"></a>Mysql常用命令</h3><ol>
+<li><p>查看当前所有的数据库</p>
+<pre><code>show databases;</code></pre></li>
+<li><p>打开指定的库</p>
+<pre><code>use database_name;</code></pre></li>
+<li><p>查看当前库的所有表</p>
+<pre><code>show tables;</code></pre></li>
+<li><p>查看其他库的所有表</p>
+<pre><code>show tables from database_name;</code></pre></li>
+<li><p>创建表</p>
+</li>
+</ol>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table table_name(</span><br><span class="line">    columns_name colunms_type,</span><br><span class="line">    columns_name colunms_type,</span><br><span class="line">    ...</span><br><span class="line">)</span><br></pre></td></tr></table></figure></code></pre><ol start="6">
+<li><p>查看表结构</p>
+<pre><code>desc table_name;</code></pre></li>
+<li><p>查看服务器的版本<br> 方式一：登陆到mysql服务端</p>
+<pre><code>select version();</code></pre><p> 方式二：没有登陆到mysql服务端</p>
+<pre><code>#mysql --version     或者    #mysql -V </code></pre></li>
+<li><p>设置字符集</p>
+<pre><code>set names utf8;</code></pre></li>
+</ol>
+<h3 id="Mysql之注释"><a href="#Mysql之注释" class="headerlink" title="Mysql之注释"></a>Mysql之注释</h3><ul>
+<li>单行注释：#注释文字</li>
+<li>多行注释：/* 注释文字 */</li>
+</ul>
 
-5. 显示数据表的详细索引信息
-    show index from 表名;
-
-6. 显示Mysql数据库的管理系统的性能和统计信息。
-    show table status from 数据库名;
-    例子：
-        show table status from test_db;     //所有表的信息
-
-        show table status from test_db like &apos;test%&apos;;   //以test开头的表的信息
-
-        show table status from test_db like &apos;test%&apos;\G;  //查询结果按列打印</code></pre><h2 id="Mysql常用命令"><a href="#Mysql常用命令" class="headerlink" title="Mysql常用命令"></a>Mysql常用命令</h2><pre><code>1. 查看当前所有的数据库
-    show databases;
-2. 打开指定的库
-    use database_name;
-3. 查看当前库的所有表
-    show tables;
-4. 查看其他库的所有表
-    show tables from database_name;
-5. 创建表
-    create table table_name(
-        columns_name colunms_type,
-        columns_name colunms_type,
-        ...
-    )
-6. 查看表结构
-    desc table_name;
-7. 查看服务器的版本
-    方式一：登陆到mysql服务端
-        select version();
-    方式二：没有登陆到mysql服务端
-        mysql --version     或者    mysql -V 
-8. 设置字符集
-    set names utf8;</code></pre><h2 id="Mysql之注释"><a href="#Mysql之注释" class="headerlink" title="Mysql之注释"></a>Mysql之注释</h2><pre><code>单行注释：#注释文字
-多行注释：/* 注释文字 */</code></pre>
       
     </div>
     
@@ -575,7 +576,7 @@ rpm -qa | grep mysql
   <p><span>本文标题:</span>Mysql基础操作</p>
   <p><span>文章作者:</span>尚先森</p>
   <p><span>发布时间:</span>2019年08月20日 - 20:23:39</p>
-  <p><span>最后更新:</span>2019年08月24日 - 18:31:13</p>
+  <p><span>最后更新:</span>2019年08月25日 - 09:55:22</p>
   <p><span>原始链接:</span><a href="/2019/08/20/Mysql基础操作/" title="Mysql基础操作">http://shang-code.cn/2019/08/20/Mysql基础操作/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/08/20/Mysql基础操作/" aria-label="复制成功！"></i></span>
   </p>
@@ -861,7 +862,7 @@ rpm -qa | grep mysql
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mysql之开篇"><span class="nav-number">1.</span> <span class="nav-text">Mysql之开篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Mysql"><span class="nav-number">1.1.</span> <span class="nav-text">安装Mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本设置"><span class="nav-number">1.2.</span> <span class="nav-text">基本设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础查询"><span class="nav-number">1.3.</span> <span class="nav-text">基础查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql常用命令"><span class="nav-number">1.4.</span> <span class="nav-text">Mysql常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql之注释"><span class="nav-number">1.5.</span> <span class="nav-text">Mysql之注释</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mysql之开篇（大杂烩）"><span class="nav-number">1.</span> <span class="nav-text">Mysql之开篇（大杂烩）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Mysql"><span class="nav-number">1.0.1.</span> <span class="nav-text">安装Mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本设置"><span class="nav-number">1.0.2.</span> <span class="nav-text">基本设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础查询"><span class="nav-number">1.0.3.</span> <span class="nav-text">基础查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mysql常用命令"><span class="nav-number">1.0.4.</span> <span class="nav-text">Mysql常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mysql之注释"><span class="nav-number">1.0.5.</span> <span class="nav-text">Mysql之注释</span></a></li></ol></li></ol></div>
             
 
           </div>
