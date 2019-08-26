@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="寿司卷code">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://shang-code.cn/images/mysql.png">
-<meta property="og:updated_time" content="2019-08-26T13:41:45.758Z">
+<meta property="og:updated_time" content="2019-08-26T13:48:06.008Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql基础操作">
 <meta name="twitter:image" content="http://shang-code.cn/images/mysql.png">
@@ -339,7 +339,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-26T21:41:45+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-26T21:48:06+08:00">
                 2019-08-26
               </time>
             
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  732 字
+                  734 字
                 </span>
               
 
@@ -449,15 +449,34 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#rpm -qa | grep mysql</span><br></pre></td></tr></table></figure>
 
 <p>删除</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#rpm -e mysql　　// 普通删除模式</span><br><span class="line">#rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除</span><br></pre></td></tr></table></figure></code></pre><p>下载、安装  </p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">#rpm -ivh mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">#yum update</span><br><span class="line">#yum install mysql-server</span><br></pre></td></tr></table></figure></code></pre><p>设置权限</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#chown mysql:mysql -R /var/lib/mysql</span><br></pre></td></tr></table></figure></code></pre><p>初始化</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mysqld --initialize</span><br></pre></td></tr></table></figure></code></pre><p>启动服务</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#systemctl start mysqld</span><br></pre></td></tr></table></figure></code></pre><p>查看运行状态:</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#systemctl status mysqld</span><br></pre></td></tr></table></figure></code></pre><p>查看版本</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mysqladmin --version</span><br></pre></td></tr></table></figure></code></pre><p>如果mysql版本为5.7以上，默认会生成一个随机密码<br>    查看随机密码方式：</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#grep password /var/log/myswld.log</span><br></pre></td></tr></table></figure></code></pre><p>设置root密码</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mysqladmin -u root password &quot;new_password&quot;;</span><br></pre></td></tr></table></figure></code></pre><h3 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h3><p>登陆</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#rpm -e mysql　　// 普通删除模式</span><br><span class="line">#rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除</span><br></pre></td></tr></table></figure>
+
+<p>下载、安装  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">#rpm -ivh mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">#yum update</span><br><span class="line">#yum install mysql-server</span><br></pre></td></tr></table></figure>
+
+<p>设置权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#chown mysql:mysql -R /var/lib/mysql</span><br></pre></td></tr></table></figure>
+
+<p>初始化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mysqld --initialize</span><br></pre></td></tr></table></figure>
+
+<p>启动服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#systemctl start mysqld</span><br></pre></td></tr></table></figure>
+
+<p>查看运行状态:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#systemctl status mysqld</span><br></pre></td></tr></table></figure>
+
+<p>查看版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mysqladmin --version</span><br></pre></td></tr></table></figure>
+
+<p>如果mysql版本为5.7以上，默认会生成一个随机密码<br>    查看随机密码方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#grep password /var/log/myswld.log</span><br></pre></td></tr></table></figure>
+
+<p>设置root密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mysqladmin -u root password &quot;new_password&quot;;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h3><p>登陆</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mysql -u root -p</span><br></pre></td></tr></table></figure>
 
 
@@ -466,7 +485,8 @@
 
 
 <p>修改root密码</p>
-<pre><code>5.7.6以后的版本</code></pre><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">USER</span> <span class="string">'root'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'new_password'</span>;</span><br></pre></td></tr></table></figure>
+<p>5.7.6以后的版本</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">USER</span> <span class="string">'root'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'new_password'</span>;</span><br></pre></td></tr></table></figure>
 
 
 <p>或者</p>
@@ -475,8 +495,12 @@
 <p>5.7.6以前的版本</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> <span class="keyword">PASSWORD</span> = <span class="keyword">PASSWORD</span>(<span class="string">'shang'</span>);</span><br></pre></td></tr></table></figure>
 
-<p>导入mysql文件<br>    Macx下：<br>    * source + 文件路径（直接拖拽进入即可）;</p>
-<pre><code>Linux下：</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#wget https://downloads.mysql.com/docs/sakila-db.tar.gz</span><br><span class="line">#tar -xf sakila-db.tar.gz</span><br><span class="line">#cd sakila-db</span><br></pre></td></tr></table></figure>
+<p>导入mysql文件<br>Macx下： </p>
+<ul>
+<li>source + 文件路径（直接拖拽进入即可）;</li>
+</ul>
+<p>Linux下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#wget https://downloads.mysql.com/docs/sakila-db.tar.gz</span><br><span class="line">#tar -xf sakila-db.tar.gz</span><br><span class="line">#cd sakila-db</span><br></pre></td></tr></table></figure>
 
 
 <p>在数据库中新建一个和要导入的数据库名称相同的数据库,然后退出Mysql</p>
@@ -506,8 +530,13 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">index</span> <span class="keyword">from</span> 表名;</span><br></pre></td></tr></table></figure>
 
 
-<p>显示Mysql数据库的管理系统的性能和统计信息。<br>    *     show table status from 数据库名;</p>
-<pre><code>例子：</code></pre><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">table</span> <span class="keyword">status</span> <span class="keyword">from</span> test_db;     //所有表的信息</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">table</span> <span class="keyword">status</span> <span class="keyword">from</span> test_db <span class="keyword">like</span> <span class="string">'test%'</span>;   //以test开头的表的信息</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">table</span> <span class="keyword">status</span> <span class="keyword">from</span> test_db <span class="keyword">like</span> <span class="string">'test%'</span>\G;  //查询结果按列打印</span><br></pre></td></tr></table></figure>
+<p>显示Mysql数据库的管理系统的性能和统计信息。</p>
+<ul>
+<li><p>show table status from 数据库名;</p>
+<p>例子：</p>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">table</span> <span class="keyword">status</span> <span class="keyword">from</span> test_db;     //所有表的信息</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">table</span> <span class="keyword">status</span> <span class="keyword">from</span> test_db <span class="keyword">like</span> <span class="string">'test%'</span>;   //以test开头的表的信息</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">table</span> <span class="keyword">status</span> <span class="keyword">from</span> test_db <span class="keyword">like</span> <span class="string">'test%'</span>\G;  //查询结果按列打印</span><br></pre></td></tr></table></figure>
 
 <h3 id="Mysql常用命令"><a href="#Mysql常用命令" class="headerlink" title="Mysql常用命令"></a>Mysql常用命令</h3><p>查看当前所有的数据库</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;</span><br></pre></td></tr></table></figure>
@@ -566,7 +595,7 @@
   <p><span>本文标题:</span>Mysql基础操作</p>
   <p><span>文章作者:</span>尚先森</p>
   <p><span>发布时间:</span>2019年08月20日 - 20:23:39</p>
-  <p><span>最后更新:</span>2019年08月26日 - 21:41:45</p>
+  <p><span>最后更新:</span>2019年08月26日 - 21:48:06</p>
   <p><span>原始链接:</span><a href="/2019/08/20/Mysql基础操作/" title="Mysql基础操作">http://shang-code.cn/2019/08/20/Mysql基础操作/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/08/20/Mysql基础操作/" aria-label="复制成功！"></i></span>
   </p>
