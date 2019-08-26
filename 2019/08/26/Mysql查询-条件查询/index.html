@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="寿司卷code">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://shang-code.cn/images/mysql.png">
-<meta property="og:updated_time" content="2019-08-26T08:48:52.947Z">
+<meta property="og:updated_time" content="2019-08-26T13:58:18.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql查询-条件查询">
 <meta name="twitter:image" content="http://shang-code.cn/images/mysql.png">
@@ -339,7 +339,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-26T16:48:52+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-26T21:58:18+08:00">
                 2019-08-26
               </time>
             
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  570 字
+                  567 字
                 </span>
               
 
@@ -481,7 +481,12 @@
 </blockquote>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">        last_name</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">        employees</span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">        last_name <span class="keyword">like</span> <span class="string">'_$_%'</span> escape <span class="string">'$'</span>;</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-between-and"><a href="#2-between-and" class="headerlink" title="2. between    and"></a>2. between    and</h4><p><strong>特点：</strong><br>    1. 包含临界值<br>    2. 两个临界值不要调换顺序<br>    3. 提高了语句简洁度</p>
+<h4 id="2-between-and"><a href="#2-between-and" class="headerlink" title="2. between    and"></a>2. between    and</h4><p><strong>特点：</strong></p>
+<ol>
+<li>包含临界值</li>
+<li>两个临界值不要调换顺序</li>
+<li>提高了语句简洁度</li>
+</ol>
 <p><strong>案例一：查询员工编号在110到120之间的员工信息</strong></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">        *</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">        employees</span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">        employees_id <span class="keyword">between</span> <span class="number">100</span> <span class="keyword">and</span> <span class="number">120</span>;</span><br></pre></td></tr></table></figure>
 
@@ -523,7 +528,7 @@
   <p><span>本文标题:</span>Mysql查询-条件查询</p>
   <p><span>文章作者:</span>尚先森</p>
   <p><span>发布时间:</span>2019年08月26日 - 16:45:20</p>
-  <p><span>最后更新:</span>2019年08月26日 - 16:48:52</p>
+  <p><span>最后更新:</span>2019年08月26日 - 21:58:18</p>
   <p><span>原始链接:</span><a href="/2019/08/26/Mysql查询-条件查询/" title="Mysql查询-条件查询">http://shang-code.cn/2019/08/26/Mysql查询-条件查询/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/08/26/Mysql查询-条件查询/" aria-label="复制成功！"></i></span>
   </p>
