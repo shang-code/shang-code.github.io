@@ -2014,7 +2014,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8af6ff;
+  background: #f56ee4;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3345,8 +3345,8 @@ code {
   padding: 3px;
 }
 * {
-  cursor: url("https://www.easyicon.net/api/resizeApi.php?id=1124585&size=24"), auto !important;
+  cursor: url("/images/shubiao.png"), auto !important;
 }
 :active {
-  cursor: url("https://www.easyicon.net/api/resizeApi.php?id=1124585&size=24"), auto !important;
+  cursor: url("/images/shubiao.png"), auto !important;
 }

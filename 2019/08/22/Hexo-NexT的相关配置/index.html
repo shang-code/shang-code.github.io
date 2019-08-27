@@ -96,7 +96,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://shang-code.cn/images/background3.png">
 <meta property="og:image" content="http://shang-code.cn/images/wordcount.png">
-<meta property="og:updated_time" content="2019-08-27T10:32:21.255Z">
+<meta property="og:updated_time" content="2019-08-27T10:44:20.638Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo&amp;NexT的相关配置">
 <meta name="twitter:image" content="http://shang-code.cn/images/background3.png">
@@ -340,7 +340,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-27T18:32:21+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-27T18:44:20+08:00">
                 2019-08-27
               </time>
             
@@ -611,29 +611,14 @@ alipay: /images/zhifubao.png</code></pre><p><em>注：下面所有需要用到�
 <p><img src="/images/wordcount.png" alt="wordcount"></p>
 <p>如果出现没有数字的情况，尝试执行下面这条（安装）命令：</p>
 <pre><code>npm i --save hexo-wordcount</code></pre><h2 id="添加背景图"><a href="#添加背景图" class="headerlink" title="添加背景图"></a>添加背景图</h2><p>在<strong>themes/next/source/css/_custom/custom.styl</strong>文件中添加：</p>
-<pre><code>body {
-background: url(https://source.unsplash.com/random/1600x900?wallpapers);
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: 50% 50%;
-}
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line"><span class="attribute">background</span>: <span class="built_in">url</span>(https://source.unsplash.com/random/1600x900?wallpapers);</span><br><span class="line"><span class="attribute">background-size</span>: cover;</span><br><span class="line"><span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line"><span class="attribute">background-attachment</span>: fixed;</span><br><span class="line"><span class="attribute">background-position</span>: <span class="number">50%</span> <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 修改主体透明度</span><br><span class="line"><span class="selector-class">.main-inner</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.9</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 修改菜单栏透明度</span><br><span class="line"><span class="selector-class">.header-inner</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.9</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-// 修改主体透明度
-.main-inner {
-  background: #fff;
-  opacity: 0.9;
-}
-
-// 修改菜单栏透明度
-.header-inner {
-  opacity: 0.9;
-}</code></pre><p>background: url() 中填写的是背景图片的 url 地址, 这里调用了 Unsplash 的 API, 随机选用该网站的高清美图作为博客背景.<br>opacity 指定了对应元素的透明度, 这里是 “0.8”, 可以按需更改.</p>
+<p>background: url() 中填写的是背景图片的 url 地址, 这里调用了 Unsplash 的 API, 随机选用该网站的高清美图作为博客背景.<br>opacity 指定了对应元素的透明度, 这里是 “0.8”, 可以按需更改.</p>
 <h2 id="修改行内代码块样式"><a href="#修改行内代码块样式" class="headerlink" title="修改行内代码块样式"></a>修改行内代码块样式</h2><p>打开 <code>themes\next\source\css\_custom\custom.styl</code>，添加如下样式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/* 行内代码块的自定义样式 */</span><br><span class="line">code &#123;</span><br><span class="line">    color: #d500fc;</span><br><span class="line">    background: rgba(78, 240, 233, 0.42);</span><br><span class="line">    margin: 2px;</span><br><span class="line">    border: 1px solid #d6d6d6;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 行内代码块的自定义样式 */</span></span><br><span class="line"><span class="selector-tag">code</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#d500fc</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(78, 240, 233, 0.42);</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#d6d6d6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="去掉图片边框"><a href="#去掉图片边框" class="headerlink" title="去掉图片边框"></a>去掉图片边框</h2><p>NexT主题默认会有图片边框，不太好看，我们可以把边框去掉。打开 themes\next\source\css_custom\custom.styl，添加如下CSS代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/* 去掉图片边框 */</span><br><span class="line">.posts-expand .post-body img &#123;</span><br><span class="line">    border: none;</span><br><span class="line">    padding: 0px;</span><br><span class="line">&#125;</span><br><span class="line">.post-gallery .post-gallery-img img &#123;</span><br><span class="line">    padding: 3px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 去掉图片边框 */</span></span><br><span class="line"><span class="selector-class">.posts-expand</span> <span class="selector-class">.post-body</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.post-gallery</span> <span class="selector-class">.post-gallery-img</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -656,7 +641,7 @@ background-position: 50% 50%;
   <p><span>本文标题:</span>Hexo&NexT的相关配置</p>
   <p><span>文章作者:</span>尚先森</p>
   <p><span>发布时间:</span>2019年08月22日 - 00:28:09</p>
-  <p><span>最后更新:</span>2019年08月27日 - 18:32:21</p>
+  <p><span>最后更新:</span>2019年08月27日 - 18:44:20</p>
   <p><span>原始链接:</span><a href="/2019/08/22/Hexo-NexT的相关配置/" title="Hexo&NexT的相关配置">http://shang-code.cn/2019/08/22/Hexo-NexT的相关配置/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/08/22/Hexo-NexT的相关配置/" aria-label="复制成功！"></i></span>
   </p>
