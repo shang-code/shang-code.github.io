@@ -95,7 +95,8 @@
 <meta property="og:site_name" content="寿司卷code">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://shang-code.cn/images/background3.png">
-<meta property="og:updated_time" content="2019-08-27T15:46:58.420Z">
+<meta property="og:image" content="http://shang-code.cn/images/wt.png">
+<meta property="og:updated_time" content="2019-08-27T15:48:12.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo&amp;NexT的相关配置">
 <meta name="twitter:image" content="http://shang-code.cn/images/background3.png">
@@ -348,7 +349,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-27T23:46:58+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-27T23:48:12+08:00">
                 2019-08-27
               </time>
             
@@ -403,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5.6k 字
+                  5.8k 字
                 </span>
               
 
@@ -419,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  29 分钟
+                  30 分钟
                 </span>
               
             </div>
@@ -632,6 +633,31 @@
 <h2 id="字数统计与阅读时长"><a href="#字数统计与阅读时长" class="headerlink" title="字数统计与阅读时长"></a>字数统计与阅读时长</h2><p>在<code>/blog/themes/next/</code>下的<code>_config.yml</code>文件中搜索<code>post_wordcount</code>字段</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">post_wordcount:</span><br><span class="line">  item_text: <span class="literal">true</span></span><br><span class="line">  wordcount: <span class="literal">true</span></span><br><span class="line">  min2read: <span class="literal">true</span></span><br><span class="line">  totalcount: <span class="literal">false</span></span><br><span class="line">  separated_meta: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p>为了让效果好一点，修改<code>/blog/themes/next/layout/_macro/post.swig</code>文件</p>
+</blockquote>
+<p>修改<code>字数统计</code>，找到如下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span title=<span class="string">"&#123;&#123; __('post.wordcount') &#125;&#125;"</span>&gt;</span><br><span class="line">  &#123;&#123; wordcount(post.content) &#125;&#125;</span><br><span class="line">&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>添加 “字” 到 </p>
+</blockquote>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; wordcount(post.content) &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>后面，修改后为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span title=<span class="string">"&#123;&#123; __('post.wordcount') &#125;&#125;"</span>&gt;</span><br><span class="line">  &#123;&#123; wordcount(post.content) &#125;&#125; 字</span><br><span class="line">&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>同理，我们修改<code>阅读时长</code>，修改后如下：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span title=<span class="string">"&#123;&#123; __('post.min2read') &#125;&#125;"</span>&gt;</span><br><span class="line">  &#123;&#123; min2read(post.content) &#125;&#125; 分钟</span><br><span class="line">&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图如下：</p>
+<p><img src="/images/wt.png" alt="wordcount"></p>
+<p>如果出现没有数字的情况，尝试执行下面这条（安装）命令：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">npm</span> <span class="selector-tag">i</span> <span class="selector-tag">--save</span> <span class="selector-tag">hexo-wordcount</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="添加背景图"><a href="#添加背景图" class="headerlink" title="添加背景图"></a>添加背景图</h2><p>在<code>themes/next/source/css/_custom/custom.styl</code>文件中添加：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line"><span class="attribute">background</span>: <span class="built_in">url</span>(https://source.unsplash.com/random/1600x900?wallpapers);</span><br><span class="line"><span class="attribute">background-size</span>: cover;</span><br><span class="line"><span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line"><span class="attribute">background-attachment</span>: fixed;</span><br><span class="line"><span class="attribute">background-position</span>: <span class="number">50%</span> <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 修改主体透明度</span><br><span class="line"><span class="selector-class">.main-inner</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.9</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 修改菜单栏透明度</span><br><span class="line"><span class="selector-class">.header-inner</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.9</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -681,7 +707,7 @@
   <p><span>本文标题:</span>Hexo&NexT的相关配置</p>
   <p><span>文章作者:</span>尚先森</p>
   <p><span>发布时间:</span>2019年08月22日 - 00:28:09</p>
-  <p><span>最后更新:</span>2019年08月27日 - 23:46:58</p>
+  <p><span>最后更新:</span>2019年08月27日 - 23:48:12</p>
   <p><span>原始链接:</span><a href="/2019/08/22/Hexo-NexT的相关配置/" title="Hexo&NexT的相关配置">http://shang-code.cn/2019/08/22/Hexo-NexT的相关配置/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/08/22/Hexo-NexT的相关配置/" aria-label="复制成功！"></i></span>
   </p>
