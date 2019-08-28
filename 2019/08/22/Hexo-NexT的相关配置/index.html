@@ -96,7 +96,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://shang-code.cn/images/background3.png">
 <meta property="og:image" content="http://shang-code.cn/images/wt.png">
-<meta property="og:updated_time" content="2019-08-27T15:48:12.741Z">
+<meta property="og:updated_time" content="2019-08-28T03:33:24.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo&amp;NexT的相关配置">
 <meta name="twitter:image" content="http://shang-code.cn/images/background3.png">
@@ -206,6 +206,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
           </a>
         </li>
       
@@ -349,8 +359,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-27T23:48:12+08:00">
-                2019-08-27
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-28T11:33:24+08:00">
+                2019-08-28
               </time>
             
           </span>
@@ -404,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5.8k 字
+                  6k 字
                 </span>
               
 
@@ -420,7 +430,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  30 分钟
+                  31 分钟
                 </span>
               
             </div>
@@ -444,10 +454,29 @@
         <p><img src="/images/background3.png" alt="hexo&amp;next配置"></p>
 <a id="more"></a>
 
+<p>如何安装<code>hexo博客框架</code>与<code>next</code>主题，还有如何把博客静态资源部署到远端<code>github</code>上，请参考这位大神的个人博客：<a href="http://gonghonglou.com/2016/02/03/firstblog/" target="_blank" rel="noopener">http://gonghonglou.com/2016/02/03/firstblog/</a></p>
+<blockquote>
+<p>接下来所介绍的是安装完hexo之后的具体配置。</p>
+</blockquote>
 <h1 id="Hexo与NexT的配置"><a href="#Hexo与NexT的配置" class="headerlink" title="Hexo与NexT的配置"></a>Hexo与NexT的配置</h1><p><code>注意</code>：每次对hexo和next作出修改时，都要执行：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s  <span class="comment">//本地部署</span></span><br><span class="line">hexo d  <span class="comment">//远端部署</span></span><br></pre></td></tr></table></figure>
 
-
+<p><code>没有部署到远端的（比如github或者coding）童鞋，使用hexo s开启服务在本地进行测试，无需执行hexo d。</code></p>
+<p>如果出现了端口正在运行无法使用的情况</p>
+<blockquote>
+<p>FATAL Port 4000 has been used. Try other port instead.<br>FATAL Something’s wrong. Maybe you can find the solution here: <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">https://hexo.io/docs/troubleshooting.html</a><br>Error: listen EADDRINUSE: address already in use :::4000</p>
+</blockquote>
+<p>可以这样解决：</p>
+<ul>
+<li><p>sudo lsof -i :4000</p>
+<blockquote>
+<p>[shang@11:06:24]~/blog$ sudo lsof -i :4000<br>COMMAND   PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME<br>node    13676 root   36u  IPv6 0x783f5ae0b80a0c4b      0t0  TCP *:terabase (LISTEN)</p>
+</blockquote>
+</li>
+<li><p>sudo kill -9 13676</p>
+</li>
+</ul>
+<p>这样端口<code>4000</code>下的进程就被杀死了。</p>
 <h2 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h2><p> <code>hexo new &quot;test&quot;</code><br>  之后就会在<strong>/blog/source/_posts/</strong>建立一个名为 <code>test.md</code> 的文件<br>  开始编写：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 个人简介</span><br><span class="line">date: 2019-08-20 23:11:27</span><br><span class="line">tags: </span><br><span class="line">      - 简介</span><br><span class="line">      - 尚先森</span><br><span class="line"></span><br><span class="line">categories: 个人介绍</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"># 个人介绍</span><br><span class="line"></span><br><span class="line">##基本资料</span><br><span class="line"></span><br><span class="line">  姓名：尚用正</span><br><span class="line">  性别：男</span><br><span class="line">  年龄：保密</span><br><span class="line">  居住地：天津</span><br><span class="line">  所在学校：内蒙古农业大学</span><br></pre></td></tr></table></figure>
 
@@ -707,7 +736,7 @@
   <p><span>本文标题:</span>Hexo&NexT的相关配置</p>
   <p><span>文章作者:</span>尚先森</p>
   <p><span>发布时间:</span>2019年08月22日 - 00:28:09</p>
-  <p><span>最后更新:</span>2019年08月27日 - 23:48:12</p>
+  <p><span>最后更新:</span>2019年08月28日 - 11:33:24</p>
   <p><span>原始链接:</span><a href="/2019/08/22/Hexo-NexT的相关配置/" title="Hexo&NexT的相关配置">http://shang-code.cn/2019/08/22/Hexo-NexT的相关配置/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/08/22/Hexo-NexT的相关配置/" aria-label="复制成功！"></i></span>
   </p>
