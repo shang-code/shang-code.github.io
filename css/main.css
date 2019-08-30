@@ -284,8 +284,8 @@ a {
   word-wrap: break-word;
 }
 a:hover {
-  color: #222;
-  border-bottom-color: #222;
+  color: #ffa500;
+  border-bottom-color: #ffa500;
 }
 blockquote {
   margin: 0;
@@ -321,7 +321,7 @@ dd {
   padding: 0;
 }
 kbd {
-  border: 1px solid #ccc;
+  border: 1px solid 66ffff;
   border-radius: 0.2em;
   box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
   background-color: #f9f9f9;
@@ -687,14 +687,14 @@ pre .javascript .function {
 .page-post-detail .post-type-quote blockquote::before {
   top: -20px;
   background-image: url("../images/quote-l.svg");
-  border-top: 1px solid #ccc;
+  border-top: 1px solid 66ffff;
 }
 .blockquote-center::after,
 .page-home .post-type-quote blockquote::after,
 .page-post-detail .post-type-quote blockquote::after {
   bottom: -20px;
   background-image: url("../images/quote-r.svg");
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid 66ffff;
   background-position: 100% 8px;
 }
 .blockquote-center p,
@@ -959,9 +959,9 @@ pre .javascript .function {
   line-height: 2;
 }
 .btn:hover {
-  border-color: #222;
+  border-color: #ffa500;
   color: #fff;
-  background: #222;
+  background: #ffa500;
 }
 .btn +.btn {
   margin: 0 0 8px 8px;
@@ -1018,7 +1018,7 @@ pre .javascript .function {
 .pagination .prev:hover,
 .pagination .next:hover,
 .pagination .page-number:hover {
-  border-top-color: #222;
+  border-top-color: #ffa500;
 }
 .pagination .space {
   padding: 0;
@@ -1032,8 +1032,8 @@ pre .javascript .function {
 }
 .pagination .page-number.current {
   color: #fff;
-  background: #ccc;
-  border-top-color: #ccc;
+  background: 66ffff;
+  border-top-color: 66ffff;
 }
 @media (max-width: 767px) {
   .pagination {
@@ -1050,7 +1050,7 @@ pre .javascript .function {
   .pagination .prev:hover,
   .pagination .next:hover,
   .pagination .page-number:hover {
-    border-bottom-color: #222;
+    border-bottom-color: #ffa500;
   }
 }
 .comments {
@@ -1102,7 +1102,7 @@ pre .javascript .function {
 }
 .headband {
   height: 3px;
-  background: #222;
+  background: #ffa500;
 }
 .site-meta {
   margin: 0;
@@ -1118,7 +1118,7 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 40px;
   color: #fff;
-  background: #222;
+  background: #ffa500;
   border-bottom: none;
 }
 .brand:hover {
@@ -1216,7 +1216,7 @@ pre .javascript .function {
 }
 .menu .menu-item a:hover,
 .menu-item-active a {
-  border-bottom-color: #222;
+  border-bottom-color: #ffa500;
 }
 .menu .menu-item .fa {
   margin-right: 5px;
@@ -1310,7 +1310,7 @@ pre .javascript .function {
 .posts-expand .post-body h6 .header-anchor {
   float: right;
   margin-left: 10px;
-  color: #ccc;
+  color: 66ffff;
   border-bottom-style: none;
   visibility: hidden;
 }
@@ -1405,7 +1405,7 @@ pre .javascript .function {
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
   transition-property: border;
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1px dashed 66ffff;
 }
 .posts-collapse .post-header::before {
   content: " ";
@@ -1427,7 +1427,7 @@ pre .javascript .function {
   border-bottom-color: #666;
 }
 .posts-collapse .post-header:hover::before {
-  background: #222;
+  background: #ffa500;
 }
 .posts-collapse .post-meta {
   position: absolute;
@@ -1587,7 +1587,7 @@ pre .javascript .function {
   border-bottom: none;
 }
 .post-nav-item a:hover {
-  color: #222;
+  color: #ffa500;
   border-bottom: none;
 }
 .post-nav-item a:active {
@@ -1617,7 +1617,7 @@ pre .javascript .function {
   margin: 80px auto 60px;
   width: 8%;
   height: 1px;
-  background: #ccc;
+  background: 66ffff;
   text-align: center;
 }
 .post:last-child .post-eof.post-eof.post-eof {
@@ -1851,7 +1851,7 @@ pre .javascript .function {
   width: 0;
   z-index: 1040;
   box-shadow: inset 0 2px 6px #000;
-  background: #222;
+  background: #ffa500;
   -webkit-transform: translateZ(0);
 }
 .sidebar a {
@@ -1881,7 +1881,7 @@ pre .javascript .function {
   width: 14px;
   height: 14px;
   padding: 5px;
-  background: #222;
+  background: #ffa500;
   line-height: 0;
   z-index: 1050;
   cursor: pointer;
@@ -1931,7 +1931,7 @@ pre .javascript .function {
 .site-author-name {
   margin: 0;
   text-align: center;
-  color: #222;
+  color: #ffa500;
   font-weight: 600;
 }
 .site-description {
@@ -2008,7 +2008,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffd133;
+  background: #ff1c58;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2093,7 +2093,7 @@ pre .javascript .function {
   transition-delay: 0s;
   transition-property: all;
   color: #666;
-  border-bottom-color: #ccc;
+  border-bottom-color: 66ffff;
 }
 .post-toc ol a:hover {
   color: #000;
@@ -2954,7 +2954,7 @@ pre .javascript .function {
 .site-meta {
   padding: 20px 0;
   color: #fff;
-  background: #222;
+  background: #ffa500;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-meta {
@@ -3085,7 +3085,7 @@ pre .javascript .function {
   color: #555;
 }
 .sidebar a:hover {
-  color: #222;
+  color: #ffa500;
 }
 .site-state-item {
   padding: 0 10px;
@@ -3098,8 +3098,8 @@ pre .javascript .function {
   text-decoration: underline;
 }
 .feed-link {
-  border-top: 1px dotted #ccc;
-  border-bottom: 1px dotted #ccc;
+  border-top: 1px dotted 66ffff;
+  border-bottom: 1px dotted 66ffff;
   text-align: center;
 }
 .feed-link a {
@@ -3156,7 +3156,7 @@ pre .javascript .function {
   text-align: center;
   margin-top: 20px;
   padding: 3px 0 0;
-  border-top: 1px dotted #ccc;
+  border-top: 1px dotted 66ffff;
 }
 .links-of-blogroll-title {
   margin-top: 0;
