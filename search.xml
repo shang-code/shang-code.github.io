@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MyDiary_in_University-2019-08-31]]></title>
+    <url>%2F2019%2F08%2F31%2FMyDiary-in-University-2019-08-31%2F</url>
+    <content type="text"><![CDATA[2019-08-31今天是大四报道的第一天，陪对象看了一场电影《哪吒之魔童降世》还不错，特别喜欢其中的一句话：“我管我是仙是魔，我的命运我自己说了算” 是啊，三年来我一直都在迷茫，忙活了三年都不知道自己的意义何在？我自己也在琢磨，考了四次四级都没有过，我这几年基本上算是虚度了不知道大四的我现在开始清醒算不算晚 认清了自己，就应该明确自己的现状，定下自己的目标 我回到宿舍，坐在自己的座位上，不知道接下来应该做什么，玩儿吗？不可以，不可以在虚度光阴，绝对不行，人家都在为考研而努力付出着，我该如何？ 我突然想起来自己的社会实践作业还没有完成，我于是拿了出来，着手开始写… 写着写着，我发现，现在的我一点都不迷茫，仿佛有什么人在指引着我的方向。那究竟是什么呢？啊，是我有了自己的目标，并且付出了实践。此时此刻的我，找到了方向！ 是啊，只要你有目标，并且去做的话，人生便不再迷茫，这是我的感觉。 于是乎我自己默默定下了一个小目标：过英语四级 单词是英语的基础，单词不会根本看不懂一篇文章的大概意思，甚至文章问的你什么，自己都不清楚。 嗯，没错了，先着手背单词 定下自己英语目标，一天新的单词背四十个，不要嫌多，我已经没有时间再去浪费了！ 然后根据软件，把该复习的单词都复习完成 坚持下去✊ 如果哪天坚持不下去了，我会回来看看自己的博客 fighting！（我居然不会，还是查的，哈哈，没关系，坚持去背去复习，我一定可以成功！） 但是我还要花一些时间去研究四级的阅读，光背单词是远远不够的！ 明天就是九月了，十二月考四级，大概还有一百天，我决定花七十天的时间去背单词，最后三十天钻研题目，嗯，就这么愉快的决定了！ 那么，开始行动吧，不要让未来的自己瞧不起现在的自己！ 🌹🌹🌹]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mysql查询-条件查询]]></title>
     <url>%2F2019%2F08%2F26%2FMysql%E6%9F%A5%E8%AF%A2-%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2%2F</url>
     <content type="text"><![CDATA[Mysql查询-条件查询语法123456select 查询列表from 表名where 筛选条件; 分类条件表达式查询 条件运算符：&gt; , &lt; , = , != , &lt;&gt; , &gt;= , &lt;= 案例一：查询工资大于12000的员工信息 123456select * from employees where salary &gt; 12000; 案例二：查询部门编号不等于90的员工姓名和部门编号 1234567select last_name, department_idfrom employeeswhere department_id&lt;&gt;90; 逻辑表达式查询作用：用于连接条件表达式 逻辑运算符：&amp;&amp;, || , ！, and , or , not&amp;&amp;和and: 两个条件都为true， 结果为true，反之为false||和o 只要有一个为true，结果就为true！和no 如果链接的条件本身为false，结果为true，反之为false 案例一：查询工资在10000到20000之间的员工名、工资以及奖金 12345678select last_name, salary, commission_pctfrom employeeswhere salary &gt;=10000 and salary &lt;=20000 案例二：查询部门编号不是在90到110之间，或者工资高于15000的员工信息 123456select *from employeeswhere not(department_id&gt;=90 and department_id&lt;=110) or salary &gt; 15000; 模糊查询 like ， between ， in ，is null 1. like:特点： 一般和通配符搭配使用 【通配符】： % ：任意多个字符，包含0个字符 _ ：任意单个字符 案例一：查询员工名中包含字符a的员工信息 123456select * from employees where last_name like '%a%'; 案例二：查询员工名中第三个字符为e，第五个字符为a的员工名和工资 123456select last_name,salary from employees where last_name like '__n_l%'; 案例三：查询员工名中第二个字符为_的员工名 用转义字符 \ 或者下面这种方法 123456select last_namefrom employeeswhere last_name like '_$_%' escape '$'; 2. between and特点： 包含临界值 两个临界值不要调换顺序 提高了语句简洁度 案例一：查询员工编号在110到120之间的员工信息 123456select *from employeeswhere employees_id between 100 and 120; 3. in特点： 提高语句简洁度 in列表的值类型必须一致或兼容 不支持通配符 案例一：查询员工的年龄属于23，24，25岁的员工信息 123456select *from employeeswhere emp_age in (23,24,25); 4. is null特点： =或&lt;&gt;不能判断null值 is null 或 is not null 可以判断null值 案例一：查询没有奖金的员工信息 123456selsct *from employeeswhere commission_pct is null;]]></content>
