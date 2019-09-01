@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="寿司卷code">
 <meta property="og:description" content="正则表达式目标：查找/取出/匹配 符合条件的某个字符或字符串 正则表达式学习方法：单个字符表示&amp;gt;&amp;gt;&amp;gt;字符串表示&amp;gt;&amp;gt;&amp;gt;表达式 正则单字符的表示方法首先，把/etc/passwd复制到家目录下 1cp /etc/passwd ~/.  特定字符某个具体的字符，如：’1’,’a’ 示例： 1grep &apos;1&apos; passwd  范围内字符 数字字符 小写字符 大写字符 大">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-01T14:48:57.162Z">
+<meta property="og:updated_time" content="2019-09-01T14:55:27.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="正则表达式目标：查找/取出/匹配 符合条件的某个字符或字符串 正则表达式学习方法：单个字符表示&amp;gt;&amp;gt;&amp;gt;字符串表示&amp;gt;&amp;gt;&amp;gt;表达式 正则单字符的表示方法首先，把/etc/passwd复制到家目录下 1cp /etc/passwd ~/.  特定字符某个具体的字符，如：’1’,’a’ 示例： 1grep &apos;1&apos; passwd  范围内字符 数字字符 小写字符 大写字符 大">
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-01T22:48:57+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-01T22:55:27+08:00">
                 2019-09-01
               </time>
             
@@ -573,16 +573,31 @@
 <p>grep ‘ab*’ test.txt<br>grep ‘ab+’ test.txt<br>grep ‘ab?’ test.txt</p>
 </blockquote>
 <p>自己可以尝试一下这三个有什么不同之处<br>下面是我做的测试，高亮的地方就是匹配到的字符</p>
-<p>[root@19:23:57]<del># grep ‘ab*’ test.txt<br><code>ab</code><br><code>ababab</code><br><code>abbbbbbbbbb</code><br><code>acccccccc</code><br>+<code>ab</code>+<code>ab</code>+<br>[root@19:24:06]</del># grep ‘ab+’ test.txt<br>+<code>ab+ab+</code>                     </p>
-<p>嘿，是不是发现<code>grep &#39;ab+&#39; test.txt</code>有问题啊<br>是的，这个<code>+</code>号需要转义一下,<code>?</code>也是同理</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'ab*'</span> test.txt</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>[root@19:24:25]<del># grep ‘ab+‘ test.txt<br><code>ab</code><br><code>ababab</code><br><code>abbbbbbbbbb</code><br>+<code>ab</code>+<code>ab</code>+<br>[root@19:25:07]</del># grep ‘ab?‘ test.txt<br><code>ab</code><br><code>ababab</code><br><code>ab</code>bbbbbbbbb<br><code>a</code>cccccccc<br>+<code>ab</code>+<code>ab</code>+   </p>
+<p><code>ab</code><br><code>ababab</code><br><code>abbbbbbbbbb</code><br><code>acccccccc</code><br>+<code>ab</code>+<code>ab</code>+</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'ab+'</span> test.txt</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>+<code>ab+ab+</code>                     </p>
+</blockquote>
+<p>嘿，是不是发现<code>grep &#39;ab+&#39; test.txt</code>有问题啊<br>是的，这个<code>+</code>号需要转义一下,<code>?</code>也是同理</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'ab\+'</span> test.txt</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>ab</code><br><code>ababab</code><br><code>abbbbbbbbbb</code><br>+<code>ab</code>+<code>ab</code>+</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'ab\?'</span> test.txt</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>ab</code><br><code>ababab</code><br><code>ab</code>bbbbbbbbb<br><code>a</code>cccccccc<br>+<code>ab</code>+<code>ab</code>+   </p>
 </blockquote>
 <h4 id="匹配多个字符"><a href="#匹配多个字符" class="headerlink" title="匹配多个字符"></a>匹配多个字符</h4><p>如果想要匹配一整个字符呢？<br>可以用<code>()</code>括起来<br>示例：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'\(ab\)*'</span> test.txt</span><br></pre></td></tr></table></figure>
 
 <p>结果：</p>
-<p>[root@19:39:47]~# grep ‘(ab)*’ test.txt</p>
 <blockquote>
 <p><code>ab</code></p>
 <p><code>ababab</code></p>
@@ -596,7 +611,7 @@
 
 <p>结果：</p>
 <blockquote>
-<p>[root@19:40:05]~# grep ‘(ab)+‘ test.txt<br><code>ab</code><br><code>ababab</code><br><code>ab</code>bbbbbbbbb<br>+<code>ab</code>+<code>ab</code>+   </p>
+<p><code>ab</code><br><code>ababab</code><br><code>ab</code>bbbbbbbbb<br>+<code>ab</code>+<code>ab</code>+   </p>
 </blockquote>
 <h4 id="重复特定次数"><a href="#重复特定次数" class="headerlink" title="重复特定次数"></a>重复特定次数</h4><p>{n,m}:重复n到m次<br>比如{2,3}，在grep中使用就是说匹配重复2次到3次的数据行<br>示例：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'[0-9]\&#123;2,3\&#125;'</span> passwd</span><br></pre></td></tr></table></figure>
@@ -615,13 +630,13 @@
 
 <p>结果：</p>
 <blockquote>
-<p>[root@21:45:21]~# grep ‘^a.*b’ test.txt<br><code>ab</code><br><code>ababab</code><br><code>abbbbbbbbbb</code></p>
+<p><code>ab</code><br><code>ababab</code><br><code>abbbbbbbbbb</code></p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^a..b'</span> test.txt</span><br></pre></td></tr></table></figure>
 
 <p>结果：</p>
 <blockquote>
-<p>[root@21:45:48]~# grep ‘^a..b’ test.txt<br><code>abab</code>ab<br><code>abbb</code>bbbbbbb</p>
+<p><code>abab</code>ab<br><code>abbb</code>bbbbbbb</p>
 </blockquote>
 <p>这次明白了吧…😓</p>
 <h4 id="逻辑表示"><a href="#逻辑表示" class="headerlink" title="逻辑表示"></a>逻辑表示</h4><p>| : ‘bin/(bash|nologin)‘<br>示例：</p>
@@ -629,7 +644,7 @@
 
 <p>结果：</p>
 <blockquote>
-<p>[root@21:39:30]~# grep ‘bin/(bash|nologin)‘ passwd<br>root:x:0:0:root:/root:/<code>bin/bash</code><br>bin:x:1:1:bin:/bin:/s<code>bin/nologin</code><br>daemon:x:2:2:daemon:/sbin:/s<code>bin/nologin</code><br>adm:x:3:4:adm:/var/adm:/s<code>bin/nologin</code><br>lp:x:4:7:lp:/var/spool/lpd:/s<code>bin/nologin</code><br>mail:x:8:12:mail:/var/spool/mail:/s<code>bin/nologin</code><br>operator:x:11:0:operator:/root:/s<code>bin/nologin</code><br>games:x:12:100:games:/usr/games:/s<code>bin/nologin</code><br>ftp:x:14:50:FTP User:/var/ftp:/s<code>bin/nologin</code><br>nobody:x:99:99:Nobody:/:/s<code>bin/nologin</code><br>systemd-network:x:192:192:systemd Network Management:/:/s<code>bin/nologin</code><br>dbus:x:81:81:System message bus:/:/s<code>bin/nologin</code><br>polkitd:x:999:997:User for polkitd:/:/s<code>bin/nologin</code><br>abrt:x:173:173::/etc/abrt:/s<code>bin/nologin</code><br>tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/s<code>bin/nologin</code><br>postfix:x:89:89::/var/spool/postfix:/s<code>bin/nologin</code><br>chrony:x:998:996::/var/lib/chrony:/s<code>bin/nologin</code><br>sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/s<code>bin/nologin</code><br>mysql:x:27:27:MySQL Server:/var/lib/mysql:/<code>bin/bash</code> </p>
+<p>root:x:0:0:root:/root:/<code>bin/bash</code><br>bin:x:1:1:bin:/bin:/s<code>bin/nologin</code><br>daemon:x:2:2:daemon:/sbin:/s<code>bin/nologin</code><br>adm:x:3:4:adm:/var/adm:/s<code>bin/nologin</code><br>lp:x:4:7:lp:/var/spool/lpd:/s<code>bin/nologin</code><br>mail:x:8:12:mail:/var/spool/mail:/s<code>bin/nologin</code><br>operator:x:11:0:operator:/root:/s<code>bin/nologin</code><br>games:x:12:100:games:/usr/games:/s<code>bin/nologin</code><br>ftp:x:14:50:FTP User:/var/ftp:/s<code>bin/nologin</code><br>nobody:x:99:99:Nobody:/:/s<code>bin/nologin</code><br>systemd-network:x:192:192:systemd Network Management:/:/s<code>bin/nologin</code><br>dbus:x:81:81:System message bus:/:/s<code>bin/nologin</code><br>polkitd:x:999:997:User for polkitd:/:/s<code>bin/nologin</code><br>abrt:x:173:173::/etc/abrt:/s<code>bin/nologin</code><br>tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/s<code>bin/nologin</code><br>postfix:x:89:89::/var/spool/postfix:/s<code>bin/nologin</code><br>chrony:x:998:996::/var/lib/chrony:/s<code>bin/nologin</code><br>sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/s<code>bin/nologin</code><br>mysql:x:27:27:MySQL Server:/var/lib/mysql:/<code>bin/bash</code> </p>
 </blockquote>
 
       
@@ -652,7 +667,7 @@
   <p><span>本文标题:</span>正则表达式</p>
   <p><span>文章作者:</span>尚先森</p>
   <p><span>发布时间:</span>2019年09月01日 - 11:55:31</p>
-  <p><span>最后更新:</span>2019年09月01日 - 22:48:57</p>
+  <p><span>最后更新:</span>2019年09月01日 - 22:55:27</p>
   <p><span>原始链接:</span><a href="/2019/09/01/正则表达式/" title="正则表达式">http://shang-code.cn/2019/09/01/正则表达式/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/09/01/正则表达式/" aria-label="复制成功！"></i></span>
   </p>
