@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="寿司卷code">
 <meta property="og:description" content="正则表达式目标：查找/取出/匹配 符合条件的某个字符或字符串 正则表达式学习方法：单个字符表示&amp;gt;&amp;gt;&amp;gt;字符串表示&amp;gt;&amp;gt;&amp;gt;表达式 正则单字符的表示方法首先，把/etc/passwd复制到家目录下 1cp /etc/passwd ~/.  特定字符某个具体的字符，如：’1’,’a’ 示例： 1grep &apos;1&apos; passwd  范围内字符 数字字符 小写字符 大写字符 大">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-01T14:45:15.744Z">
+<meta property="og:updated_time" content="2019-09-01T14:48:57.162Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="正则表达式目标：查找/取出/匹配 符合条件的某个字符或字符串 正则表达式学习方法：单个字符表示&amp;gt;&amp;gt;&amp;gt;字符串表示&amp;gt;&amp;gt;&amp;gt;表达式 正则单字符的表示方法首先，把/etc/passwd复制到家目录下 1cp /etc/passwd ~/.  特定字符某个具体的字符，如：’1’,’a’ 示例： 1grep &apos;1&apos; passwd  范围内字符 数字字符 小写字符 大写字符 大">
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-01T22:45:15+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-01T22:48:57+08:00">
                 2019-09-01
               </time>
             
@@ -573,9 +573,7 @@
 <p>grep ‘ab*’ test.txt<br>grep ‘ab+’ test.txt<br>grep ‘ab?’ test.txt</p>
 </blockquote>
 <p>自己可以尝试一下这三个有什么不同之处<br>下面是我做的测试，高亮的地方就是匹配到的字符</p>
-<blockquote>
 <p>[root@19:23:57]<del># grep ‘ab*’ test.txt<br><code>ab</code><br><code>ababab</code><br><code>abbbbbbbbbb</code><br><code>acccccccc</code><br>+<code>ab</code>+<code>ab</code>+<br>[root@19:24:06]</del># grep ‘ab+’ test.txt<br>+<code>ab+ab+</code>                     </p>
-</blockquote>
 <p>嘿，是不是发现<code>grep &#39;ab+&#39; test.txt</code>有问题啊<br>是的，这个<code>+</code>号需要转义一下,<code>?</code>也是同理</p>
 <blockquote>
 <p>[root@19:24:25]<del># grep ‘ab+‘ test.txt<br><code>ab</code><br><code>ababab</code><br><code>abbbbbbbbbb</code><br>+<code>ab</code>+<code>ab</code>+<br>[root@19:25:07]</del># grep ‘ab?‘ test.txt<br><code>ab</code><br><code>ababab</code><br><code>ab</code>bbbbbbbbb<br><code>a</code>cccccccc<br>+<code>ab</code>+<code>ab</code>+   </p>
@@ -654,7 +652,7 @@
   <p><span>本文标题:</span>正则表达式</p>
   <p><span>文章作者:</span>尚先森</p>
   <p><span>发布时间:</span>2019年09月01日 - 11:55:31</p>
-  <p><span>最后更新:</span>2019年09月01日 - 22:45:15</p>
+  <p><span>最后更新:</span>2019年09月01日 - 22:48:57</p>
   <p><span>原始链接:</span><a href="/2019/09/01/正则表达式/" title="正则表达式">http://shang-code.cn/2019/09/01/正则表达式/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/09/01/正则表达式/" aria-label="复制成功！"></i></span>
   </p>
