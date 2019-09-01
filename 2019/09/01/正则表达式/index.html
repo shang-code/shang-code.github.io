@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="正则表达式目标：查找/取出/匹配 符合条件的某个字符或字符串 正则表达式学习方法：单个字符表示&amp;gt;&amp;gt;&amp;gt;字符串表示&amp;gt;&amp;gt;&amp;gt;表达式 正则单字符的表示方法首先，把/etc/passwd复制到家目录下 1cp /etc/passwd ~/.   特定字符：某个具体的字符，如：’1’,’a’  示例： 1grep &apos;1&apos; passwd   范围内字符：单个字符 []   数字">
+<meta name="description" content="正则表达式目标：查找/取出/匹配 符合条件的某个字符或字符串 正则表达式学习方法：单个字符表示&amp;gt;&amp;gt;&amp;gt;字符串表示&amp;gt;&amp;gt;&amp;gt;表达式 正则单字符的表示方法首先，把/etc/passwd复制到家目录下 1cp /etc/passwd ~/.  特定字符：某个具体的字符，如：’1’,’a’示例： 1grep &apos;1&apos; passwd  范围内字符：单个字符 [] 数字字符：[0-">
 <meta name="keywords" content="正则表达式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则表达式">
 <meta property="og:url" content="http://shang-code.cn/2019/09/01/正则表达式/index.html">
 <meta property="og:site_name" content="寿司卷code">
-<meta property="og:description" content="正则表达式目标：查找/取出/匹配 符合条件的某个字符或字符串 正则表达式学习方法：单个字符表示&amp;gt;&amp;gt;&amp;gt;字符串表示&amp;gt;&amp;gt;&amp;gt;表达式 正则单字符的表示方法首先，把/etc/passwd复制到家目录下 1cp /etc/passwd ~/.   特定字符：某个具体的字符，如：’1’,’a’  示例： 1grep &apos;1&apos; passwd   范围内字符：单个字符 []   数字">
+<meta property="og:description" content="正则表达式目标：查找/取出/匹配 符合条件的某个字符或字符串 正则表达式学习方法：单个字符表示&amp;gt;&amp;gt;&amp;gt;字符串表示&amp;gt;&amp;gt;&amp;gt;表达式 正则单字符的表示方法首先，把/etc/passwd复制到家目录下 1cp /etc/passwd ~/.  特定字符：某个具体的字符，如：’1’,’a’示例： 1grep &apos;1&apos; passwd  范围内字符：单个字符 [] 数字字符：[0-">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-01T08:33:03.353Z">
+<meta property="og:updated_time" content="2019-09-01T08:38:01.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
-<meta name="twitter:description" content="正则表达式目标：查找/取出/匹配 符合条件的某个字符或字符串 正则表达式学习方法：单个字符表示&amp;gt;&amp;gt;&amp;gt;字符串表示&amp;gt;&amp;gt;&amp;gt;表达式 正则单字符的表示方法首先，把/etc/passwd复制到家目录下 1cp /etc/passwd ~/.   特定字符：某个具体的字符，如：’1’,’a’  示例： 1grep &apos;1&apos; passwd   范围内字符：单个字符 []   数字">
+<meta name="twitter:description" content="正则表达式目标：查找/取出/匹配 符合条件的某个字符或字符串 正则表达式学习方法：单个字符表示&amp;gt;&amp;gt;&amp;gt;字符串表示&amp;gt;&amp;gt;&amp;gt;表达式 正则单字符的表示方法首先，把/etc/passwd复制到家目录下 1cp /etc/passwd ~/.  特定字符：某个具体的字符，如：’1’,’a’示例： 1grep &apos;1&apos; passwd  范围内字符：单个字符 [] 数字字符：[0-">
 
 
 
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-01T16:33:03+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-01T16:38:01+08:00">
                 2019-09-01
               </time>
             
@@ -468,16 +468,10 @@
 <h2 id="正则单字符的表示方法"><a href="#正则单字符的表示方法" class="headerlink" title="正则单字符的表示方法"></a>正则单字符的表示方法</h2><p>首先，把<code>/etc/passwd</code>复制到家目录下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/passwd ~/.</span><br></pre></td></tr></table></figure>
 
-<ol>
-<li>特定字符：某个具体的字符，如：’1’,’a’</li>
-</ol>
-<p>示例：</p>
+<h3 id="特定字符：某个具体的字符，如：’1’-’a’"><a href="#特定字符：某个具体的字符，如：’1’-’a’" class="headerlink" title="特定字符：某个具体的字符，如：’1’,’a’"></a>特定字符：某个具体的字符，如：’1’,’a’</h3><p>示例：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'1'</span> passwd</span><br></pre></td></tr></table></figure>
 
-<ol start="2">
-<li>范围内字符：单个字符 []</li>
-</ol>
-<ul>
+<h3 id="范围内字符：单个字符"><a href="#范围内字符：单个字符" class="headerlink" title="范围内字符：单个字符 []"></a>范围内字符：单个字符 []</h3><ul>
 <li>数字字符：[0-9],[123] (注意：只是范围内的一个字符)<br>示例：</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'[0-9]'</span> passwd</span><br></pre></td></tr></table></figure>
@@ -507,10 +501,7 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'[^0-5]'</span> passwd</span><br></pre></td></tr></table></figure>
 
-<ol start="3">
-<li>任意字符</li>
-</ol>
-<ul>
+<h3 id="任意字符"><a href="#任意字符" class="headerlink" title="任意字符"></a>任意字符</h3><ul>
 <li>一个点：’.’ (代表任何一个字符)</li>
 <li><em>注意*</em>：’[.]’ 与 ‘.‘ 的效果是一样的</li>
 </ul>
@@ -535,7 +526,7 @@
   <p><span>本文标题:</span>正则表达式</p>
   <p><span>文章作者:</span>尚先森</p>
   <p><span>发布时间:</span>2019年09月01日 - 11:55:31</p>
-  <p><span>最后更新:</span>2019年09月01日 - 16:33:03</p>
+  <p><span>最后更新:</span>2019年09月01日 - 16:38:01</p>
   <p><span>原始链接:</span><a href="/2019/09/01/正则表达式/" title="正则表达式">http://shang-code.cn/2019/09/01/正则表达式/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/09/01/正则表达式/" aria-label="复制成功！"></i></span>
   </p>
@@ -825,7 +816,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则单字符的表示方法"><span class="nav-number">1.1.</span> <span class="nav-text">正则单字符的表示方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则单字符的表示方法"><span class="nav-number">1.1.</span> <span class="nav-text">正则单字符的表示方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特定字符：某个具体的字符，如：’1’-’a’"><span class="nav-number">1.1.1.</span> <span class="nav-text">特定字符：某个具体的字符，如：’1’,’a’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#范围内字符：单个字符"><span class="nav-number">1.1.2.</span> <span class="nav-text">范围内字符：单个字符 []</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任意字符"><span class="nav-number">1.1.3.</span> <span class="nav-text">任意字符</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
