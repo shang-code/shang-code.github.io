@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="寿司卷code">
 <meta property="og:description" content="正则表达式目标：查找/取出/匹配 符合条件的某个字符或字符串 正则表达式学习方法：单个字符表示&amp;gt;&amp;gt;&amp;gt;字符串表示&amp;gt;&amp;gt;&amp;gt;表达式 正则单字符的表示方法首先，把/etc/passwd复制到家目录下 1cp /etc/passwd ~/.  特定字符某个具体的字符，如：’1’,’a’ 示例： 1grep &apos;1&apos; passwd  范围内字符 数字字符 小写字符 大写字符 大">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-01T09:48:12.156Z">
+<meta property="og:updated_time" content="2019-09-01T14:25:56.235Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="正则表达式目标：查找/取出/匹配 符合条件的某个字符或字符串 正则表达式学习方法：单个字符表示&amp;gt;&amp;gt;&amp;gt;字符串表示&amp;gt;&amp;gt;&amp;gt;表达式 正则单字符的表示方法首先，把/etc/passwd复制到家目录下 1cp /etc/passwd ~/.  特定字符某个具体的字符，如：’1’,’a’ 示例： 1grep &apos;1&apos; passwd  范围内字符 数字字符 小写字符 大写字符 大">
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-01T17:48:12+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-01T22:25:56+08:00">
                 2019-09-01
               </time>
             
@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  383 字
+                  1.2k 字
                 </span>
               
 
@@ -442,7 +442,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -537,6 +537,85 @@
 
 <p>\b:代表单词的分隔<br>示例：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'\bx\b'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<h2 id="字符表达式的字符组合"><a href="#字符表达式的字符组合" class="headerlink" title="字符表达式的字符组合"></a>字符表达式的字符组合</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>‘root’ ‘1000’ ‘a..c’<br>‘[A-Z][a-z]’：大写字母与小写字母的组合<br>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'[A-Z][a-z]'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<p>‘[0-9][0-9]’：数字与数字的组合<br>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'[0-9][0-9]'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<p><strong>这里会有一个问题</strong>：会匹配到<code>两位以及两位数以上</code>的数据行</p>
+<p>解决办法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'\b[0-9][0-9]\b'</span> passwd</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">其实用久了我们会发现，上面的这种组合方式非常的繁琐、不方便</span><br><span class="line">有没有更好的办法呢？</span><br><span class="line">当然有！</span><br><span class="line"></span><br><span class="line"><span class="comment">### 重复</span></span><br><span class="line"></span><br><span class="line">* *:`零次或多次`匹配前面的字符或表达式</span><br><span class="line">* +:`一次或多次匹`配前面的字符或表达式</span><br><span class="line">* ?:`零次或一次`匹配前面的字符或表达式</span><br><span class="line"></span><br><span class="line">首先创建一个测试文件`test.txt`</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">touch test.txt</span><br></pre></td></tr></table></figure>
+
+<p>填入以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ab</span><br><span class="line"></span><br><span class="line">ababab</span><br><span class="line"></span><br><span class="line">abbbbbbbbbb</span><br><span class="line"></span><br><span class="line">bbbbbbbbbbb</span><br><span class="line"></span><br><span class="line">acccccccc</span><br><span class="line"></span><br><span class="line">+ab+ab+</span><br></pre></td></tr></table></figure>
+
+<h4 id="匹配单个字符"><a href="#匹配单个字符" class="headerlink" title="匹配单个字符"></a>匹配单个字符</h4><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grep &apos;ab*&apos; test.txt</span><br><span class="line">grep &apos;ab+&apos; test.txt</span><br><span class="line">grep &apos;ab?&apos; test.txt</span><br></pre></td></tr></table></figure>
+
+<p>自己可以尝试一下这三个有什么不同之处<br> 下面是我做的测试，高亮的地方就是匹配到的字符</p>
+<blockquote>
+<p>[root@19:23:57]<del># grep ‘ab*’ test.txt<br><code>ab</code><br><code>ababab</code><br><code>abbbbbbbbbb</code><br><code>acccccccc</code><br>+<code>ab</code>+<code>ab</code>+<br>[root@19:24:06]</del># grep ‘ab+’ test.txt<br>+<code>ab+ab+</code>                     </p>
+</blockquote>
+<p>嘿，是不是发现<code>grep &#39;ab+&#39; test.txt</code>有问题啊<br>是的，这个<code>+</code>号需要转义一下,<code>?</code>也是同理</p>
+<blockquote>
+<p>[root@19:24:25]<del># grep ‘ab+‘ test.txt<br><code>ab</code><br><code>ababab</code><br><code>abbbbbbbbbb</code><br>+<code>ab</code>+<code>ab</code>+<br>[root@19:25:07]</del># grep ‘ab?‘ test.txt<br><code>ab</code><br><code>ababab</code><br><code>ab</code>bbbbbbbbb<br><code>a</code>cccccccc<br>+<code>ab</code>+<code>ab</code>+   </p>
+</blockquote>
+<h4 id="匹配多个字符"><a href="#匹配多个字符" class="headerlink" title="匹配多个字符"></a>匹配多个字符</h4><p>如果想要匹配一整个字符呢？<br>可以用<code>()</code>括起来<br>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'\(ab\)*'</span> test.txt</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<p>[root@19:39:47]~# grep ‘(ab)*’ test.txt</p>
+<blockquote>
+<p><code>ab</code></p>
+<p><code>ababab</code></p>
+<p><code>ab</code>bbbbbbbbb</p>
+<p>bbbbbbbbbbb</p>
+<p>acccccccc</p>
+<p>+<code>ab</code>+<code>ab</code>+</p>
+</blockquote>
+<p>是不是发现其中有空行的存在？<br>这是因为<code>*</code>包括<code>匹配零次</code>的结果<br>语句应该这样写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'\(ab\)\+'</span> test.txt</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<blockquote>
+<p>[root@19:40:05]~# grep ‘(ab)+‘ test.txt<br><code>ab</code><br><code>ababab</code><br><code>ab</code>bbbbbbbbb<br>+<code>ab</code>+<code>ab</code>+   </p>
+</blockquote>
+<h4 id="重复特定次数"><a href="#重复特定次数" class="headerlink" title="重复特定次数"></a>重复特定次数</h4><p>{n,m}:重复n到m次<br>比如{2,3}，在grep中使用就是说匹配重复2次到3次的数据行<br>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'[0-9]\&#123;2,3\&#125;'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<p>测试之后会发现确实是匹配到了2次到3次的数据行了，但是其中也包括了三次以上的数据行<br>这该如何解决呢？<br>没错，就是你想的那样</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'\b[0-9]\&#123;2,3\&#125;\b'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<h4 id="匹配任意字符串"><a href="#匹配任意字符串" class="headerlink" title="匹配任意字符串"></a>匹配任意字符串</h4><p><code>.</code>表示任何一个字符<br>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^a.*'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<p>这里请注意<code>&#39;^a.*b&#39;</code>与<code>&#39;^a..b&#39;</code>的区别</p>
+<p>这个应该都明白吧？</p>
+<p>哎，还是写出来吧…</p>
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^a.*b'</span> test.txt</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<blockquote>
+<p>[root@21:45:21]~# grep ‘^a.*b’ test.txt<br><code>ab</code><br><code>ababab</code><br><code>abbbbbbbbbb</code></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^a..b'</span> test.txt</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<blockquote>
+<p>[root@21:45:48]~# grep ‘^a..b’ test.txt<br><code>abab</code>ab<br><code>abbb</code>bbbbbbb</p>
+</blockquote>
+<p>这次明白了吧…😓</p>
+<h4 id="逻辑表示"><a href="#逻辑表示" class="headerlink" title="逻辑表示"></a>逻辑表示</h4><p>| : ‘bin/(bash|nologin)‘<br>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'bin/\(bash\|nologin\)'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<blockquote>
+<p>[root@21:39:30]~# grep ‘bin/(bash|nologin)‘ passwd<br>root:x:0:0:root:/root:/<code>bin/bash</code><br>bin:x:1:1:bin:/bin:/s<code>bin/nologin</code><br>daemon:x:2:2:daemon:/sbin:/s<code>bin/nologin</code><br>adm:x:3:4:adm:/var/adm:/s<code>bin/nologin</code><br>lp:x:4:7:lp:/var/spool/lpd:/s<code>bin/nologin</code><br>mail:x:8:12:mail:/var/spool/mail:/s<code>bin/nologin</code><br>operator:x:11:0:operator:/root:/s<code>bin/nologin</code><br>games:x:12:100:games:/usr/games:/s<code>bin/nologin</code><br>ftp:x:14:50:FTP User:/var/ftp:/s<code>bin/nologin</code><br>nobody:x:99:99:Nobody:/:/s<code>bin/nologin</code><br>systemd-network:x:192:192:systemd Network Management:/:/s<code>bin/nologin</code><br>dbus:x:81:81:System message bus:/:/s<code>bin/nologin</code><br>polkitd:x:999:997:User for polkitd:/:/s<code>bin/nologin</code><br>abrt:x:173:173::/etc/abrt:/s<code>bin/nologin</code><br>tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/s<code>bin/nologin</code><br>postfix:x:89:89::/var/spool/postfix:/s<code>bin/nologin</code><br>chrony:x:998:996::/var/lib/chrony:/s<code>bin/nologin</code><br>sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/s<code>bin/nologin</code><br>mysql:x:27:27:MySQL Server:/var/lib/mysql:/<code>bin/bash</code> </p>
+</blockquote>
+
       
     </div>
     
@@ -557,7 +636,7 @@
   <p><span>本文标题:</span>正则表达式</p>
   <p><span>文章作者:</span>尚先森</p>
   <p><span>发布时间:</span>2019年09月01日 - 11:55:31</p>
-  <p><span>最后更新:</span>2019年09月01日 - 17:48:12</p>
+  <p><span>最后更新:</span>2019年09月01日 - 22:25:56</p>
   <p><span>原始链接:</span><a href="/2019/09/01/正则表达式/" title="正则表达式">http://shang-code.cn/2019/09/01/正则表达式/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/09/01/正则表达式/" aria-label="复制成功！"></i></span>
   </p>
@@ -847,7 +926,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则单字符的表示方法"><span class="nav-number">1.1.</span> <span class="nav-text">正则单字符的表示方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特定字符"><span class="nav-number">1.1.1.</span> <span class="nav-text">特定字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#范围内字符"><span class="nav-number">1.1.2.</span> <span class="nav-text">范围内字符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数字字符"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">数字字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小写字符"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">小写字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#大写字符"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">大写字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#大小写字符"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">大小写字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#符号"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">符号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反向字符"><span class="nav-number">1.1.2.6.</span> <span class="nav-text">反向字符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任意字符"><span class="nav-number">1.1.3.</span> <span class="nav-text">任意字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边界字符"><span class="nav-number">1.1.4.</span> <span class="nav-text">边界字符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#头尾字符"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">头尾字符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元字符"><span class="nav-number">1.1.5.</span> <span class="nav-text">元字符</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则单字符的表示方法"><span class="nav-number">1.1.</span> <span class="nav-text">正则单字符的表示方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特定字符"><span class="nav-number">1.1.1.</span> <span class="nav-text">特定字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#范围内字符"><span class="nav-number">1.1.2.</span> <span class="nav-text">范围内字符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数字字符"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">数字字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小写字符"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">小写字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#大写字符"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">大写字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#大小写字符"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">大小写字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#符号"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">符号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反向字符"><span class="nav-number">1.1.2.6.</span> <span class="nav-text">反向字符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任意字符"><span class="nav-number">1.1.3.</span> <span class="nav-text">任意字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边界字符"><span class="nav-number">1.1.4.</span> <span class="nav-text">边界字符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#头尾字符"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">头尾字符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元字符"><span class="nav-number">1.1.5.</span> <span class="nav-text">元字符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符表达式的字符组合"><span class="nav-number">1.2.</span> <span class="nav-text">字符表达式的字符组合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">1.2.1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#匹配单个字符"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">匹配单个字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#匹配多个字符"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">匹配多个字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重复特定次数"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">重复特定次数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#匹配任意字符串"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">匹配任意字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑表示"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">逻辑表示</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
