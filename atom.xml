@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://shang-code.cn/"/>
-  <updated>2019-09-01T15:01:20.884Z</updated>
+  <updated>2019-09-03T12:06:09.683Z</updated>
   <id>http://shang-code.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正则表达式-测试案例（1）</title>
+    <link href="http://shang-code.cn/2019/09/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-%E6%B5%8B%E8%AF%95%E6%A1%88%E4%BE%8B%EF%BC%881%EF%BC%89/"/>
+    <id>http://shang-code.cn/2019/09/03/正则表达式-测试案例（1）/</id>
+    <published>2019-09-03T11:37:34.000Z</published>
+    <updated>2019-09-03T12:06:09.683Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="案例测试"><a href="#案例测试" class="headerlink" title="案例测试"></a>案例测试</h1><h2 id="案例一"><a href="#案例一" class="headerlink" title="案例一"></a>案例一</h2><p>匹配4-10位QQ号</p><p>首先创建一个qq.txt文件</p><p>可以填入随意的内容：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">123</span><br><span class="line">1231212414</span><br><span class="line">1414</span><br><span class="line">325313531515</span><br><span class="line">235235235dsdf2</span><br><span class="line">23325325fsffew</span><br><span class="line">24234</span><br><span class="line">234234</span><br><span class="line">23423</span><br><span class="line">12345678900987654x</span><br><span class="line">123321456765456789</span><br><span class="line">123545654567867</span><br><span class="line">2434234234</span><br><span class="line">322332545454</span><br><span class="line">223325545</span><br><span class="line">123dfsw245_heeet</span><br><span class="line">2525</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^[0-9]\&#123;4,10\&#125;'</span> qq.txt</span><br></pre></td></tr></table></figure><h2 id="案例二"><a href="#案例二" class="headerlink" title="案例二"></a>案例二</h2><p>匹配15位或18位的身份证号（支持带X）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^[0-9]\([0-9]\&#123;13\&#125;\|[0-9]\&#123;16\&#125;\)[0-9xX]$'</span> qq.txt</span><br></pre></td></tr></table></figure><h2 id="案例三"><a href="#案例三" class="headerlink" title="案例三"></a>案例三</h2><p>匹配密码（由数字，26个字母和下划线组成）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^\w\+$'</span> qq.txt</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;案例测试&quot;&gt;&lt;a href=&quot;#案例测试&quot; class=&quot;headerlink&quot; title=&quot;案例测试&quot;&gt;&lt;/a&gt;案例测试&lt;/h1&gt;&lt;h2 id=&quot;案例一&quot;&gt;&lt;a href=&quot;#案例一&quot; class=&quot;headerlink&quot; title=&quot;案例一&quot;&gt;&lt;/a&gt;案例
+      
+    
+    </summary>
+    
+      <category term="正则表达式" scheme="http://shang-code.cn/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+    
+      <category term="正则表达式" scheme="http://shang-code.cn/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>正则表达式</title>
