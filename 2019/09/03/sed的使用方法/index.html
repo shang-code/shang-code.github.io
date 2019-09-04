@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="寿司卷code">
 <meta property="og:description" content="sed的使用方法sed文本处理：正则选定文本 -&amp;gt; sed进行处理 sed处理后并不会改变其内容 格式命令行格式1sed [options] &apos;command&apos; file(s)  主要参数：  options: -e,-n command: 行定位（正则）+ sed命令（操作）  示例： 123sed -n &apos;/root/p&apos;sed -e &apos;10,20d&apos; -e &apos;s/false/true/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-03T14:27:30.566Z">
+<meta property="og:updated_time" content="2019-09-04T14:40:35.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sed的使用方法">
 <meta name="twitter:description" content="sed的使用方法sed文本处理：正则选定文本 -&amp;gt; sed进行处理 sed处理后并不会改变其内容 格式命令行格式1sed [options] &apos;command&apos; file(s)  主要参数：  options: -e,-n command: 行定位（正则）+ sed命令（操作）  示例： 123sed -n &apos;/root/p&apos;sed -e &apos;10,20d&apos; -e &apos;s/false/true/">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-03T22:27:30+08:00">
-                2019-09-03
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-04T22:40:35+08:00">
+                2019-09-04
               </time>
             
           </span>
@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k 字
+                  2.7k 字
                 </span>
               
 
@@ -442,7 +442,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  13 分钟
                 </span>
               
             </div>
@@ -484,6 +484,7 @@
 <li>i : 插入行（与vim的命令类似）</li>
 <li>c : 代替行（与vim的命令类似）</li>
 <li>d : 删除行（与vim的命令类似）</li>
+<li>s : 替换（核心参数） | g : 全局</li>
 </ul>
 <h3 id="p"><a href="#p" class="headerlink" title="p"></a>p</h3><p>对<code>passwd</code>文件进行打印</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'p'</span> passwd</span><br></pre></td></tr></table></figure>
@@ -517,6 +518,24 @@
 <h3 id="d"><a href="#d" class="headerlink" title="d"></a>d</h3><p>删除第10行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed <span class="string">'10d'</span></span><br></pre></td></tr></table></figure>
 
+<p>###s</p>
+<p>将passwd文件每一行中的<code>nologin</code>替换为<code>login</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'s/nologin/login/'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<p><code>注意</code>：不要忽略上面示例命令中的每一个<code>/</code></p>
+<p>将passwd文件中的每一个<code>:</code>替换为<code>%</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'s/:/%/'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<p>结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">root%x:0:0:root:/root:/bin/bash</span><br><span class="line">bin%x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">daemon%x:2:2:daemon:/sbin:/sbin/nologin</span><br><span class="line">adm%x:3:4:adm:/var/adm:/sbin/nologin</span><br><span class="line">lp%x:4:7:lp:/var/spool/lpd:/sbin/nologin</span><br><span class="line">sync%x:5:0:sync:/sbin:/bin/sync</span><br><span class="line">shutdown%x:6:0:shutdown:/sbin:/sbin/shutdown</span><br><span class="line">halt%x:7:0:halt:/sbin:/sbin/halt</span><br><span class="line">mail%x:8:12:mail:/var/spool/mail:/sbin/nologin</span><br><span class="line">operator%x:11:0:operator:/root:/sbin/nologin</span><br><span class="line">games%x:12:100:games:/usr/games:/sbin/nologin</span><br><span class="line">ftp%x:14:50:FTP User:/var/ftp:/sbin/nologin</span><br><span class="line">nobody%x:99:99:Nobody:/:/sbin/nologin</span><br><span class="line">systemd-network%x:192:192:systemd Network Management:/:/sbin/nologin</span><br><span class="line">dbus%x:81:81:System message bus:/:/sbin/nologin</span><br><span class="line">polkitd%x:999:997:User for polkitd:/:/sbin/nologin</span><br><span class="line">abrt%x:173:173::/etc/abrt:/sbin/nologin</span><br><span class="line">tss%x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin</span><br><span class="line">postfix%x:89:89::/var/spool/postfix:/sbin/nologin</span><br><span class="line">chrony%x:998:996::/var/lib/chrony:/sbin/nologin</span><br><span class="line">sshd%x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin</span><br><span class="line">mysql%x:27:27:MySQL Server:/var/lib/mysql:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>每一行只替换了开头第一个冒号，这并不是我们想要得到的最后结果<br>怎么解决？<br>需要进行全局的替换操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'s/:/%/g'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<p>结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">root%x%0%0%root%/root%/bin/bash</span><br><span class="line">bin%x%1%1%bin%/bin%/sbin/nologin</span><br><span class="line">daemon%x%2%2%daemon%/sbin%/sbin/nologin</span><br><span class="line">adm%x%3%4%adm%/var/adm%/sbin/nologin</span><br><span class="line">lp%x%4%7%lp%/var/spool/lpd%/sbin/nologin</span><br><span class="line">sync%x%5%0%sync%/sbin%/bin/sync</span><br><span class="line">shutdown%x%6%0%shutdown%/sbin%/sbin/shutdown</span><br><span class="line">halt%x%7%0%halt%/sbin%/sbin/halt</span><br><span class="line">mail%x%8%12%mail%/var/spool/mail%/sbin/nologin</span><br><span class="line">operator%x%11%0%operator%/root%/sbin/nologin</span><br><span class="line">games%x%12%100%games%/usr/games%/sbin/nologin</span><br><span class="line">ftp%x%14%50%FTP User%/var/ftp%/sbin/nologin</span><br><span class="line">nobody%x%99%99%Nobody%/%/sbin/nologin</span><br><span class="line">systemd-network%x%192%192%systemd Network Management%/%/sbin/nologin</span><br><span class="line">dbus%x%81%81%System message bus%/%/sbin/nologin</span><br><span class="line">polkitd%x%999%997%User for polkitd%/%/sbin/nologin</span><br><span class="line">abrt%x%173%173%%/etc/abrt%/sbin/nologin</span><br><span class="line">tss%x%59%59%Account used by the trousers package to sandbox the tcsd daemon%/dev/null%/sbin/nologin</span><br><span class="line">postfix%x%89%89%%/var/spool/postfix%/sbin/nologin</span><br><span class="line">chrony%x%998%996%%/var/lib/chrony%/sbin/nologin</span><br><span class="line">sshd%x%74%74%Privilege-separated SSH%/var/empty/sshd%/sbin/nologin</span><br><span class="line">mysql%x%27%27%MySQL Server%/var/lib/mysql%/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>ok,这样就解决了（形式跟vim的替换神似啊朋友们🤯）</p>
 <h2 id="行定位"><a href="#行定位" class="headerlink" title="行定位"></a>行定位</h2><h3 id="定位一行："><a href="#定位一行：" class="headerlink" title="定位一行："></a>定位一行：</h3><ul>
 <li>x（行号）</li>
 <li>/pattern/（正则）</li>
@@ -571,6 +590,79 @@
 
 <p>找出install信息</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -n <span class="string">'/install/p'</span> /var/<span class="built_in">log</span>/yum.log</span><br></pre></td></tr></table></figure>
+
+<h3 id="案例四：数据筛选"><a href="#案例四：数据筛选" class="headerlink" title="案例四：数据筛选"></a>案例四：数据筛选</h3><p>获取网卡的ip信息</p>
+<p>首先看一下网卡的信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+
+<p>结果为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">ens33: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500</span><br><span class="line">        inet 192.168.43.254  netmask 255.255.255.0  broadcast 192.168.43.255</span><br><span class="line">        inet6 2409:8910:608:bee0:43c2:af5d:e823:ff1b  prefixlen 64  scopeid 0x0&lt;global&gt;</span><br><span class="line">        inet6 fe80::d127:5715:bfe1:fad8  prefixlen 64  scopeid 0x20&lt;link&gt;</span><br><span class="line">        ether 00:0c:29:d2:af:1d  txqueuelen 1000  (Ethernet)</span><br><span class="line">        RX packets 564525  bytes 625035188 (596.0 MiB)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 280887  bytes 24583679 (23.4 MiB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br><span class="line"></span><br><span class="line">lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536</span><br><span class="line">        inet 127.0.0.1  netmask 255.0.0.0</span><br><span class="line">        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;</span><br><span class="line">        loop  txqueuelen 1  (Local Loopback)</span><br><span class="line">        RX packets 44  bytes 3964 (3.8 KiB)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 44  bytes 3964 (3.8 KiB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br></pre></td></tr></table></figure>
+
+<p>然后利用替换把不需要的部分替换为空</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig ens33 | sed -n <span class="string">'/inet /p'</span> | sed <span class="string">'s/inet //'</span> | sed <span class="string">'s/ net.*//'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="高级操作命令"><a href="#高级操作命令" class="headerlink" title="高级操作命令"></a>高级操作命令</h2><ul>
+<li>{} : 允许同时使用多个sed命令，用<code>;</code>分隔</li>
+<li>n : 读取下一个输入行（用下一个命令处理）</li>
+<li>&amp; : 具体作用看示例</li>
+<li>() : 与替换操作结合使用效果更佳呦</li>
+</ul>
+<h3 id><a href="#" class="headerlink" title="{}"></a>{}</h3><p>将第10-20行删除并且把所有<code>nologin</code>替换为<code>login</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed <span class="string">'&#123;10,20d;s/nologin/login/g&#125;'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="n"><a href="#n" class="headerlink" title="n"></a>n</h3><p>其实<code>n</code>的用处跟first~step类似，只不过比它高级（装逼）😏</p>
+<p>示例：</p>
+<p>输出偶数行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'&#123;n;p&#125;'</span></span><br><span class="line">nl passwd | sed -n <span class="string">'2~2p'</span></span><br></pre></td></tr></table></figure>
+
+<p>输出奇数行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'&#123;p;n&#125;'</span></span><br><span class="line">nl passwd | sed -n <span class="string">'1~2p'</span></span><br></pre></td></tr></table></figure>
+
+<p>按照1，4，7，10进行输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'&#123;p;n;n&#125;'</span></span><br><span class="line">nl passwd | sed -n <span class="string">'1~3p'</span></span><br></pre></td></tr></table></figure>
+
+<p>按照3，6，9，12进行输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'n;n;p'</span></span><br><span class="line">nl passwd | sed -n <span class="string">'3~3p'</span></span><br></pre></td></tr></table></figure>
+
+<p>按照2，5，8，11进行输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'n;p;n'</span></span><br><span class="line">nl passwd | sed -n <span class="string">'2~3p'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="amp"><a href="#amp" class="headerlink" title="&amp;"></a>&amp;</h3><p>将passwd文件中的用户名称后面加上一些空格</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed <span class="string">'s/[a-zA-Z_-]\+/&amp;      /'</span></span><br></pre></td></tr></table></figure>
+
+<p>结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">1  root      :x:0:0:root:/root:/bin/bash</span><br><span class="line">     2  bin      :x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">     3  daemon      :x:2:2:daemon:/sbin:/sbin/nologin</span><br><span class="line">     4  adm      :x:3:4:adm:/var/adm:/sbin/nologin</span><br><span class="line">     5  lp      :x:4:7:lp:/var/spool/lpd:/sbin/nologin</span><br><span class="line">     6  sync      :x:5:0:sync:/sbin:/bin/sync</span><br><span class="line">     7  shutdown      :x:6:0:shutdown:/sbin:/sbin/shutdown</span><br><span class="line">     8  halt      :x:7:0:halt:/sbin:/sbin/halt</span><br><span class="line">     9  mail      :x:8:12:mail:/var/spool/mail:/sbin/nologin</span><br><span class="line">    10  operator      :x:11:0:operator:/root:/sbin/nologin</span><br><span class="line">    11  games      :x:12:100:games:/usr/games:/sbin/nologin</span><br><span class="line">    12  ftp      :x:14:50:FTP User:/var/ftp:/sbin/nologin</span><br><span class="line">    13  nobody      :x:99:99:Nobody:/:/sbin/nologin</span><br><span class="line">    14  systemd-network      :x:192:192:systemd Network Management:/:/sbin/nologin</span><br><span class="line">    15  dbus      :x:81:81:System message bus:/:/sbin/nologin</span><br><span class="line">    16  polkitd      :x:999:997:User for polkitd:/:/sbin/nologin</span><br><span class="line">    17  abrt      :x:173:173::/etc/abrt:/sbin/nologin</span><br><span class="line">    18  tss      :x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin</span><br><span class="line">    19  postfix      :x:89:89::/var/spool/postfix:/sbin/nologin</span><br><span class="line">    20  chrony      :x:998:996::/var/lib/chrony:/sbin/nologin</span><br><span class="line">    21  sshd      :x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin</span><br><span class="line">    22  mysql      :x:27:27:MySQL Server:/var/lib/mysql:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>案例一：大小写转换</p>
+<p>将用户名的首字母转换为大写/小写</p>
+<p><code>知识点</code>：<br>元字符\u\I\U\L : 转换为大写/小写</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed <span class="string">'s/[a-z_-]\+/\u&amp;/'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<p>案例二：大小写转换</p>
+<p>将文件夹下的<code>.txt</code>文件名转换为大写</p>
+<p>首先看一下我的当前目录下有什么.txt文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls *.txt</span><br></pre></td></tr></table></figure>
+
+<p>结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qq.txt  test.txt</span><br></pre></td></tr></table></figure>
+
+<p>那么接下来进行操作吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls *.txt | sed <span class="string">'s/\w\+/\U&amp;/'</span></span><br></pre></td></tr></table></figure>
+
+<p>结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QQ.txt</span><br><span class="line">TEST.txt</span><br></pre></td></tr></table></figure>
+
+<p>也许你会奇怪为什么后面的txt没有被大写<br>其实是因为<code>\w</code>并不包括<code>.</code>，所以后面的内容便不再进行替换</p>
+<h3 id="-1"><a href="#-1" class="headerlink" title="()"></a>()</h3><p>与练习（1）中的案例四一样，获取网卡的ip<br>只不过方式有一些不同<br>究竟不同在哪里<br>请看例子(其实是我也迷迷糊糊，说不明白)…</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig ens33 | sed -n <span class="string">'/inet /p'</span> | sed <span class="string">'s/inet \([0-9.]\+\).*$/\1/'</span></span><br></pre></td></tr></table></figure>
+
+<p>大概来说一下吧，我的理解是被<code>()</code>括起来的部分会被保留，其余的会被替换为空白<br>此处只有一对<code>()</code>，所以后面要替换的位置只有一个<code>\1</code><br>假如命令中有两处被括号括起来，也就是说<br>有两个地方想要被保留下来，那么后面要替换的位置就要这样写<code>\1\2</code><br>究竟如何，我也不知道，先这样吧。</p>
+<p>看一个案例吧…</p>
+<p>案例：获取passwd文件信息</p>
+<p>获取用户的名字，id，和组id</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'s/^\([a-z_-]\+\):x:\([0-9]\+\):\([0-9]\+\).*$/USER:\1 \t ID:\2 \t  UID:\3/'</span> passwd</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -591,7 +683,7 @@
   <p><span>本文标题:</span>sed的使用方法</p>
   <p><span>文章作者:</span>尚先森</p>
   <p><span>发布时间:</span>2019年09月03日 - 20:23:03</p>
-  <p><span>最后更新:</span>2019年09月03日 - 22:27:30</p>
+  <p><span>最后更新:</span>2019年09月04日 - 22:40:35</p>
   <p><span>原始链接:</span><a href="/2019/09/03/sed的使用方法/" title="sed的使用方法">http://shang-code.cn/2019/09/03/sed的使用方法/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/09/03/sed的使用方法/" aria-label="复制成功！"></i></span>
   </p>
@@ -881,7 +973,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sed的使用方法"><span class="nav-number">1.</span> <span class="nav-text">sed的使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#格式"><span class="nav-number">1.1.</span> <span class="nav-text">格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行格式"><span class="nav-number">1.1.1.</span> <span class="nav-text">命令行格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本格式"><span class="nav-number">1.1.2.</span> <span class="nav-text">脚本格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本操作命令"><span class="nav-number">1.2.</span> <span class="nav-text">基本操作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#p"><span class="nav-number">1.2.1.</span> <span class="nav-text">p</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a（后）"><span class="nav-number">1.2.2.</span> <span class="nav-text">a（后）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#i（前）"><span class="nav-number">1.2.3.</span> <span class="nav-text">i（前）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c"><span class="nav-number">1.2.4.</span> <span class="nav-text">c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d"><span class="nav-number">1.2.5.</span> <span class="nav-text">d</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行定位"><span class="nav-number">1.3.</span> <span class="nav-text">行定位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定位一行："><span class="nav-number">1.3.1.</span> <span class="nav-text">定位一行：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#x（行号）"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">x（行号）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pattern-（正则）"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">/pattern/（正则）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定位n行："><span class="nav-number">1.3.2.</span> <span class="nav-text">定位n行：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#x-y（行号）"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">x,y（行号）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pattern-root"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">/pattern/,/root/</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#x-y-（取反）"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">x,y!（取反）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#first-step"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">first~step</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练习（1）"><span class="nav-number">1.4.</span> <span class="nav-text">练习（1）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#案例一：增加文件内容"><span class="nav-number">1.4.1.</span> <span class="nav-text">案例一：增加文件内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例二：文本处理"><span class="nav-number">1.4.2.</span> <span class="nav-text">案例二：文本处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例三：服务器日志处理"><span class="nav-number">1.4.3.</span> <span class="nav-text">案例三：服务器日志处理</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sed的使用方法"><span class="nav-number">1.</span> <span class="nav-text">sed的使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#格式"><span class="nav-number">1.1.</span> <span class="nav-text">格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行格式"><span class="nav-number">1.1.1.</span> <span class="nav-text">命令行格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本格式"><span class="nav-number">1.1.2.</span> <span class="nav-text">脚本格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本操作命令"><span class="nav-number">1.2.</span> <span class="nav-text">基本操作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#p"><span class="nav-number">1.2.1.</span> <span class="nav-text">p</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a（后）"><span class="nav-number">1.2.2.</span> <span class="nav-text">a（后）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#i（前）"><span class="nav-number">1.2.3.</span> <span class="nav-text">i（前）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c"><span class="nav-number">1.2.4.</span> <span class="nav-text">c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d"><span class="nav-number">1.2.5.</span> <span class="nav-text">d</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行定位"><span class="nav-number">1.3.</span> <span class="nav-text">行定位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定位一行："><span class="nav-number">1.3.1.</span> <span class="nav-text">定位一行：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#x（行号）"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">x（行号）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pattern-（正则）"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">/pattern/（正则）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定位n行："><span class="nav-number">1.3.2.</span> <span class="nav-text">定位n行：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#x-y（行号）"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">x,y（行号）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pattern-root"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">/pattern/,/root/</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#x-y-（取反）"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">x,y!（取反）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#first-step"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">first~step</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练习（1）"><span class="nav-number">1.4.</span> <span class="nav-text">练习（1）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#案例一：增加文件内容"><span class="nav-number">1.4.1.</span> <span class="nav-text">案例一：增加文件内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例二：文本处理"><span class="nav-number">1.4.2.</span> <span class="nav-text">案例二：文本处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例三：服务器日志处理"><span class="nav-number">1.4.3.</span> <span class="nav-text">案例三：服务器日志处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例四：数据筛选"><span class="nav-number">1.4.4.</span> <span class="nav-text">案例四：数据筛选</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级操作命令"><span class="nav-number">1.5.</span> <span class="nav-text">高级操作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.5.1.</span> <span class="nav-text">{}</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n"><span class="nav-number">1.5.2.</span> <span class="nav-text">n</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#amp"><span class="nav-number">1.5.3.</span> <span class="nav-text">&amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-1"><span class="nav-number">1.5.4.</span> <span class="nav-text">()</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
