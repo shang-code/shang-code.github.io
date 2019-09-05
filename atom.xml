@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://shang-code.cn/"/>
-  <updated>2019-09-05T12:43:33.511Z</updated>
+  <updated>2019-09-05T14:17:27.734Z</updated>
   <id>http://shang-code.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>awk的使用方法</title>
+    <link href="http://shang-code.cn/2019/09/05/awk%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>http://shang-code.cn/2019/09/05/awk的使用方法/</id>
+    <published>2019-09-05T12:44:46.000Z</published>
+    <updated>2019-09-05T14:17:27.734Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="awk的使用"><a href="#awk的使用" class="headerlink" title="awk的使用"></a>awk的使用</h1><h2 id="awk的处理方式与格式"><a href="#awk的处理方式与格式" class="headerlink" title="awk的处理方式与格式"></a>awk的处理方式与格式</h2><h3 id="awk的处理方式"><a href="#awk的处理方式" class="headerlink" title="awk的处理方式"></a>awk的处理方式</h3><ul><li>awk一次处理一行内容</li><li>awk可以对每行进行切片处理</li></ul><p>示例：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'&#123;print $1&#125;'</span></span><br></pre></td></tr></table></figure><h3 id="awk的格式"><a href="#awk的格式" class="headerlink" title="awk的格式"></a>awk的格式</h3><h4 id="命令行格式"><a href="#命令行格式" class="headerlink" title="命令行格式"></a>命令行格式</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk [options] <span class="string">'command'</span> files</span><br></pre></td></tr></table></figure><p>command1:pattern {awk操作命令}</p><p>操作命令：</p><ul><li>内置函数：print(),printf(),getline…</li><li>控制指令：if(){…}else{…},while()</li></ul><h4 id="脚本格式"><a href="#脚本格式" class="headerlink" title="脚本格式"></a>脚本格式</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -f awk-script-file file(s)</span><br></pre></td></tr></table></figure><h2 id="awk的内置参数"><a href="#awk的内置参数" class="headerlink" title="awk的内置参数"></a>awk的内置参数</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul><li><p>$0 : 表示整个当前行</p></li><li><p>$1 : 表示第一个字段</p></li><li><p>$2 : 每行第二个字段<br>以此类推</p></li><li><p>NR : 每行的记录号（行号）</p></li><li><p>NF : 字段数（以分隔符为参照物）</p></li><li><p>FILENAME : 正在处理的文件名</p></li></ul><p>示例：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print NR,NF&#125;'</span> /etc/passwd</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print FILENAME&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure><h3 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h3><p>options: -F field-separator(默认为空格)</p><p>示例：</p><p>打印<code>passwd</code>中的<code>组id</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print $3&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure><p>打印<code>passwd</code>中的<code>用户名</code>和<code>组id</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print $1,$3&#125;'</span> /etc/passwd</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print $1" "$3&#125;'</span> /etc/passwd</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print $1"---"$3&#125;'</span> /etc/passwd</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print "USER:",$1"UID:"$3&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure><h3 id="案例一"><a href="#案例一" class="headerlink" title="案例一"></a>案例一</h3><p>显示/etc/passwd每行的行号，每行的列数，对应行的用户名（print,printf）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print "Line: " NR,"Columns: "NF,"USER: "$1&#125;'</span> /etc/passwd</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;printf("Line: %3s Columns: %s USER: %s\n",NR,NF,$1)&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure><h3 id="案例二"><a href="#案例二" class="headerlink" title="案例二"></a>案例二</h3><p>显示/etc/passwd中用户id大于100的行号和用户名（if(){}else{}）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;if ($3&gt;100) print "Line: "NR,"USER: "$1&#125;'</span> passwd</span><br></pre></td></tr></table></figure><h3 id="案例三"><a href="#案例三" class="headerlink" title="案例三"></a>案例三</h3><p>显示/etc/passwd中的带有<code>nologin</code>的行的<code>USER</code>信息和<code>组id</code>信息</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -n <span class="string">'/nologin/p'</span> /etc/passwd | awk -F <span class="string">':'</span> <span class="string">'&#123;print "USER: "$1,"UID: "$3&#125;'</span></span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'/nologin/&#123;print "USER: "$1,"UID: "$3&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;awk的使用&quot;&gt;&lt;a href=&quot;#awk的使用&quot; class=&quot;headerlink&quot; title=&quot;awk的使用&quot;&gt;&lt;/a&gt;awk的使用&lt;/h1&gt;&lt;h2 id=&quot;awk的处理方式与格式&quot;&gt;&lt;a href=&quot;#awk的处理方式与格式&quot; class=&quot;header
+      
+    
+    </summary>
+    
+      <category term="awk" scheme="http://shang-code.cn/categories/awk/"/>
+    
+    
+      <category term="awk" scheme="http://shang-code.cn/tags/awk/"/>
+    
+  </entry>
   
   <entry>
     <title>sed的使用方法</title>

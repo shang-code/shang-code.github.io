@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="正则表达式,">
+  <meta name="keywords" content="awk,">
 
 
 
@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="案例测试案例一匹配4-10位QQ号 首先创建一个qq.txt文件 可以填入随意的内容： 123456789101112131415161712312312124141414325313531515235235235dsdf223325325fsffew242342342342342312345678900987654x1233214567654567891235456545678672434234">
-<meta name="keywords" content="正则表达式">
+<meta name="description" content="awk的使用awk的处理方式与格式awk的处理方式 awk一次处理一行内容 awk可以对每行进行切片处理  示例： 1awk &apos;&amp;#123;print $1&amp;#125;&apos;  awk的格式命令行格式1awk [options] &apos;command&apos; files  command1:pattern {awk操作命令} 操作命令：  内置函数：print(),printf(),getline… 控制指令：">
+<meta name="keywords" content="awk">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式-测试案例（1）">
-<meta property="og:url" content="http://shang-code.cn/2019/09/03/正则表达式-测试案例（1）/index.html">
+<meta property="og:title" content="awk的使用方法">
+<meta property="og:url" content="http://shang-code.cn/2019/09/05/awk的使用方法/index.html">
 <meta property="og:site_name" content="寿司卷code">
-<meta property="og:description" content="案例测试案例一匹配4-10位QQ号 首先创建一个qq.txt文件 可以填入随意的内容： 123456789101112131415161712312312124141414325313531515235235235dsdf223325325fsffew242342342342342312345678900987654x1233214567654567891235456545678672434234">
+<meta property="og:description" content="awk的使用awk的处理方式与格式awk的处理方式 awk一次处理一行内容 awk可以对每行进行切片处理  示例： 1awk &apos;&amp;#123;print $1&amp;#125;&apos;  awk的格式命令行格式1awk [options] &apos;command&apos; files  command1:pattern {awk操作命令} 操作命令：  内置函数：print(),printf(),getline… 控制指令：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-03T12:06:09.683Z">
+<meta property="og:updated_time" content="2019-09-05T14:17:27.734Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="正则表达式-测试案例（1）">
-<meta name="twitter:description" content="案例测试案例一匹配4-10位QQ号 首先创建一个qq.txt文件 可以填入随意的内容： 123456789101112131415161712312312124141414325313531515235235235dsdf223325325fsffew242342342342342312345678900987654x1233214567654567891235456545678672434234">
+<meta name="twitter:title" content="awk的使用方法">
+<meta name="twitter:description" content="awk的使用awk的处理方式与格式awk的处理方式 awk一次处理一行内容 awk可以对每行进行切片处理  示例： 1awk &apos;&amp;#123;print $1&amp;#125;&apos;  awk的格式命令行格式1awk [options] &apos;command&apos; files  command1:pattern {awk操作命令} 操作命令：  内置函数：print(),printf(),getline… 控制指令：">
 
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://shang-code.cn/2019/09/03/正则表达式-测试案例（1）/">
+  <link rel="canonical" href="http://shang-code.cn/2019/09/05/awk的使用方法/">
 
 
 
@@ -156,7 +156,7 @@
 
 
 
-  <title>正则表达式-测试案例（1） | 寿司卷code</title>
+  <title>awk的使用方法 | 寿司卷code</title>
   
 
 
@@ -326,7 +326,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shang-code.cn/2019/09/03/正则表达式-测试案例（1）/">
+    <link itemprop="mainEntityOfPage" href="http://shang-code.cn/2019/09/05/awk的使用方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="尚先森">
@@ -343,7 +343,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">正则表达式-测试案例（1）</h1>
+          <h1 class="post-title" itemprop="name headline">awk的使用方法</h1>
         
 
         <div class="post-meta">
@@ -355,8 +355,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-03T19:37:34+08:00">
-                2019-09-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-05T20:44:46+08:00">
+                2019-09-05
               </time>
             
 
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-03T20:06:09+08:00">
-                2019-09-03
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-05T22:17:27+08:00">
+                2019-09-05
               </time>
             
           </span>
@@ -390,8 +390,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/正则表达式/" itemprop="url" rel="index">
-                    <span itemprop="name">正则表达式</span>
+                  <a href="/categories/awk/" itemprop="url" rel="index">
+                    <span itemprop="name">awk</span>
                   </a>
                 </span>
 
@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  101 字
+                  387 字
                 </span>
               
 
@@ -463,18 +463,56 @@
       
 
       
-        <h1 id="案例测试"><a href="#案例测试" class="headerlink" title="案例测试"></a>案例测试</h1><h2 id="案例一"><a href="#案例一" class="headerlink" title="案例一"></a>案例一</h2><p>匹配4-10位QQ号</p>
-<p>首先创建一个qq.txt文件</p>
-<p>可以填入随意的内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">123</span><br><span class="line">1231212414</span><br><span class="line">1414</span><br><span class="line">325313531515</span><br><span class="line">235235235dsdf2</span><br><span class="line">23325325fsffew</span><br><span class="line">24234</span><br><span class="line">234234</span><br><span class="line">23423</span><br><span class="line">12345678900987654x</span><br><span class="line">123321456765456789</span><br><span class="line">123545654567867</span><br><span class="line">2434234234</span><br><span class="line">322332545454</span><br><span class="line">223325545</span><br><span class="line">123dfsw245_heeet</span><br><span class="line">2525</span><br></pre></td></tr></table></figure>
+        <h1 id="awk的使用"><a href="#awk的使用" class="headerlink" title="awk的使用"></a>awk的使用</h1><h2 id="awk的处理方式与格式"><a href="#awk的处理方式与格式" class="headerlink" title="awk的处理方式与格式"></a>awk的处理方式与格式</h2><h3 id="awk的处理方式"><a href="#awk的处理方式" class="headerlink" title="awk的处理方式"></a>awk的处理方式</h3><ul>
+<li>awk一次处理一行内容</li>
+<li>awk可以对每行进行切片处理</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'&#123;print $1&#125;'</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^[0-9]\&#123;4,10\&#125;'</span> qq.txt</span><br></pre></td></tr></table></figure>
+<h3 id="awk的格式"><a href="#awk的格式" class="headerlink" title="awk的格式"></a>awk的格式</h3><h4 id="命令行格式"><a href="#命令行格式" class="headerlink" title="命令行格式"></a>命令行格式</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk [options] <span class="string">'command'</span> files</span><br></pre></td></tr></table></figure>
 
-<h2 id="案例二"><a href="#案例二" class="headerlink" title="案例二"></a>案例二</h2><p>匹配15位或18位的身份证号（支持带X）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^[0-9]\([0-9]\&#123;13\&#125;\|[0-9]\&#123;16\&#125;\)[0-9xX]$'</span> qq.txt</span><br></pre></td></tr></table></figure>
+<p>command1:pattern {awk操作命令}</p>
+<p>操作命令：</p>
+<ul>
+<li>内置函数：print(),printf(),getline…</li>
+<li>控制指令：if(){…}else{…},while()</li>
+</ul>
+<h4 id="脚本格式"><a href="#脚本格式" class="headerlink" title="脚本格式"></a>脚本格式</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -f awk-script-file file(s)</span><br></pre></td></tr></table></figure>
 
-<h2 id="案例三"><a href="#案例三" class="headerlink" title="案例三"></a>案例三</h2><p>匹配密码（由数字，26个字母和下划线组成）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^\w\+$'</span> qq.txt</span><br></pre></td></tr></table></figure>
+<h2 id="awk的内置参数"><a href="#awk的内置参数" class="headerlink" title="awk的内置参数"></a>awk的内置参数</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
+<li><p>$0 : 表示整个当前行</p>
+</li>
+<li><p>$1 : 表示第一个字段</p>
+</li>
+<li><p>$2 : 每行第二个字段<br>以此类推</p>
+</li>
+<li><p>NR : 每行的记录号（行号）</p>
+</li>
+<li><p>NF : 字段数（以分隔符为参照物）</p>
+</li>
+<li><p>FILENAME : 正在处理的文件名</p>
+</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print NR,NF&#125;'</span> /etc/passwd</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print FILENAME&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<h3 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h3><p>options: -F field-separator(默认为空格)</p>
+<p>示例：</p>
+<p>打印<code>passwd</code>中的<code>组id</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print $3&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<p>打印<code>passwd</code>中的<code>用户名</code>和<code>组id</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print $1,$3&#125;'</span> /etc/passwd</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print $1" "$3&#125;'</span> /etc/passwd</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print $1"---"$3&#125;'</span> /etc/passwd</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print "USER:",$1"UID:"$3&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<h3 id="案例一"><a href="#案例一" class="headerlink" title="案例一"></a>案例一</h3><p>显示/etc/passwd每行的行号，每行的列数，对应行的用户名（print,printf）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;print "Line: " NR,"Columns: "NF,"USER: "$1&#125;'</span> /etc/passwd</span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;printf("Line: %3s Columns: %s USER: %s\n",NR,NF,$1)&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<h3 id="案例二"><a href="#案例二" class="headerlink" title="案例二"></a>案例二</h3><p>显示/etc/passwd中用户id大于100的行号和用户名（if(){}else{}）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">':'</span> <span class="string">'&#123;if ($3&gt;100) print "Line: "NR,"USER: "$1&#125;'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<h3 id="案例三"><a href="#案例三" class="headerlink" title="案例三"></a>案例三</h3><p>显示/etc/passwd中的带有<code>nologin</code>的行的<code>USER</code>信息和<code>组id</code>信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -n <span class="string">'/nologin/p'</span> /etc/passwd | awk -F <span class="string">':'</span> <span class="string">'&#123;print "USER: "$1,"UID: "$3&#125;'</span></span><br><span class="line">awk -F <span class="string">':'</span> <span class="string">'/nologin/&#123;print "USER: "$1,"UID: "$3&#125;'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -492,12 +530,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>正则表达式-测试案例（1）</p>
+  <p><span>本文标题:</span>awk的使用方法</p>
   <p><span>文章作者:</span>尚先森</p>
-  <p><span>发布时间:</span>2019年09月03日 - 19:37:34</p>
-  <p><span>最后更新:</span>2019年09月03日 - 20:06:09</p>
-  <p><span>原始链接:</span><a href="/2019/09/03/正则表达式-测试案例（1）/" title="正则表达式-测试案例（1）">http://shang-code.cn/2019/09/03/正则表达式-测试案例（1）/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/09/03/正则表达式-测试案例（1）/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年09月05日 - 20:44:46</p>
+  <p><span>最后更新:</span>2019年09月05日 - 22:17:27</p>
+  <p><span>原始链接:</span><a href="/2019/09/05/awk的使用方法/" title="awk的使用方法">http://shang-code.cn/2019/09/05/awk的使用方法/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/09/05/awk的使用方法/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -566,7 +604,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/正则表达式/" rel="tag"><img src="/images/tag.png"> 正则表达式</a>
+            <a href="/tags/awk/" rel="tag"><img src="/images/tag.png"> awk</a>
           
         </div>
       
@@ -579,8 +617,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/01/正则表达式/" rel="next" title="正则表达式">
-                <i class="fa fa-chevron-left"></i> 正则表达式
+              <a href="/2019/09/03/sed的使用方法/" rel="next" title="sed的使用方法">
+                <i class="fa fa-chevron-left"></i> sed的使用方法
               </a>
             
           </div>
@@ -588,10 +626,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/03/sed的使用方法/" rel="prev" title="sed的使用方法">
-                sed的使用方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -789,7 +823,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#案例测试"><span class="nav-number">1.</span> <span class="nav-text">案例测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#案例一"><span class="nav-number">1.1.</span> <span class="nav-text">案例一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例二"><span class="nav-number">1.2.</span> <span class="nav-text">案例二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例三"><span class="nav-number">1.3.</span> <span class="nav-text">案例三</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#awk的使用"><span class="nav-number">1.</span> <span class="nav-text">awk的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#awk的处理方式与格式"><span class="nav-number">1.1.</span> <span class="nav-text">awk的处理方式与格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#awk的处理方式"><span class="nav-number">1.1.1.</span> <span class="nav-text">awk的处理方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk的格式"><span class="nav-number">1.1.2.</span> <span class="nav-text">awk的格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#命令行格式"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">命令行格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#脚本格式"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">脚本格式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#awk的内置参数"><span class="nav-number">1.2.</span> <span class="nav-text">awk的内置参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">1.2.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分隔符"><span class="nav-number">1.2.2.</span> <span class="nav-text">分隔符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例一"><span class="nav-number">1.2.3.</span> <span class="nav-text">案例一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例二"><span class="nav-number">1.2.4.</span> <span class="nav-text">案例二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例三"><span class="nav-number">1.2.5.</span> <span class="nav-text">案例三</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
