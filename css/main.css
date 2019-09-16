@@ -1790,7 +1790,6 @@ pre .javascript .function {
 }
 .post-body p a:hover {
   color: #ffc125;
-  font-size: 20px;
 }
 .my_post_copyright {
   width: 85%;
@@ -2008,7 +2007,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d2ff5c;
+  background: #667e37;
 }
 .links-of-blogroll {
   font-size: 13px;
