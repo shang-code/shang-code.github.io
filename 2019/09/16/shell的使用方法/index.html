@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="shell使用方法学习技巧 认真听课 给所有脚本添加上注释 用写好的脚本进行修改，达到修改后仍可正常执行的效果 根据自己的需求整理思路并创造完整的脚本  第一个脚本：Hello Worldvim test.sh 123#!/bin/bashecho &quot;hello world&quot;  bash test.sh 执行方式 ./    (需要使用 chmod +x hello.sh 给文件执行权限) bas">
+<meta name="description" content="shell使用方法学习技巧 认真听课 给所有脚本添加上注释 用写好的脚本进行修改，达到修改后仍可正常执行的效果 根据自己的需求整理思路并创造完整的脚本  第一个脚本：Hello World vim test.sh  123#!/bin/bashecho &quot;hello world&quot;   bash test.sh  执行方式 ./    (需要使用 chmod +x hello.sh 给文件执行权限)">
 <meta name="keywords" content="shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="shell的使用方法">
 <meta property="og:url" content="http://shang-code.cn/2019/09/16/shell的使用方法/index.html">
 <meta property="og:site_name" content="寿司卷code">
-<meta property="og:description" content="shell使用方法学习技巧 认真听课 给所有脚本添加上注释 用写好的脚本进行修改，达到修改后仍可正常执行的效果 根据自己的需求整理思路并创造完整的脚本  第一个脚本：Hello Worldvim test.sh 123#!/bin/bashecho &quot;hello world&quot;  bash test.sh 执行方式 ./    (需要使用 chmod +x hello.sh 给文件执行权限) bas">
+<meta property="og:description" content="shell使用方法学习技巧 认真听课 给所有脚本添加上注释 用写好的脚本进行修改，达到修改后仍可正常执行的效果 根据自己的需求整理思路并创造完整的脚本  第一个脚本：Hello World vim test.sh  123#!/bin/bashecho &quot;hello world&quot;   bash test.sh  执行方式 ./    (需要使用 chmod +x hello.sh 给文件执行权限)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-16T13:26:28.167Z">
+<meta property="og:updated_time" content="2019-09-16T13:45:46.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell的使用方法">
-<meta name="twitter:description" content="shell使用方法学习技巧 认真听课 给所有脚本添加上注释 用写好的脚本进行修改，达到修改后仍可正常执行的效果 根据自己的需求整理思路并创造完整的脚本  第一个脚本：Hello Worldvim test.sh 123#!/bin/bashecho &quot;hello world&quot;  bash test.sh 执行方式 ./    (需要使用 chmod +x hello.sh 给文件执行权限) bas">
+<meta name="twitter:description" content="shell使用方法学习技巧 认真听课 给所有脚本添加上注释 用写好的脚本进行修改，达到修改后仍可正常执行的效果 根据自己的需求整理思路并创造完整的脚本  第一个脚本：Hello World vim test.sh  123#!/bin/bashecho &quot;hello world&quot;   bash test.sh  执行方式 ./    (需要使用 chmod +x hello.sh 给文件执行权限)">
 
 
 
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-16T21:26:28+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-16T21:45:46+08:00">
                 2019-09-16
               </time>
             
@@ -469,17 +469,22 @@
 <li>用写好的脚本进行修改，达到修改后仍可正常执行的效果</li>
 <li>根据自己的需求整理思路并创造完整的脚本</li>
 </ul>
-<h2 id="第一个脚本：Hello-World"><a href="#第一个脚本：Hello-World" class="headerlink" title="第一个脚本：Hello World"></a>第一个脚本：Hello World</h2><p>vim test.sh</p>
+<h2 id="第一个脚本：Hello-World"><a href="#第一个脚本：Hello-World" class="headerlink" title="第一个脚本：Hello World"></a>第一个脚本：Hello World</h2><blockquote>
+<p>vim test.sh</p>
+</blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"hello world"</span></span><br></pre></td></tr></table></figure>
 
+<blockquote>
 <p>bash test.sh</p>
+</blockquote>
 <h2 id="执行方式"><a href="#执行方式" class="headerlink" title="执行方式"></a>执行方式</h2><ul>
 <li>./    (需要使用 chmod +x hello.sh 给文件执行权限)</li>
 <li>bash</li>
 </ul>
 <h2 id="命令：echo"><a href="#命令：echo" class="headerlink" title="命令：echo"></a>命令：echo</h2><ul>
-<li>-e : 输出特殊字符的输出<br>示例：</li>
+<li>-e : 输出特殊字符的输出 </li>
 </ul>
+<p>示例：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> -e <span class="string">"\\"</span></span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -509,7 +514,7 @@
 </li>
 </ul>
 <hr>
-<p><code>小贴士</code>:</p>
+<p><strong>小贴士:</strong></p>
 <p>shell: 帮助用户和内核之间进行沟通的桥梁（接口：API）</p>
 <p>RedHad/CentOS/Ubuntu使用的都是Linux内核</p>
 <p>所有开头带<code>点</code>的文件都是隐藏文件</p>
@@ -530,7 +535,7 @@
 <h2 id="起别名"><a href="#起别名" class="headerlink" title="起别名"></a>起别名</h2><p>配置文件：<br>.bashrc(单用户生效)<br>/etc/bashrc(所有用户生效)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/bashrc	//让配置文件中的配置立即生效</span><br></pre></td></tr></table></figure>
 
-<p>格式：<br><code>alias 别名 = &#39;命令[选项]&#39;</code>（不能使用已经存在的命令作为别名）    </p>
+<p>格式：<code>alias 别名 = &#39;命令[选项]&#39;</code>（不能使用已经存在的命令作为别名）    </p>
 <p><code>\</code> 称为转义符：将该符号后的字符不产生其特殊作用<br>示例：\rm aaa</p>
 <h2 id="ctrl"><a href="#ctrl" class="headerlink" title="ctrl"></a>ctrl</h2><ul>
 <li>ctrl + l，快速清屏</li>
@@ -539,9 +544,12 @@
 </ul>
 <h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><p>wc: wordcount</p>
 <blockquote>
-<p><code>输入</code>重定向：&lt;（覆盖式写入）,此重定向有一定的风险<br>命令：wc &lt; filename</p>
+<p><code>输入</code>重定向：&lt;（覆盖式写入）,此重定向有一定的风险</p>
 </blockquote>
-<p>示例：wc -l &lt; /etc/passwd(统计系统有多少个用户)</p>
+<p>命令：wc &lt; filename</p>
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wc -l &lt; /etc/passwd(统计系统有多少个用户)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><code>输出</code>重定向：&gt;</p>
 </blockquote>
@@ -769,7 +777,7 @@
   <p><span>本文标题:</span>shell的使用方法</p>
   <p><span>文章作者:</span>尚先森</p>
   <p><span>发布时间:</span>2019年09月16日 - 17:42:37</p>
-  <p><span>最后更新:</span>2019年09月16日 - 21:26:28</p>
+  <p><span>最后更新:</span>2019年09月16日 - 21:45:46</p>
   <p><span>原始链接:</span><a href="/2019/09/16/shell的使用方法/" title="shell的使用方法">http://shang-code.cn/2019/09/16/shell的使用方法/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/09/16/shell的使用方法/" aria-label="复制成功！"></i></span>
   </p>
