@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="docker是什么为什么会有docker出现一款产品从开发到上线，从操作系统，到运行环境，再到应用配置。作为开发+运维之间的协作我们需要关心很多东西，这也是很多互联网公司都不得不面对的问题，特别是各种版本的迭代之后，不同版本环境的兼容，对运维人员都是考验Docker之所以发展如此迅速，也是因为它对此给出了一个标准化的解决方案。环境配置如此麻烦，换一台机器，就要重来一次，费力费时。很多人想到，能不能">
+<meta name="description" content="docker">
 <meta name="keywords" content="docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker学习笔记">
-<meta property="og:url" content="http://shang-code.cn/2019/09/21/Docker学习笔记/index.html">
+<meta property="og:title" content="Docker学习笔记-基础篇">
+<meta property="og:url" content="http://shang-code.cn/2019/09/21/Docker学习笔记-基础篇/index.html">
 <meta property="og:site_name" content="寿司卷code">
-<meta property="og:description" content="docker是什么为什么会有docker出现一款产品从开发到上线，从操作系统，到运行环境，再到应用配置。作为开发+运维之间的协作我们需要关心很多东西，这也是很多互联网公司都不得不面对的问题，特别是各种版本的迭代之后，不同版本环境的兼容，对运维人员都是考验Docker之所以发展如此迅速，也是因为它对此给出了一个标准化的解决方案。环境配置如此麻烦，换一台机器，就要重来一次，费力费时。很多人想到，能不能">
+<meta property="og:description" content="docker">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-21T05:27:14.981Z">
+<meta property="og:updated_time" content="2019-09-21T05:32:25.655Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker学习笔记">
-<meta name="twitter:description" content="docker是什么为什么会有docker出现一款产品从开发到上线，从操作系统，到运行环境，再到应用配置。作为开发+运维之间的协作我们需要关心很多东西，这也是很多互联网公司都不得不面对的问题，特别是各种版本的迭代之后，不同版本环境的兼容，对运维人员都是考验Docker之所以发展如此迅速，也是因为它对此给出了一个标准化的解决方案。环境配置如此麻烦，换一台机器，就要重来一次，费力费时。很多人想到，能不能">
+<meta name="twitter:title" content="Docker学习笔记-基础篇">
+<meta name="twitter:description" content="docker">
 
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://shang-code.cn/2019/09/21/Docker学习笔记/">
+  <link rel="canonical" href="http://shang-code.cn/2019/09/21/Docker学习笔记-基础篇/">
 
 
 
@@ -156,7 +156,7 @@
 
 
 
-  <title>Docker学习笔记 | 寿司卷code</title>
+  <title>Docker学习笔记-基础篇 | 寿司卷code</title>
   
 
 
@@ -326,7 +326,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shang-code.cn/2019/09/21/Docker学习笔记/">
+    <link itemprop="mainEntityOfPage" href="http://shang-code.cn/2019/09/21/Docker学习笔记-基础篇/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="尚先森">
@@ -343,7 +343,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Docker学习笔记</h1>
+          <h1 class="post-title" itemprop="name headline">Docker学习笔记-基础篇</h1>
         
 
         <div class="post-meta">
@@ -355,7 +355,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-21T11:03:52+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-21T13:28:57+08:00">
                 2019-09-21
               </time>
             
@@ -371,34 +371,12 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-21T13:27:14+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-21T13:32:25+08:00">
                 2019-09-21
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/docker/" itemprop="url" rel="index">
-                    <span itemprop="name">docker</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -463,7 +441,10 @@
       
 
       
-        <h1 id="docker是什么"><a href="#docker是什么" class="headerlink" title="docker是什么"></a>docker是什么</h1><h2 id="为什么会有docker出现"><a href="#为什么会有docker出现" class="headerlink" title="为什么会有docker出现"></a>为什么会有docker出现</h2><p>一款产品从开发到上线，从操作系统，到运行环境，再到应用配置。作为开发+运维之间的协作我们需要关心很多东西，这也是很多互联网公司都不得不面对的问题，特别是各种版本的迭代之后，不同版本环境的兼容，对运维人员都是考验<br>Docker之所以发展如此迅速，也是因为它对此给出了一个标准化的解决方案。<br>环境配置如此麻烦，换一台机器，就要重来一次，费力费时。很多人想到，能不能从根本上解决问题，软件可以带环境安装？也就是说，安装的时候，把原始环境一模一样地复制过来。开发人员利用 Docker 可以消除协作编码时“在我的机器上可正常工作”的问题。</p>
+        <p><a href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569648693&di=a642ff7f36509cea662e962df059b58b&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.pianshen.com%2Fimages%2F983%2Fa5b33f17f5d26bc936d5921d1f91bd67.png" target="_blank" rel="noopener">docker</a></p>
+<a id="more"></a>
+
+<h1 id="docker是什么"><a href="#docker是什么" class="headerlink" title="docker是什么"></a>docker是什么</h1><h2 id="为什么会有docker出现"><a href="#为什么会有docker出现" class="headerlink" title="为什么会有docker出现"></a>为什么会有docker出现</h2><p>一款产品从开发到上线，从操作系统，到运行环境，再到应用配置。作为开发+运维之间的协作我们需要关心很多东西，这也是很多互联网公司都不得不面对的问题，特别是各种版本的迭代之后，不同版本环境的兼容，对运维人员都是考验<br>Docker之所以发展如此迅速，也是因为它对此给出了一个标准化的解决方案。<br>环境配置如此麻烦，换一台机器，就要重来一次，费力费时。很多人想到，能不能从根本上解决问题，软件可以带环境安装？也就是说，安装的时候，把原始环境一模一样地复制过来。开发人员利用 Docker 可以消除协作编码时“在我的机器上可正常工作”的问题。</p>
 <p> 之前在服务器配置一个应用的运行环境，要安装各种软件，就拿尚硅谷电商项目的环境来说吧，Java/Tomcat/MySQL/JDBC驱动包等。安装和配置这些东西有多麻烦就不说了，它还不能跨平台。假如我们是在 Windows 上安装的这些环境，到了 Linux 又得重新装。况且就算不跨操作系统，换另一台同样操作系统的服务器，要移植应用也是非常麻烦的。</p>
 <p>传统上认为，软件编码开发/测试结束后，所产出的成果即是程序或是能够编译执行的二进制字节码等(java为例)。而为了让这些程序可以顺利执行，开发团队也得准备完整的部署文件，让维运团队得以部署应用程式，开发需要清楚的告诉运维部署团队，用的全部配置文件+所有软件环境。不过，即便如此，仍然常常发生部署失败的状况。Docker镜像的设计，使得Docker得以打破过去「程序即应用」的观念。透过镜像(images)将作业系统核心除外，运作应用程式所需要的系统环境，由下而上打包，达到应用程式跨平台间的无缝接轨运作。</p>
 <h2 id="docker理念"><a href="#docker理念" class="headerlink" title="docker理念"></a>docker理念</h2><p>Docker是基于Go语言实现的云开源项目。</p>
@@ -641,6 +622,8 @@
 
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>常用命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">attach    Attach to a running container                 # 当前 shell 下 attach 连接指定运行镜像</span><br><span class="line">build     Build an image from a Dockerfile              # 通过 Dockerfile 定制镜像</span><br><span class="line">commit    Create a new image from a container changes   # 提交当前容器为新的镜像</span><br><span class="line">cp        Copy files/folders from the containers filesystem to the host path   #从容器中拷贝指定文件或者目录到宿主机中</span><br><span class="line">create    Create a new container                        # 创建一个新的容器，同 run，但不启动容器</span><br><span class="line">diff      Inspect changes on a container&apos;s filesystem   # 查看 docker 容器变化</span><br><span class="line">events    Get real time events from the server          # 从 docker 服务获取容器实时事件</span><br><span class="line">exec      Run a command in an existing container        # 在已存在的容器上运行命令</span><br><span class="line">export    Stream the contents of a container as a tar archive   # 导出容器的内容流作为一个 tar 归档文件[对应 import ]</span><br><span class="line">history   Show the history of an image                  # 展示一个镜像形成历史</span><br><span class="line">images    List images                                   # 列出系统当前镜像</span><br><span class="line">import    Create a new filesystem image from the contents of a tarball # 从tar包中的内容创建一个新的文件系统映像[对应export]</span><br><span class="line">info      Display system-wide information               # 显示系统相关信息</span><br><span class="line">inspect   Return low-level information on a container   # 查看容器详细信息</span><br><span class="line">kill      Kill a running container                      # kill 指定 docker 容器</span><br><span class="line">load      Load an image from a tar archive              # 从一个 tar 包中加载一个镜像[对应 save]</span><br><span class="line">login     Register or Login to the docker registry server    # 注册或者登陆一个 docker 源服务器</span><br><span class="line">logout    Log out from a Docker registry server          # 从当前 Docker registry 退出</span><br><span class="line">logs      Fetch the logs of a container                 # 输出当前容器日志信息</span><br><span class="line">port      Lookup the public-facing port which is NAT-ed to PRIVATE_PORT    # 查看映射端口对应的容器内部源端口</span><br><span class="line">pause     Pause all processes within a container        # 暂停容器</span><br><span class="line">ps        List containers                               # 列出容器列表</span><br><span class="line">pull      Pull an image or a repository from the docker registry server   # 从docker镜像源服务器拉取指定镜像或者库镜像</span><br><span class="line">push      Push an image or a repository to the docker registry server    # 推送指定镜像或者库镜像至docker源服务器</span><br><span class="line">restart   Restart a running container                   # 重启运行的容器</span><br><span class="line">rm        Remove one or more containers                 # 移除一个或者多个容器</span><br><span class="line">rmi       Remove one or more images             # 移除一个或多个镜像[无容器使用该镜像才可删除，否则需删除相关容器才可继续或 -f 强制删除]</span><br><span class="line">run       Run a command in a new container              # 创建一个新的容器并运行一个命令</span><br><span class="line">save      Save an image to a tar archive                # 保存一个镜像为一个 tar 包[对应 load]</span><br><span class="line">search    Search for an image on the Docker Hub         # 在 docker hub 中搜索镜像</span><br><span class="line">start     Start a stopped containers                    # 启动容器</span><br><span class="line">stop      Stop a running containers                     # 停止容器</span><br><span class="line">tag       Tag an image into a repository                # 给源中镜像打标签</span><br><span class="line">top       Lookup the running processes of a container   # 查看容器中运行的进程信息</span><br><span class="line">unpause   Unpause a paused container                    # 取消暂停容器</span><br><span class="line">version   Show the docker version information           # 查看 docker 版本号</span><br><span class="line">wait      Block until a container stops, then print its exit code   # 截取容器停止时的退出状态值</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -658,12 +641,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>Docker学习笔记</p>
+  <p><span>本文标题:</span>Docker学习笔记-基础篇</p>
   <p><span>文章作者:</span>尚先森</p>
-  <p><span>发布时间:</span>2019年09月21日 - 11:03:52</p>
-  <p><span>最后更新:</span>2019年09月21日 - 13:27:14</p>
-  <p><span>原始链接:</span><a href="/2019/09/21/Docker学习笔记/" title="Docker学习笔记">http://shang-code.cn/2019/09/21/Docker学习笔记/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/09/21/Docker学习笔记/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年09月21日 - 13:28:57</p>
+  <p><span>最后更新:</span>2019年09月21日 - 13:32:25</p>
+  <p><span>原始链接:</span><a href="/2019/09/21/Docker学习笔记-基础篇/" title="Docker学习笔记-基础篇">http://shang-code.cn/2019/09/21/Docker学习笔记-基础篇/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/09/21/Docker学习笔记-基础篇/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -745,8 +728,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/16/shell的使用方法/" rel="next" title="shell的使用方法">
-                <i class="fa fa-chevron-left"></i> shell的使用方法
+              <a href="/2019/09/21/Docker学习笔记/" rel="next" title="Docker学习笔记">
+                <i class="fa fa-chevron-left"></i> Docker学习笔记
               </a>
             
           </div>
@@ -754,10 +737,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/21/Docker学习笔记-基础篇/" rel="prev" title="Docker学习笔记-基础篇">
-                Docker学习笔记-基础篇 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
