@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="docker">
 <meta name="keywords" content="docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker学习笔记-基础篇">
 <meta property="og:url" content="http://shang-code.cn/2019/09/21/Docker学习笔记-基础篇/index.html">
 <meta property="og:site_name" content="寿司卷code">
-<meta property="og:description" content="docker">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-21T05:32:25.655Z">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569648693&di=a642ff7f36509cea662e962df059b58b&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.pianshen.com%2Fimages%2F983%2Fa5b33f17f5d26bc936d5921d1f91bd67.png">
+<meta property="og:image" content="http://shang-code.cn/images/aliyun_jiasu.png">
+<meta property="og:updated_time" content="2019-09-21T05:42:00.013Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker学习笔记-基础篇">
-<meta name="twitter:description" content="docker">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569648693&di=a642ff7f36509cea662e962df059b58b&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.pianshen.com%2Fimages%2F983%2Fa5b33f17f5d26bc936d5921d1f91bd67.png">
 
 
 
@@ -371,12 +371,34 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-21T13:32:25+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-21T13:42:00+08:00">
                 2019-09-21
               </time>
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -441,7 +463,7 @@
       
 
       
-        <p><a href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569648693&di=a642ff7f36509cea662e962df059b58b&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.pianshen.com%2Fimages%2F983%2Fa5b33f17f5d26bc936d5921d1f91bd67.png" target="_blank" rel="noopener">docker</a></p>
+        <p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569648693&di=a642ff7f36509cea662e962df059b58b&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.pianshen.com%2Fimages%2F983%2Fa5b33f17f5d26bc936d5921d1f91bd67.png" alt="docker"></p>
 <a id="more"></a>
 
 <h1 id="docker是什么"><a href="#docker是什么" class="headerlink" title="docker是什么"></a>docker是什么</h1><h2 id="为什么会有docker出现"><a href="#为什么会有docker出现" class="headerlink" title="为什么会有docker出现"></a>为什么会有docker出现</h2><p>一款产品从开发到上线，从操作系统，到运行环境，再到应用配置。作为开发+运维之间的协作我们需要关心很多东西，这也是很多互联网公司都不得不面对的问题，特别是各种版本的迭代之后，不同版本环境的兼容，对运维人员都是考验<br>Docker之所以发展如此迅速，也是因为它对此给出了一个标准化的解决方案。<br>环境配置如此麻烦，换一台机器，就要重来一次，费力费时。很多人想到，能不能从根本上解决问题，软件可以带环境安装？也就是说，安装的时候，把原始环境一模一样地复制过来。开发人员利用 Docker 可以消除协作编码时“在我的机器上可正常工作”的问题。</p>
@@ -514,7 +536,7 @@
 <h2 id="设置镜像加速"><a href="#设置镜像加速" class="headerlink" title="设置镜像加速"></a>设置镜像加速</h2><p>阿里云网址:<a href="https://www.aliyun.com" target="_blank" rel="noopener">https://www.aliyun.com</a></p>
 <p>使用支付宝或者淘宝扫码登录后,在搜索栏中搜索<code>镜像服务</code>,即可列出参考选项<code>容器镜像服务</code>,点击进去,点击<code>管理控制台</code></p>
 <p>在左边一栏的最下边点击<code>镜像加速器</code>,找到<code>centos</code>,复制里面的所有命令,粘贴到终端运行即可</p>
-<p><a href="images/aliyun_jiasu.png">aliyun_image_speed</a></p>
+<p><img src="/images/aliyun_jiasu.png" alt="aliyun_image_speed"></p>
 <h2 id="运行hello-world"><a href="#运行hello-world" class="headerlink" title="运行hello-world"></a>运行hello-world</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull hello-world</span><br><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
 
 <h2 id="底层原理"><a href="#底层原理" class="headerlink" title="底层原理"></a>底层原理</h2><ol>
@@ -644,7 +666,7 @@
   <p><span>本文标题:</span>Docker学习笔记-基础篇</p>
   <p><span>文章作者:</span>尚先森</p>
   <p><span>发布时间:</span>2019年09月21日 - 13:28:57</p>
-  <p><span>最后更新:</span>2019年09月21日 - 13:32:25</p>
+  <p><span>最后更新:</span>2019年09月21日 - 13:42:00</p>
   <p><span>原始链接:</span><a href="/2019/09/21/Docker学习笔记-基础篇/" title="Docker学习笔记-基础篇">http://shang-code.cn/2019/09/21/Docker学习笔记-基础篇/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/09/21/Docker学习笔记-基础篇/" aria-label="复制成功！"></i></span>
   </p>
@@ -833,7 +855,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
