@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="寿司卷code">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://getwallpapers.com/wallpaper/full/6/9/c/335389.jpg">
-<meta property="og:updated_time" content="2019-09-29T13:40:41.963Z">
+<meta property="og:updated_time" content="2019-09-29T13:51:44.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux笔记">
 <meta name="twitter:image" content="http://getwallpapers.com/wallpaper/full/6/9/c/335389.jpg">
@@ -370,7 +370,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-29T21:40:41+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-29T21:51:44+08:00">
                 2019-09-29
               </time>
             
@@ -425,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.9k 字
+                  2.8k 字
                 </span>
               
 
@@ -465,7 +465,7 @@
         <p><img src="http://getwallpapers.com/wallpaper/full/6/9/c/335389.jpg" alt="linux_tubiao"></p>
 <a id="more"></a>
 
-<h1 id="Linux第一章-概述"><a href="#Linux第一章-概述" class="headerlink" title="Linux第一章-概述"></a>Linux第一章-概述</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>摘自于[百度百科]<a href="https://baike.baidu.com/item/linux/27050" target="_blank" rel="noopener">https://baike.baidu.com/item/linux/27050</a></p>
+<h1 id="Linux第一章-概述"><a href="#Linux第一章-概述" class="headerlink" title="Linux第一章-概述"></a>Linux第一章-概述</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>摘自于<a href="https://baike.baidu.com/item/linux/27050" target="_blank" rel="noopener">百度百科</a></p>
 <ol>
 <li><p>Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和Unix的多用户、多任务、支持多线程和多CPU的操作系统。伴随着互联网的发展，Linux得到了来自全世界软件爱好者、组织、公司的支持。它除了在服务器操作系统方面保持着强劲的发展势头以外，在个人电脑、嵌入式系统上都有着长足的进步。使用者不仅可以直观地获取该操作系统的实现机制，而且可以根据自身的需要来修改完善这个操作系统，使其最大化地适应用户的需要.</p>
 </li>
@@ -488,44 +488,33 @@
 <li>开头第一个字母(或者是<code>.</code>和<code>-</code>):</li>
 </ol>
 <ul>
-<li><ul>
-<li>: 表示文件</li>
-</ul>
-</li>
-<li>d : 表示目录</li>
-<li>f : 表示块设备文件</li>
-<li>c : 表示字符设备文件</li>
-<li>l : 表示链接文件</li>
-<li>p : 管道文件</li>
-<li>. : 隐藏文件</li>
+<li><code>-</code> : 表示文件</li>
+<li><code>d</code> : 表示目录</li>
+<li><code>f</code> : 表示块设备文件</li>
+<li><code>c</code> : 表示字符设备文件</li>
+<li><code>l</code> : 表示链接文件</li>
+<li><code>p</code> : 管道文件</li>
+<li><code>.</code> : 隐藏文件</li>
 </ul>
 <ol start="2">
-<li><p>rwxr-xr-x<br> 分为三个用户类型<br> 前三个字母属于文件所有者的权限(u)<br> 中间三个字母属于组内用户的权限(g)<br> 最后三个字母属于组外用户的权限(o)</p>
-<p> 文件下:</p>
+<li>rwxr-xr-x</li>
+</ol>
+<p>分为三个用户类型<br>前三个字母属于文件所有者的权限(u)<br>中间三个字母属于组内用户的权限(g)<br>最后三个字母属于组外用户的权限(o)</p>
+<p>文件下:</p>
 <ul>
-<li><ul>
-<li>: 没有对应的权限</li>
+<li><code>-</code> : 没有对应的权限</li>
+<li><code>r</code> : 可读</li>
+<li><code>w</code> : 可写</li>
+<li><code>x</code> : 可执行</li>
 </ul>
-</li>
-<li><p>r : 可读</p>
-</li>
-<li><p>w : 可写</p>
-</li>
-<li><p>x : 可执行</p>
 <p>目录下:</p>
-</li>
-<li><ul>
-<li>: 没有对应的权限</li>
+<ul>
+<li><code>-</code> : 没有对应的权限</li>
+<li><code>r</code> : 可查询此目录下文件名数据，比如ls命令</li>
+<li><code>w</code> : 可以建立新目录/删除已存在目录/修改已存在的目录</li>
+<li><code>x</code> : 具有执行的权限，简单地说，就是可以将该目录转换成家目录的能力，比如cd 命令。注意，x权限对于目录是极其重要的，如果没有该目录，表示你不能切换到该目录，更不能对其子目录或者文件进行操作，即使你有“r/w”权限。</li>
 </ul>
-</li>
-<li><p>r : 可查询此目录下文件名数据，比如ls命令</p>
-</li>
-<li><p>w : 可以建立新目录/删除已存在目录/修改已存在的目录</p>
-</li>
-<li><p>x : 具有执行的权限，简单地说，就是可以将该目录转换成家目录的能力，比如cd 命令。注意，x权限对于目录是极其重要的，如果没有该目录，表示你不能切换到该目录，更不能对其子目录或者文件进行操作，即使你有“r/w”权限。</p>
-</li>
-</ul>
-</li>
+<ol start="3">
 <li><p>87<br> 表示硬链接格式</p>
 </li>
 <li><p>root root<br> 第一个root表示文件所有者<br> 第二个root表示组名</p>
@@ -633,7 +622,7 @@
 <li>proc : 虚拟的文件系统/进程实时状态信息</li>
 <li>usr : 系统文件</li>
 </ul>
-<h1 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h1><h2 id="vim编辑器的用法"><a href="#vim编辑器的用法" class="headerlink" title="vim编辑器的用法"></a>vim编辑器的用法</h2><p>具体用法见我的这篇博客[vim的使用方法]<a href="https://shang-code.cn/2019/08/24/vim的使用方法-相关配置/">https://shang-code.cn/2019/08/24/vim的使用方法-相关配置/</a></p>
+<h1 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h1><h2 id="vim编辑器的用法"><a href="#vim编辑器的用法" class="headerlink" title="vim编辑器的用法"></a>vim编辑器的用法</h2><p>具体用法见我的这篇博客<a href="https://shang-code.cn/2019/08/24/vim的使用方法-相关配置/">vim的使用方法</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 当前目录下如果文件存在,会直接进入该文件中</span></span><br><span class="line">vim test.txt</span><br><span class="line"><span class="comment"># 当前目录下不存在,会在当前目录下新建一个名为test.txt的文件</span></span><br></pre></td></tr></table></figure>
 
 <p>进入后想要退出的话:<br>:wq –&gt; 保存并且退出<br>:!q –&gt; 不保存强制退出</p>
@@ -658,7 +647,7 @@
   <p><span>本文标题:</span>Linux笔记</p>
   <p><span>文章作者:</span>尚先森</p>
   <p><span>发布时间:</span>2019年09月29日 - 18:38:19</p>
-  <p><span>最后更新:</span>2019年09月29日 - 21:40:41</p>
+  <p><span>最后更新:</span>2019年09月29日 - 21:51:44</p>
   <p><span>原始链接:</span><a href="/2019/09/29/Linux笔记/" title="Linux笔记">http://shang-code.cn/2019/09/29/Linux笔记/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://shang-code.cn/2019/09/29/Linux笔记/" aria-label="复制成功！"></i></span>
   </p>
