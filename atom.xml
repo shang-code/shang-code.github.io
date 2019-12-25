@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://shang-code.cn/"/>
-  <updated>2019-12-23T04:56:54.474Z</updated>
+  <updated>2019-12-25T14:42:46.285Z</updated>
   <id>http://shang-code.cn/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://shang-code.cn/2019/12/23/shell%E8%84%9A%E6%9C%AC%E4%BB%8B%E7%BB%8D/"/>
     <id>http://shang-code.cn/2019/12/23/shell脚本介绍/</id>
     <published>2019-12-23T04:56:26.000Z</published>
-    <updated>2019-12-23T04:56:54.474Z</updated>
+    <updated>2019-12-25T14:42:46.285Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="shell-脚本"><a href="#shell-脚本" class="headerlink" title="shell 脚本"></a>shell 脚本</h1><h2 id="什么是-shell"><a href="#什么是-shell" class="headerlink" title="什么是 shell"></a>什么是 shell</h2><p>shell 在 linux 中成为 linux 壳,在壳中间是 linux 的系统内核</p><p>简单的来说,shell 是帮助<em>用户</em>与<em>系统内核</em>之间进行沟通的<code>桥梁</code></p><ul><li>举个例子:</li></ul><p>我们现在在一个互联网公司中,现在老板让我们和一个国外的客户商谈一个项目,然而呢,我们英语不好,可以说是菜的一批…<br>这个时候我们就需要花重金聘请一位<code>翻译</code>来为我们进行信息的传达,而这个翻译的身份,就相当于我们现在所说的 <code>shell</code>,懂了吧?</p><p>ok</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="shell脚本"><a href="#shell脚本" class="headerlink" title="shell脚本"></a>shell脚本</h1><h2 id="什么是-shell"><a href="#什么是-shell" class="headerlink" title="什么是 shell"></a>什么是 shell</h2><p>Shell 编程跟 JavaScript、php 编程一样，只要有一个能编写代码的文本编辑器和一个能解释执行的脚本解释器就可以了。<br>Linux 的 Shell 种类众多，常见的有：</p><ul><li>Bourne Shell（/usr/bin/sh或/bin/sh）</li><li>Bourne Again Shell（/bin/bash）</li><li>C Shell（/usr/bin/csh）</li><li>K Shell（/usr/bin/ksh）</li><li>Shell for Root（/sbin/sh）<br>……</li></ul><p>shell 在 linux 中称为 linux壳,在壳中间是 linux 的系统内核</p><p>简单的来说,shell 是帮助用户与系统内核之间进行沟通的<code>桥梁</code></p><p><strong>举个例子:</strong></p><p><em>我们现在在一个互联网公司中,现在老板让我们和一个国外的客户商谈一个项目,然而呢,我们英语不好,可以说是菜的一批…<br>这个时候我们就需要花重金聘请一位<code>翻译</code>来为我们进行信息的传达,而这个翻译的身份,就相当于我们现在所说的 <code>shell</code>,懂了吧?</em></p><p>ok</p><blockquote><p>Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。<br>Shell 既是一种命令语言，又是一种程序设计语言。<br>Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问 操作系统内核 的服务。</p></blockquote><p><strong>shell分两大类：</strong></p><ol><li><p>图形界面shell（Graphical User Interface shell 即 GUI shell）</p><p>应用最为广泛的 Windows Explorer （微软的windows系列操作系统）</p></li><li><p>命令行式shell（Command Line Interface shell ，即CLI shell）</p><p>bash / sh / ksh / csh / zsh（Unix/linux 系统）<br>MS-DOS系统<br>cmd.exe/ 命令提示字符（Windows NT 系统）</p></li></ol><p>传统意义上的shell指的是命令行式的shell，以后如果不特别注明，shell是指命令行式的shell。</p><p>Shell基本上是一个命令解释器，类似于DOS下的command。它接收用户命令（如ls等），然后调用相应的应用程序。较为通用的shell有标准的Bourne shell和 C shell</p><p><strong>交互式 shell 与 非交互式 shell</strong></p><ol><li><p>交互式模式就是shell等待你的输入，并且执行你提交的命令。这种模式被称作交互式是因为shell与用户进行交互。这种模式也是大多数用户非常熟悉的：登录、执行一些命令、签退。当你签退后，shell也终止了。</p></li><li><p>shell也可以运行在另外一种模式：非交互式模式。在这种模式下，shell不与你进行交互，而是读取存放在文件中的命令，并且执行它们。当它读到文件的结尾，shell也就终止了</p></li></ol><p>Shell 程序本身的功能是很弱的，比如文件操作、输入输出、进程管理等都得依赖内核。我们运行一个命令，大部分情况下 Shell 都会去调用内核暴露出来的接口，这就是在使用内核，只是这个过程被 Shell 隐藏了起来，它自己在背后默默进行，我们看不到而已。</p><p>接口其实就是一个一个的函数，使用内核就是调用这些函数。</p><p>如下图,是我从网上摘下来的图片</p><p><img src="http://c.biancheng.net/uploads/allimg/190417/1-1Z41G31T3628.gif" alt="shell_introduction"></p><h2 id="Shell-Script"><a href="#Shell-Script" class="headerlink" title="Shell Script"></a>Shell Script</h2><p>Shell Script,顾名思义,名为 shell 脚本</p><p>查了查网络上的资料<br>找到了鸟哥🐦对于 shell 脚本的定义</p><blockquote><p>鸟哥的专业解释：<br>shell脚本是利用shell的功能所写的一个「程序」。这个程序是使用纯文本文件，将一些shell的语法与命令（包括外部命令）写在里面，搭配正则表达式、管道命令与数据流重定向等功能，以达到我们所想要的处理目的</p></blockquote><p>嗯 , 差不多就是这个意思</p><p>那么为什么会产生 shell 脚本呢?</p><p>这样,我举个例子吧</p><p>假设我现在是一名小公司的运维人员,项目经理下达一项命令,每周日的凌晨 3 点备份公司的某某数据库的数据,并且将备份的数据库的日志文件拷贝一份给老板,于是乎,我们按部就班的每周日都要去一个一个去输入相应的命令<br>这样效率非常低…<br>一者,时间上来讲,我们总不能一直那么大晚上的去工作<br>二者,每周都是相同的命令,做起来非常浪费时间,没有意义<br>那么,有人就想,能不能把命令都集中到一起写入到文件中,使用时直接执行那个文件不就好了吗?<br>于是,shell 脚本经过漫长的演变,成为了现在的模样.</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;shell-脚本&quot;&gt;&lt;a href=&quot;#shell-脚本&quot; class=&quot;headerlink&quot; title=&quot;shell 脚本&quot;&gt;&lt;/a&gt;shell 脚本&lt;/h1&gt;&lt;h2 id=&quot;什么是-shell&quot;&gt;&lt;a href=&quot;#什么是-shell&quot; class=&quot;he
+        &lt;h1 id=&quot;shell脚本&quot;&gt;&lt;a href=&quot;#shell脚本&quot; class=&quot;headerlink&quot; title=&quot;shell脚本&quot;&gt;&lt;/a&gt;shell脚本&lt;/h1&gt;&lt;h2 id=&quot;什么是-shell&quot;&gt;&lt;a href=&quot;#什么是-shell&quot; class=&quot;header
       
     
     </summary>
