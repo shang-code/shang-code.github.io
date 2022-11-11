@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="寿司卷code" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux笔记扩展">
+<meta property="og:url" content="https://imauu.gitee.io/2019/10/08/Linux笔记扩展/index.html">
+<meta property="og:site_name" content="寿司卷code">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gixjr757h0j30sg0lc0tx.jpg">
+<meta property="og:updated_time" content="2022-09-07T07:21:08.780Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux笔记扩展">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gixjr757h0j30sg0lc0tx.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":14,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://imauu.gitee.io/2019/10/08/Linux笔记扩展/">
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "1db79efd"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "1db79efd"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  <title>Linux笔记扩展 | 寿司卷code</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <!--
+    <a href="https://github.com/shang-code/" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+    -->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">寿司卷code</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不拼尽全力试一下，又怎么会知道啊。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://imauu.gitee.io/2019/10/08/Linux笔记扩展/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="尚先森">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h4nm4ry4apj205i05ia9y.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="寿司卷code">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux笔记扩展</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-08T16:49:06+08:00">
+                2019-10-08
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2022-09-07T15:21:08+08:00">
+                2022-09-07
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/08/Linux笔记扩展/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/08/Linux笔记扩展/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  18 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gixjr757h0j30sg0lc0tx.jpg" alt="linux_tubiao" style="zoom:67%;">
+
+<a id="more"></a>
+
+<h1 id="ln-链接"><a href="#ln-链接" class="headerlink" title="ln 链接"></a>ln 链接</h1><p>ln : link</p>
+<p>为什么要用到软链接?</p>
+<p>其实类似于windows中,桌面上的快捷方式一样</p>
+<p>为了方便,我们平时在windows上,把所有常用的软件的快捷方式放在桌面上</p>
+<p>Linux中也一样</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式</span></span><br><span class="line">ln [选项] 源文件 目标文件</span><br><span class="line"><span class="comment"># 选项:</span></span><br><span class="line">    -s : 创建软连接(基本上这一个参数就够了)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line"><span class="comment"># 1. 软链接</span></span><br><span class="line"><span class="comment"># 创建文件 /etc/issue 的软链接 /tmp/issue.soft</span></span><br><span class="line">ln -s /etc/issue /tmp/issue.soft</span><br><span class="line">ll /tmp</span><br><span class="line">    <span class="comment"># 特点:</span></span><br><span class="line">    <span class="comment"># 1. 软链接生成的文件是 "满权限" 的,这样是很危险的?</span></span><br><span class="line">    <span class="comment"># 2. 不不不,其实真正的权限还是由原文件来决定</span></span><br><span class="line">    <span class="comment"># 3. 只有软链接的开头才会是 "l" </span></span><br><span class="line">    <span class="comment"># 4. 有指向源文件的箭头</span></span><br><span class="line">    lrwxrwxrwx. 1 root root  10 10月  8 17:12 issue.soft -&gt; /etc/issue</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 硬链接 </span></span><br><span class="line"><span class="comment"># 创建文件 /etc/issue 的硬链接 /tmp/issue.hard</span></span><br><span class="line">ln /etc/issue /tmp/issue.hard</span><br><span class="line">ll /tmp</span><br><span class="line">    <span class="comment"># 特点:</span></span><br><span class="line">    <span class="comment"># 1. 硬链接生成的文件 "不是满权限" 的</span></span><br><span class="line">    <span class="comment"># 2. 硬链接文件与源文件同步更新</span></span><br><span class="line">    <span class="comment"># 3. 相当于cp(拷贝),即使源文件删除了,硬链接的文件依然存在(实时的备份)</span></span><br><span class="line">    <span class="comment"># 4. 通过 i 节点识别: 命令 "ls -i /etc/issue /tmp/issue.hard" 查看文件索引号(inode),会发现源文件与硬链接文件的索引号相同,这也是为什么两个文件会实时同步的原因</span></span><br><span class="line">    <span class="comment"># 5. 硬链接无法跨分区</span></span><br><span class="line">    <span class="comment"># 6. 无法针对目录</span></span><br><span class="line">    -rw-r--r--. 2 root root  23 8月  30 2017 issue.hard</span><br></pre></td></tr></table></figure>
+
+<h1 id="文件搜索命令-locate"><a href="#文件搜索命令-locate" class="headerlink" title="文件搜索命令 locate"></a>文件搜索命令 locate</h1><p>locate <code>秒级搜索</code></p>
+<p>但是有一个问题,对于刚刚新建的文件或目录,实时的查找出来,需要更新一下数据库</p>
+<p>相对于<code>find</code>来说,find查找虽然没有那么快,但它是实时搜索的,没有更新的这一个步骤</p>
+<p>在centos7中,locate好像没有了,需要下载一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载</span></span><br><span class="line">yum -y install mlocate</span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">mkdir /syz</span><br><span class="line"><span class="comment"># 更新数据库,不然无法找到刚刚新建的目录</span></span><br><span class="line"><span class="comment"># 注意: 临时资料库中的文件是查找不到的,如/tmp</span></span><br><span class="line">updatedb</span><br><span class="line"><span class="comment"># 查找</span></span><br><span class="line">locate /syz</span><br><span class="line"><span class="comment"># 如果出现一些文件无法找到的情况,那是因为收到了限制</span></span><br><span class="line"><span class="comment"># 修改配置文件,解除限制</span></span><br><span class="line">vim /etc/updatedb.conf  <span class="comment">#把yes改为no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找不区分大小写</span></span><br><span class="line">touch /SyZ.txt </span><br><span class="line">updatedb</span><br><span class="line">locate -i syz</span><br></pre></td></tr></table></figure>
+
+<h1 id="which"><a href="#which" class="headerlink" title="which"></a>which</h1><p>快速查找命令的位置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">which</span> ls</span><br><span class="line">    <span class="built_in">alias</span> ls=<span class="string">'ls --color=auto'</span></span><br><span class="line">	/usr/bin/ls</span><br><span class="line"><span class="built_in">which</span> rm</span><br><span class="line">    <span class="built_in">alias</span> rm=<span class="string">'rm -i'</span></span><br><span class="line">	/usr/bin/rm</span><br><span class="line"><span class="comment"># 其实在Linux系统中,我们执行rm命令时,之所以会再次提醒确认删除</span></span><br><span class="line"><span class="comment"># 不是rm这个命令特有的,而是 rm 通过 alias 映射成了 rm -i</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h1><p>是不是感觉学过了?</p>
+<p>扩展嘛,再来深入一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 不区分大小写的查找</span></span><br><span class="line">touch /syz.txt</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"Syz\nsyz\nSyz\nasdasfsSyz\nafaaaesyz\n12412421\nwrfwafsa"</span> &gt;&gt; /syz.txt</span><br><span class="line">grep -i <span class="string">"syz"</span> /syz.txt </span><br><span class="line"></span><br><span class="line"><span class="comment"># 反向查找</span></span><br><span class="line">touch /test.txt</span><br><span class="line">vim /test.txt</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 填入以下内容</span></span><br><span class="line">    --------------------------</span><br><span class="line">    <span class="comment"># this is a test</span></span><br><span class="line">    hello world</span><br><span class="line">    <span class="comment"># hello world</span></span><br><span class="line">    hi!</span><br><span class="line">    --------------------------</span><br><span class="line">grep -v <span class="string">"^#"</span> /test.txt  <span class="comment"># 只输出不带有 # 的行</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="who"><a href="#who" class="headerlink" title="who"></a>who</h1><p>查看当前所有用户的登录情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">who</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以什么用户身份登录的  登录方式    登录的时间  (登录机器的IP段)</span></span><br><span class="line">root     tty1         2019-10-08 16:20</span><br><span class="line">root     pts/0        2019-10-08 16:20 (10.211.55.2)</span><br><span class="line">root     pts/1        2019-10-08 21:46 (10.211.55.2)</span><br><span class="line"><span class="comment"># 解析:</span></span><br><span class="line"><span class="comment"># tty 表示为本地终端登录的</span></span><br><span class="line"><span class="comment"># pts 表示为远程登录的</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="uptime"><a href="#uptime" class="headerlink" title="uptime"></a>uptime</h1><p>查看服务器已经运行的时间</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uptime</span><br><span class="line">    <span class="comment"># 初始时间 状态 已经运行的时间  当前总共几个用户登录 负载均衡</span></span><br><span class="line">    20:50:09 up  4:30,  2 users,  load average: 0.00, 0.01, 0.05</span><br></pre></td></tr></table></figure>
+
+<h1 id="w"><a href="#w" class="headerlink" title="w"></a>w</h1><p>查看 uptime who 的综合信息(比这两者还要多一点东西)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">w</span><br><span class="line"></span><br><span class="line">21:48:25 up  5:28,  3 users,  load average: 0.00, 0.01, 0.05</span><br><span class="line">USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT</span><br><span class="line">root     tty1                      16:20    7:29   0.02s  0.02s -bash</span><br><span class="line">root     pts/0    10.211.55.2      16:20   57:05   0.24s  0.24s -bash</span><br><span class="line">root     pts/1    10.211.55.2      21:46    1.00s  0.04s  0.03s w</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解析:</span></span><br><span class="line"><span class="comment"># 第一行: 机器开机时间  状态    已经运行的时间  已经登陆了几个用户  负载均衡</span></span><br><span class="line"><span class="comment"># 第三行: 用户身份  登录方式    来自哪个网段    何时登录的  累计空闲时间    累计占用CPU资源的时间    占用CPU资源的时间  当前执行的命令</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="write"><a href="#write" class="headerlink" title="write"></a>write</h1><p>给某个在线用户发送信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">useradd syz</span><br><span class="line">passwd syz</span><br><span class="line"><span class="comment"># 重新打开一个终端,以syz用户登录</span></span><br><span class="line"><span class="comment"># 回到root用户下的终端中,给syz用户发送信息</span></span><br><span class="line">write syz</span><br><span class="line">hello</span><br><span class="line">world</span><br><span class="line"></span><br><span class="line"><span class="comment"># 最后最好回车一下,然后ctrl + d 结束,发送</span></span><br><span class="line"><span class="comment"># 然后就会在syz用户的终端下收到消息</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="wall"><a href="#wall" class="headerlink" title="wall"></a>wall</h1><p>给所有的在线用户发送消息(包括自己)</p>
+<p>这里不再演示</p>
+<h1 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h1><p>/bin/ping<br>测试网络的连通性</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -c : 指定发送的次数</span></span><br><span class="line">ping -c 3 baidu.com</span><br><span class="line"><span class="comment"># 结尾的时间越短,证明网络连通性越好</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h1><p>功能:查看和设置网卡信息<br>英文全称:interface configure<br>路径:/sbin/ifconfig<br>使用权限:root</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看本机IP地址</span></span><br><span class="line">ifconfig</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置临时IP地址</span></span><br><span class="line"><span class="comment"># 语法: ifconfig 网卡名称 IP地址</span></span><br><span class="line">ifconfig eth0 10.0.0.10</span><br></pre></td></tr></table></figure>
+
+<h1 id="mail"><a href="#mail" class="headerlink" title="mail"></a>mail</h1><p>功能:查看邮件或给用户发送邮件<br>路径:/bin/mail<br>执行权限:所有用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 给 syz 用户发送邮件</span></span><br><span class="line">mail syz</span><br><span class="line"></span><br><span class="line">hello</span><br><span class="line"></span><br><span class="line"><span class="comment"># ctrl + d</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看邮件</span></span><br><span class="line">mail</span><br><span class="line"><span class="comment"># h : 列出所有邮件</span></span><br><span class="line"><span class="comment"># 数字 : 输入列出的邮件的索引号即可查看对应的邮件内容</span></span><br><span class="line"><span class="comment"># d 数字 : 删除相应的邮件</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="last-和-lastlog"><a href="#last-和-lastlog" class="headerlink" title="last 和 lastlog"></a>last 和 lastlog</h1><h2 id="last"><a href="#last" class="headerlink" title="last"></a>last</h2><p>功能:列出现在和过去所有用户的<code>登陆信息</code>,包括系统什么时候<code>重启</code>过</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">last</span><br><span class="line"></span><br><span class="line">    root     pts/3        10.211.55.2      Tue Oct  8 22:55 - 22:55  (00:00)    </span><br><span class="line">    root     pts/1        10.211.55.2      Tue Oct  8 22:55   still logged <span class="keyword">in</span>   </span><br><span class="line">    syz      pts/2        10.211.55.2      Tue Oct  8 22:54   still logged <span class="keyword">in</span>   </span><br><span class="line">    root     pts/1        10.211.55.2      Tue Oct  8 22:22 - 22:55  (00:32)    </span><br><span class="line">    root     pts/1        10.211.55.2      Tue Oct  8 21:46 - 22:22  (00:36)    </span><br><span class="line">    root     pts/0        10.211.55.2      Tue Oct  8 16:20   still logged <span class="keyword">in</span>   </span><br><span class="line">    root     tty1                          Tue Oct  8 16:20   still logged <span class="keyword">in</span>   </span><br><span class="line">    reboot   system boot  3.10.0-693.el7.x Tue Oct  8 16:19 - 23:38  (07:18)    </span><br><span class="line">    root     pts/0        10.211.55.2      Mon Oct  7 19:26 - down   (02:01)    </span><br><span class="line">    root     tty1                          Mon Oct  7 19:24 - 21:27  (02:03)    </span><br><span class="line">    reboot   system boot  3.10.0-693.el7.x Mon Oct  7 19:23 - 21:27  (02:04)    </span><br><span class="line">    root     pts/0        10.211.55.2      Sun Oct  6 11:39 - crash (1+07:44)   </span><br><span class="line">    root     tty1                          Sun Oct  6 11:18 - 13:14  (01:56)    </span><br><span class="line">    reboot   system boot  3.10.0-693.el7.x Sun Oct  6 11:17 - 21:27 (1+10:10)   </span><br><span class="line"></span><br><span class="line">    wtmp begins Sun Oct  6 11:17:26 2019</span><br></pre></td></tr></table></figure>
+
+<h2 id="lastlog"><a href="#lastlog" class="headerlink" title="lastlog"></a>lastlog</h2><p>功能:只查看所有用户(包括不可登录的用户)的<code>最后一次</code>的登录信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看所有用户(包括不可登录的用户)的最后一次的登录信息</span></span><br><span class="line">lastlog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过用户的uid查看对应用户的最后一次登录信息</span></span><br><span class="line"><span class="comment"># 查看root用户的最后一次登录信息</span></span><br><span class="line">lastlog -u 0</span><br><span class="line">    用户名           端口     来自             最后登陆时间</span><br><span class="line">    root             pts/3    10.211.55.2      二 10月  8 22:55:46 +0800 2019</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看syz用户的最后一次登录信息</span></span><br><span class="line"><span class="comment"># 首先查看用户syz的uid</span></span><br><span class="line">cat /etc/passwd | grep syz</span><br><span class="line">    syz:x:1002:1002::/home/syz:/bin/bash</span><br><span class="line">lastlog -u 1002</span><br><span class="line">    用户名           端口     来自             最后登陆时间</span><br><span class="line">    syz              pts/2    10.211.55.2      二 10月  8 22:54:35 +0800 2019</span><br></pre></td></tr></table></figure>
+
+<h1 id="traceroute"><a href="#traceroute" class="headerlink" title="traceroute"></a>traceroute</h1><p>功能:显示数据包到主机间的路径,可以用来排除网络在哪里出现了问题<br>执行权限:所有用户<br>语法:traceroute 网址(或域名)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">traceroute www.imau.edu.cn</span><br><span class="line">    <span class="comment"># 可能是因为网络的问题,到后面太慢,所以只粘贴了一点</span></span><br><span class="line">    traceroute to www.imau.edu.cn (222.74.205.105), 64 hops max, 52 byte packets</span><br><span class="line">    1  bogon (192.168.43.249)  3.731 ms  2.668 ms  3.235 ms</span><br><span class="line">    2  * * *</span><br><span class="line">    3  bogon (172.20.1.89)  96.085 ms  25.947 ms  24.937 ms</span><br><span class="line">    4  * * *</span><br><span class="line">    5  111.56.28.17 (111.56.28.17)  39.030 ms  53.792 ms  20.011 ms</span><br><span class="line">    6  221.183.13.109 (221.183.13.109)  17.659 ms  33.792 ms  24.449 ms</span><br><span class="line">    7  * * *</span><br><span class="line">    8  * * *</span><br><span class="line">    9  221.183.66.2 (221.183.66.2)  106.024 ms</span><br><span class="line">        221.183.30.58 (221.183.30.58)  39.249 ms *</span><br><span class="line">    10  202.97.57.197 (202.97.57.197)  185.827 ms</span><br><span class="line">        202.97.88.233 (202.97.88.233)  52.745 ms  58.777 ms</span><br><span class="line">    11  202.97.28.190 (202.97.28.190)  92.896 ms</span><br><span class="line">        202.97.28.194 (202.97.28.194)  117.207 ms  114.305 ms</span><br><span class="line">    12  219.148.161.234 (219.148.161.234)  69.864 ms</span><br><span class="line">        219.148.167.170 (219.148.167.170)  76.444 ms</span><br><span class="line">        219.148.167.150 (219.148.167.150)  63.254 ms</span><br><span class="line">    13  * * *</span><br><span class="line">    14  123.178.212.154 (123.178.212.154)  136.865 ms</span><br><span class="line">        123.178.212.150 (123.178.212.150)  68.919 ms  69.143 ms</span><br><span class="line">    15  * * *</span><br><span class="line">    16  * * *</span><br><span class="line">    17  * * *</span><br><span class="line">    18  * * *</span><br><span class="line">    19  * * *</span><br></pre></td></tr></table></figure>
+
+<h1 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h1><p>功能:显示网络相关信息<br>执行权限:所有用户<br>语法:netstat [选项]</p>
+<p>选项:</p>
+<ul>
+<li>-t : TCP协议</li>
+<li>-u : UDP协议</li>
+<li>-l : 监听</li>
+<li>-r : 路由</li>
+<li>-n : 显示IP地址和端口号</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例</span></span><br><span class="line"><span class="comment"># 1. 查看本机监听的端口</span></span><br><span class="line">netstat -tlun</span><br><span class="line"><span class="comment"># 2. 查看本机所有的网络连接</span></span><br><span class="line"><span class="comment"># -a : 表示 all</span></span><br><span class="line">netstat -an</span><br><span class="line"><span class="comment"># 3. 查看本机路由表</span></span><br><span class="line">netstat -rn</span><br></pre></td></tr></table></figure>
+
+<h1 id="nmtui"><a href="#nmtui" class="headerlink" title="nmtui"></a>nmtui</h1><p>功能:配置网络</p>
+<p>配置完记得要执行 <code>systemctl restart network</code> 才能生效</p>
+<h1 id="mount-挂载"><a href="#mount-挂载" class="headerlink" title="mount 挂载"></a>mount 挂载</h1><p>这是对<code>Linux笔记</code>中的 mount 的扩展</p>
+<p>最初,CentOS没有了图形界面,我不知道如何才能把镜像光驱挂载到本地磁盘</p>
+<p>现在知道了</p>
+<p>👨‍💻‍</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 首先让虚拟机连接上 镜像文件</span></span><br><span class="line">mkdir /mnt/centos</span><br><span class="line">mount -t iso9660 /dev/sr0 /mnt/centos</span><br><span class="line"><span class="comment"># 其实可以简写</span></span><br><span class="line">mount /dev/sr0 /mnt/centos</span><br></pre></td></tr></table></figure>
+
+<h1 id="chage-查看密码信息"><a href="#chage-查看密码信息" class="headerlink" title="chage 查看密码信息"></a>chage 查看密码信息</h1><p>功能:查看用户密码相关信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 语法:chage [选项] 用户名</span></span><br><span class="line"><span class="comment"># 选项:</span></span><br><span class="line">    -l : 列出用户的详细密码信息</span><br><span class="line">    -d : 修改密码最后一次更改日期</span><br><span class="line">    -m : 两次密码修改间隔</span><br><span class="line">    -M : 密码有效期</span><br><span class="line">    -W : 密码过期前警告天数</span><br><span class="line">    -I : 密码过期后宽限天数</span><br><span class="line">    -E : 密码失效时间</span><br><span class="line"></span><br><span class="line">chage -l syz</span><br><span class="line"></span><br><span class="line">    最近一次密码修改时间					：10月 08, 2019</span><br><span class="line">    密码过期时间					：从不</span><br><span class="line">    密码失效时间					：从不</span><br><span class="line">    帐户过期时间						：从不</span><br><span class="line">    两次改变密码之间相距的最小天数		：0</span><br><span class="line">    两次改变密码之间相距的最大天数		：99999</span><br><span class="line">    在密码过期之前警告的天数	：7</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上面的内容弄了解即可,不是太重要,因为这样还不如直接进入shadow文件内修改来的直观</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重要的一条命令:</span></span><br><span class="line">chage -d 0 syz  <span class="comment">#该用户下次登录时,必须先修改密码</span></span><br><span class="line"><span class="comment"># 不要使用root用户直接su进入该用户,应该新开一个终端登录该用户</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="chattr"><a href="#chattr" class="headerlink" title="chattr"></a>chattr</h1><p>英文意思是 change attribute</p>
+<p>注意:root 超级管理员也不可以跨越<code>chattr</code>设定的规则!!!</p>
+<p>暗叫一声:666…</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 语法: chattr &#123;+ - =&#125; [选项] 文件或目录名</span></span><br><span class="line"><span class="comment"># 选项:</span></span><br><span class="line">    -i : 如果对文件设置了 i 属性,那么不允许对文件进行删除和改名,也不能添加和修改数据</span><br><span class="line">         如果对目录设置了 i 属性,那么只能修改目录下文件的数据,但不允许新建和删除文件</span><br><span class="line">    -a : 如果对文件设置了 a 属性,那么只能在文件中增加数据,不能删除和修改数据</span><br><span class="line">         如果对目录设置了 a 属性,那么只允许在目录中新建和修改文件,但是不允许删除</span><br><span class="line"></span><br><span class="line">********************************************************************</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. i 的测试</span></span><br><span class="line"><span class="comment"># 1.1 i 之文件下的测试</span></span><br><span class="line"><span class="comment"># 新建一个名为111.txt的文件</span></span><br><span class="line">touch 111.txt</span><br><span class="line"><span class="comment"># 给111.txt设置chattr</span></span><br><span class="line">chattr +i 111.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看当前目录下是否设置了chattr</span></span><br><span class="line"><span class="comment"># 语法: lsattr [选项]</span></span><br><span class="line"><span class="comment"># 选项:</span></span><br><span class="line">    -a : 查看所有</span><br><span class="line">    -d : 查看当前目录本身,不查看子目录</span><br><span class="line">lsattr -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 尝试在111.txt中添加数据</span></span><br><span class="line"><span class="built_in">echo</span> hello &gt;&gt; 111.txt</span><br><span class="line">    -bash: 111.txt: 权限不够</span><br><span class="line"><span class="comment"># 尝试删除111.txt</span></span><br><span class="line">rm -rf 111.txt</span><br><span class="line">    rm: 无法删除<span class="string">"111.txt"</span>: 不允许的操作</span><br><span class="line"></span><br><span class="line">*********************************************************</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1.2 i 之目录下的测试</span></span><br><span class="line">mkdir /<span class="built_in">test</span></span><br><span class="line">touch /<span class="built_in">test</span>/aaa.txt</span><br><span class="line">chattr +i /<span class="built_in">test</span></span><br><span class="line">lsattr -a /<span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> hello &gt;&gt; /<span class="built_in">test</span>/aaa.txt     <span class="comment">#可以对该目录下的文件写入数据</span></span><br><span class="line">touch /<span class="built_in">test</span>/bbb.txt     <span class="comment">#但是不能创建文件</span></span><br><span class="line">    touch: 无法创建<span class="string">"/test/bbb.txt"</span>: 权限不够</span><br><span class="line">rm -rf /<span class="built_in">test</span>/aaa.txt</span><br><span class="line">    rm: 无法删除<span class="string">"/test/aaa.txt"</span>: 权限不够</span><br><span class="line"></span><br><span class="line">*********************************************************</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. a 的测试</span></span><br><span class="line"><span class="comment"># 2.1 a 之文件下的测试</span></span><br><span class="line">touch aaa</span><br><span class="line"><span class="built_in">echo</span> hello &gt;&gt; aaa</span><br><span class="line">cat aaa</span><br><span class="line">chattr +a aaa</span><br><span class="line">lsattr -a</span><br><span class="line"><span class="built_in">echo</span> 111 &gt;&gt; aaa     <span class="comment">#向aaa文件内追加新数据,不修改原来的数据</span></span><br><span class="line"><span class="built_in">echo</span> 222 &gt; aaa      <span class="comment">#向aaa文件内覆盖写入数据,尝试修改原来的数据,发现没有权限</span></span><br><span class="line">    -bash: aaa: 不允许的操作</span><br><span class="line"></span><br><span class="line">*********************************************************</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.2 a 之目录下的测试</span></span><br><span class="line">mkdir /test2</span><br><span class="line">chattr +a /test2</span><br><span class="line">lsattr -a /test2</span><br><span class="line">touch /test2/aaa</span><br><span class="line">touch /test2/bbb</span><br><span class="line"><span class="built_in">echo</span> aaa &gt;&gt; /test2/aaa</span><br><span class="line">rm -rf /test2/aaa</span><br><span class="line">    rm: 无法删除<span class="string">"/test2/aaa"</span>: 不允许的操作</span><br><span class="line"></span><br><span class="line">*********************************************************</span><br><span class="line"></span><br><span class="line"><span class="comment"># 总结一下</span></span><br><span class="line"></span><br><span class="line">    i 选项相对于 a 选项来说要严格一些</span><br><span class="line"></span><br><span class="line">    i 总的来说就是: 不可以增加 不可以删除</span><br><span class="line">    a 总的来说就是: 可以增加,不可以删除</span><br><span class="line"></span><br><span class="line">    两者对于目录的chattr设置,目录下的文件都可以进行修改</span><br></pre></td></tr></table></figure>
+
+<h1 id="sudo-权限"><a href="#sudo-权限" class="headerlink" title="sudo 权限"></a>sudo 权限</h1><p>root 用户将只能<code>超级用户</code>执行的命令赋予<code>普通用户</code>执行</p>
+<p>注意: <code>sudo</code>的操作对象是系统命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">visudo  <span class="comment">#实际上打开的是 /etc/sudoers</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#用户   被管理主机的地址=(可以使用的身份)   授权命令(需要使用绝对路径)</span></span><br><span class="line">    root	ALL=(ALL) 	ALL</span><br><span class="line">    <span class="comment">#组名   ...</span></span><br><span class="line">    %wheel	ALL=(ALL)	ALL</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例</span></span><br><span class="line"><span class="comment"># 打开 visudo</span></span><br><span class="line"><span class="comment"># 在 root	ALL=(ALL) 	ALL 下面加入一行</span></span><br><span class="line">syz 10.211.55.5 /sbin/useradd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换至该用户</span></span><br><span class="line">su - syz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看该用户在 sudo 中可以执行的命令</span></span><br><span class="line">sudo -l</span><br><span class="line">    [sudo] syz 的密码：</span><br><span class="line">    匹配 %2<span class="variable">$s</span> 上 %1<span class="variable">$s</span> 的默认条目：</span><br><span class="line">        !visiblepw, always_set_home, match_group_by_gid, env_reset, env_keep=<span class="string">"COLORS DISPLAY HOSTNAME HISTSIZE KDEDIR</span></span><br><span class="line"><span class="string">        LS_COLORS"</span>, env_keep+=<span class="string">"MAIL PS1 PS2 QTDIR USERNAME LANG LC_ADDRESS LC_CTYPE"</span>, env_keep+=<span class="string">"LC_COLLATE</span></span><br><span class="line"><span class="string">        LC_IDENTIFICATION LC_MEASUREMENT LC_MESSAGES"</span>, env_keep+=<span class="string">"LC_MONETARY LC_NAME LC_NUMERIC LC_PAPER</span></span><br><span class="line"><span class="string">        LC_TELEPHONE"</span>, env_keep+=<span class="string">"LC_TIME LC_ALL LANGUAGE LINGUAS _XKB_CHARSET XAUTHORITY"</span>,</span><br><span class="line">        secure_path=/sbin\:/bin\:/usr/sbin\:/usr/bin</span><br><span class="line"></span><br><span class="line">    用户 syz 可以在 centos-server 上运行以下命令：</span><br><span class="line">        (root) /sbin/useradd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试该命令</span></span><br><span class="line">sudo useradd syz1  <span class="comment">#不报错,即运行成功</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">*********************************************************</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用其他用户测试</span></span><br><span class="line">su - zhangsan</span><br><span class="line">sudo useradd zhangsan1</span><br><span class="line">    [sudo] zhangsan 的密码：</span><br><span class="line">    zhangsan 不在 sudoers 文件中。此事将被报告。</span><br><span class="line"></span><br><span class="line">*********************************************************</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下面这个例子只是做示范,警告同学们不要这么操作</span></span><br><span class="line"></span><br><span class="line">visudo</span><br><span class="line"></span><br><span class="line">    syz     ALL=/usr/bin/vim</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意: 这是很危险的</span></span><br><span class="line"><span class="comment"># 因为这样的话,执行sudo命令后代表syz用户拥有了和root一样的vim编辑权限</span></span><br><span class="line"><span class="comment"># 甚至可以编辑/etc/passwd</span></span><br><span class="line">su - syz</span><br><span class="line">sudo /usr/bin/vim /etc/passwd   <span class="comment">#可以不写绝对路径,直接写 vim</span></span><br><span class="line"><span class="comment"># 可以修改并保存,很危险</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="文件系统常用命令"><a href="#文件系统常用命令" class="headerlink" title="文件系统常用命令"></a>文件系统常用命令</h1><p>df du fsck dumpe2fs</p>
+<h2 id="df-文件系统查看命令"><a href="#df-文件系统查看命令" class="headerlink" title="df-文件系统查看命令"></a>df-文件系统查看命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 语法:df [选项] 挂载点</span></span><br><span class="line"><span class="comment"># 选项:</span></span><br><span class="line">    -a : 显示所有文件系统信息,包括特殊文件系统(如/proc,/sysfs)</span><br><span class="line">    -h : 使用习惯单位显示容量</span><br><span class="line">    -T : 显示文件系统类型(KB,MB,GB)</span><br><span class="line">    -m : 以 MB 为单位显示容量</span><br><span class="line">    -k : 以 KB 为单位显示容量</span><br><span class="line"><span class="comment"># 常用</span></span><br><span class="line">df -Th</span><br></pre></td></tr></table></figure>
+
+<h2 id="du-统计目录或文件大小"><a href="#du-统计目录或文件大小" class="headerlink" title="du-统计目录或文件大小"></a>du-统计目录或文件大小</h2><p>一般用来统计目录的大小</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 语法: du [选项] [目录或文件名]</span></span><br><span class="line"><span class="comment"># 选项:</span></span><br><span class="line">    -a : 显示每个子文件的磁盘占用量</span><br><span class="line">    -h : 使用习惯单位显示磁盘占用量</span><br><span class="line">    -s : 统计总占用量而不列出目录和文件的占用量</span><br><span class="line"><span class="comment"># 常用</span></span><br><span class="line">du -sh /</span><br></pre></td></tr></table></figure>
+
+<h2 id="df-与-du-的区别"><a href="#df-与-du-的区别" class="headerlink" title="df 与 du 的区别"></a>df 与 du 的区别</h2><p><code>df</code> 命令是从文件系统考虑的,不光要考虑文件占用的空间,还要统计被命令或程序占用的空间(最常见的就是文件已经被删除,但是程序并没有释放空间)</p>
+<p><code>du</code> 命令是面向文件的,只会计算目录或文件的占用的空间</p>
+<h2 id="fsck-文件系统修复命令"><a href="#fsck-文件系统修复命令" class="headerlink" title="fsck-文件系统修复命令"></a>fsck-文件系统修复命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 语法: fsck [选项] 分区设备文件名</span></span><br><span class="line"><span class="comment"># 选项:</span></span><br><span class="line">    -a : 不用显示用户提醒,自动修复文件系统</span><br><span class="line">    -y : 自动修复,和 -a 选项作用一致,不过有些文件系统只支持 -y</span><br></pre></td></tr></table></figure>
+
+<h2 id="dumpe2fs-显示磁盘状态"><a href="#dumpe2fs-显示磁盘状态" class="headerlink" title="dumpe2fs-显示磁盘状态"></a>dumpe2fs-显示磁盘状态</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 语法: dumpe2fs 分区设备文件名</span></span><br><span class="line"></span><br><span class="line">dumpe2fs /dev/sdb1</span><br><span class="line"></span><br><span class="line">    dumpe2fs 1.42.9 (28-Dec-2013)   </span><br><span class="line">    Filesystem volume name:   &lt;none&gt;    <span class="comment">#卷标</span></span><br><span class="line">    Last mounted on:          &lt;not available&gt;   <span class="comment">#挂载点</span></span><br><span class="line">    Filesystem UUID:          49900854-b38a-4f2d-80bb-825863b86684  <span class="comment">#分区UUID</span></span><br><span class="line">    Filesystem magic number:  0xEF53</span><br><span class="line">    Filesystem revision <span class="comment">#:    1 (dynamic)</span></span><br><span class="line">    Filesystem features:      has_journal ext_attr resize_inode dir_index filetype extent 64bit flex_bg sparse_super large_file huge_file uninit_bg dir_nlink extra_isize</span><br><span class="line">    Filesystem flags:         signed_directory_hash </span><br><span class="line">    Default mount options:    user_xattr acl</span><br><span class="line">    Filesystem state:         clean</span><br><span class="line">    Errors behavior:          Continue</span><br><span class="line">    Filesystem OS <span class="built_in">type</span>:       Linux</span><br><span class="line">    Inode count:              131072    <span class="comment">#i节点数</span></span><br><span class="line">    Block count:              524288    <span class="comment">#块数量</span></span><br><span class="line">    Reserved block count:     26214</span><br><span class="line">    Free blocks:              498132</span><br><span class="line">    Free inodes:              131061</span><br><span class="line">    First block:              0</span><br><span class="line">    Block size:               4096  <span class="comment">#块大小</span></span><br><span class="line">    Fragment size:            4096</span><br><span class="line">    Group descriptor size:    64</span><br><span class="line">    Reserved GDT blocks:      255</span><br><span class="line">    Blocks per group:         32768</span><br><span class="line">    Fragments per group:      32768</span><br><span class="line">    Inodes per group:         8192</span><br><span class="line">    Inode blocks per group:   512</span><br><span class="line">    Flex block group size:    16</span><br><span class="line">    Filesystem created:       Sun Oct  6 11:52:35 2019</span><br><span class="line">    Last mount time:          Sun Oct  6 12:00:17 2019</span><br><span class="line">    Last write time:          Sun Oct  6 13:14:11 2019</span><br><span class="line">    Mount count:              1</span><br><span class="line">    Maximum mount count:      -1</span><br><span class="line">    Last checked:             Sun Oct  6 11:52:35 2019</span><br><span class="line">    Check interval:           0 (&lt;none&gt;)</span><br><span class="line">    Lifetime writes:          97 MB</span><br><span class="line">    Reserved blocks uid:      0 (user root)</span><br><span class="line">    Reserved blocks gid:      0 (group root)</span><br><span class="line">    First inode:              11</span><br><span class="line">    Inode size:	          256</span><br><span class="line">    Required extra isize:     28</span><br><span class="line">    Desired extra isize:      28</span><br><span class="line">    Journal inode:            8</span><br><span class="line">    Default directory <span class="built_in">hash</span>:   half_md4</span><br><span class="line">    Directory Hash Seed:      214be6cc-19b8-4bff-92ed-13a372f7b4b1</span><br><span class="line">    Journal backup:           inode blocks</span><br><span class="line">    Journal features:         journal_64bit</span><br><span class="line">    日志大小:             64M</span><br><span class="line">    Journal length:           16384</span><br><span class="line">    Journal sequence:         0x00000004</span><br><span class="line">    Journal start:            0</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>Linux笔记扩展</p>
+  <p><span>文章作者:</span>尚先森</p>
+  <p><span>发布时间:</span>2019年10月08日 - 16:49:06</p>
+  <p><span>最后更新:</span>2022年09月07日 - 15:21:08</p>
+  <p><span>原始链接:</span><a href="/2019/10/08/Linux笔记扩展/" title="Linux笔记扩展">https://imauu.gitee.io/2019/10/08/Linux笔记扩展/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://imauu.gitee.io/2019/10/08/Linux笔记扩展/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+    
+    </div>
+
+    
+        
+        <div>
+            <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/syz.png" alt="尚先森 wechat" style="width: 200px; max-width: 100%;">
+    <div>有任何问题可以扫描上方二维码私聊我哦😊</div>
+</div>
+
+        </div>
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持是我创作的最大动力^_^</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.png" alt="尚先森 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubao.png" alt="尚先森 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><img src="/images/tag.png"> Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/29/Linux笔记/" rel="next" title="Linux笔记">
+                <i class="fa fa-chevron-left"></i> Linux笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/09/01/正则表达式/" rel="prev" title="正则表达式">
+                正则表达式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tva1.sinaimg.cn/large/e6c9d24ely1h4nm4ry4apj205i05ia9y.jpg" alt="尚先森">
+            
+              <p class="site-author-name" itemprop="name">尚先森</p>
+              <p class="site-description motion-element" itemprop="description">最后一刻，都不可以放弃希望！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shang-code" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:syz15822409222@126.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://a4.qpic.cn/psb?/V10taC184UP7Xd/DBrT8JfiC4.Cbt9gOoLq3EMz6VxjKNILvuMgpLI*L80!/c/dJ8AAAAAAAAA&ek=1&kp=1&pt=0&bo=rgGuAa4BrgERFyA!&tl=1&vuin=1093999475&tm=1566439200&sce=60-2-2&rf=0-0" target="_blank" title="微信">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微信</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://a4.qpic.cn/psb?/V10taC184UP7Xd/ZzGxvjixd59IA0smjXXNRNqr.iYN*upaiO01bWSzGWE!/c/dJ8AAAAAAAAA&ek=1&kp=1&pt=0&bo=HALkAhwC5AIRFyA!&tl=1&vuin=1093999475&tm=1566439200&sce=60-2-2&rf=0-0" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-globe"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.imooc.com/" title="慕课网" target="_blank">慕课网</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ln-链接"><span class="nav-number">1.</span> <span class="nav-text">ln 链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件搜索命令-locate"><span class="nav-number">2.</span> <span class="nav-text">文件搜索命令 locate</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#which"><span class="nav-number">3.</span> <span class="nav-text">which</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#grep"><span class="nav-number">4.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#who"><span class="nav-number">5.</span> <span class="nav-text">who</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#uptime"><span class="nav-number">6.</span> <span class="nav-text">uptime</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#w"><span class="nav-number">7.</span> <span class="nav-text">w</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#write"><span class="nav-number">8.</span> <span class="nav-text">write</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#wall"><span class="nav-number">9.</span> <span class="nav-text">wall</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ping"><span class="nav-number">10.</span> <span class="nav-text">ping</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ifconfig"><span class="nav-number">11.</span> <span class="nav-text">ifconfig</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mail"><span class="nav-number">12.</span> <span class="nav-text">mail</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#last-和-lastlog"><span class="nav-number">13.</span> <span class="nav-text">last 和 lastlog</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#last"><span class="nav-number">13.1.</span> <span class="nav-text">last</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lastlog"><span class="nav-number">13.2.</span> <span class="nav-text">lastlog</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#traceroute"><span class="nav-number">14.</span> <span class="nav-text">traceroute</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#netstat"><span class="nav-number">15.</span> <span class="nav-text">netstat</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nmtui"><span class="nav-number">16.</span> <span class="nav-text">nmtui</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mount-挂载"><span class="nav-number">17.</span> <span class="nav-text">mount 挂载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chage-查看密码信息"><span class="nav-number">18.</span> <span class="nav-text">chage 查看密码信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chattr"><span class="nav-number">19.</span> <span class="nav-text">chattr</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sudo-权限"><span class="nav-number">20.</span> <span class="nav-text">sudo 权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件系统常用命令"><span class="nav-number">21.</span> <span class="nav-text">文件系统常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#df-文件系统查看命令"><span class="nav-number">21.1.</span> <span class="nav-text">df-文件系统查看命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#du-统计目录或文件大小"><span class="nav-number">21.2.</span> <span class="nav-text">du-统计目录或文件大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#df-与-du-的区别"><span class="nav-number">21.3.</span> <span class="nav-text">df 与 du 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fsck-文件系统修复命令"><span class="nav-number">21.4.</span> <span class="nav-text">fsck-文件系统修复命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dumpe2fs-显示磁盘状态"><span class="nav-number">21.5.</span> <span class="nav-text">dumpe2fs-显示磁盘状态</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <img src="http://www.icosky.com/icon/48/Cartoon/Bleach%20Chibi%20Icons%20for%20mac/Bleach%20Chibi%20Nr%20%206%20Rukia%20by%20rukichen.png">
+  </span>
+  <span class="author" itemprop="copyrightHolder">尚先森</span>
+
+  
+</div>
+
+<!-- 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+ -->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'hU7o1mDSLSyDeK4wE4hDgcIG-gzGzoHsz',
+        appKey: 'SezjNE3ljsOzb5og8uQs51FR',
+        placeholder: '回复时请填写个人邮箱和昵称，网址选填。',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+  
+  
+<!-- 自定义的js文件 -->
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+
+<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/kesyoban.model.json"},"display":{"superSample":2,"width":150,"height":200,"position":"left","hOffset":10,"vOffset":25},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

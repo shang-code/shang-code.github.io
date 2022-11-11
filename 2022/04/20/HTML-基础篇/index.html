@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTML,前端,开发,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="寿司卷code" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="keywords" content="HTML,前端,开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML-基础篇">
+<meta property="og:url" content="https://imauu.gitee.io/2022/04/20/HTML-基础篇/index.html">
+<meta property="og:site_name" content="寿司卷code">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h1g9aaiah9j20l40b43yp.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qxxf8kpgj21d40n4wf1.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qxy9cqw9j214k0ne402.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qy213dqzj214s0iygml.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qyj58vdbj214u0jyq49.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qyr1wr34j20t20cy3yt.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qysomsruj20xb0u0wh0.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qyw578hhj20u016877m.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qywz9nrfj21ib0u04ea.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qyxecnckj20oc0cgaa8.jpg">
+<meta property="og:updated_time" content="2022-07-27T05:55:43.816Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML-基础篇">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h1g9aaiah9j20l40b43yp.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":14,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://imauu.gitee.io/2022/04/20/HTML-基础篇/">
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "1db79efd"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "1db79efd"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  <title>HTML-基础篇 | 寿司卷code</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <!--
+    <a href="https://github.com/shang-code/" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+    -->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">寿司卷code</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不拼尽全力试一下，又怎么会知道啊。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://imauu.gitee.io/2022/04/20/HTML-基础篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="尚先森">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h4nm4ry4apj205i05ia9y.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="寿司卷code">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML-基础篇</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-20T15:31:05+08:00">
+                2022-04-20
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2022-07-27T13:55:43+08:00">
+                2022-07-27
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/开发/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2022/04/20/HTML-基础篇/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2022/04/20/HTML-基础篇/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  9.9k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  37 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h1g9aaiah9j20l40b43yp.jpg" alt="HTML5_index"></p>
+<a id="more"></a>
+
+<h1 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h1><ul>
+<li><p><a href="https://blog.csdn.net/weixin_45607293/article/details/121521557?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165044231416780271593390%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=165044231416780271593390&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~top_positive~default-1-121521557.nonecase&utm_term=HTML5教程&spm=1018.2226.3001.4450" target="_blank" rel="noopener">HTML5开箱即用</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/kyl282889543/article/details/86755510?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165044231416780357252524%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=165044231416780357252524&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~rank_v31_ecpm-20-86755510.nonecase&utm_term=HTML5教程&spm=1018.2226.3001.4450" target="_blank" rel="noopener">HTML5前端知识图谱</a></p>
+</li>
+</ul>
+<h1 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h1><h2 id="基础标签"><a href="#基础标签" class="headerlink" title="基础标签"></a>基础标签</h2><h3 id="1-整体架构"><a href="#1-整体架构" class="headerlink" title="1. 整体架构"></a>1. 整体架构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span>   <span class="comment">&lt;!-- 文档类型说明 必须放在文档的最前面 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  I'am very happy!</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qxxf8kpgj21d40n4wf1.jpg" alt="image-20220429220319061"></p>
+<h3 id="2-标题标签"><a href="#2-标题标签" class="headerlink" title="2. 标题标签"></a>2. 标题标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>标题标签<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>标题一共六级选,<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>文字加粗一行显,<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h3</span>&gt;</span>由大到小依次减,<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h4</span>&gt;</span>由重到轻随之变.<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h5</span>&gt;</span>语法规范书写后,<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h6</span>&gt;</span>具体效果刷新见.<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qxy9cqw9j214k0ne402.jpg" alt="image-20220429220414366"></p>
+<h3 id="3-段落和换行标签"><a href="#3-段落和换行标签" class="headerlink" title="3. 段落和换行标签"></a>3. 段落和换行标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>ABCDEFGHIJKLMN<span class="tag">&lt;<span class="name">br</span>/&gt;</span>OPQRSTUVWXYZ<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>ABCDEFGHIJKLMNOPQRSTUVWXYZ<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>ABCDEFGHIJKLMNOPQRSTUVWXYZ<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qy213dqzj214s0iygml.jpg" alt="image-20220429220756878"></p>
+<h3 id="4-文本格式化标签"><a href="#4-文本格式化标签" class="headerlink" title="4. 文本格式化标签"></a>4. 文本格式化标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  我是<span class="tag">&lt;<span class="name">strong</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>的文字 <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">  我是<span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span>的文字 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  我是<span class="tag">&lt;<span class="name">em</span>&gt;</span>倾斜<span class="tag">&lt;/<span class="name">em</span>&gt;</span>的文字 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  我是<span class="tag">&lt;<span class="name">i</span>&gt;</span>倾斜<span class="tag">&lt;/<span class="name">i</span>&gt;</span>的文字 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  我是<span class="tag">&lt;<span class="name">del</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">del</span>&gt;</span>标签 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  我是<span class="tag">&lt;<span class="name">s</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">s</span>&gt;</span>标签 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  我是<span class="tag">&lt;<span class="name">ins</span>&gt;</span>下划线<span class="tag">&lt;/<span class="name">ins</span>&gt;</span>标签 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  我是<span class="tag">&lt;<span class="name">u</span>&gt;</span>下划线<span class="tag">&lt;/<span class="name">u</span>&gt;</span>标签</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qyj58vdbj214u0jyq49.jpg" alt="image-20220429222424292"></p>
+<h3 id="5-div和span标签"><a href="#5-div和span标签" class="headerlink" title="5. div和span标签"></a>5. div和span标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是一个div<span class="tag">&lt;/<span class="name">div</span>&gt;</span>123</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是一个div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>百度<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>新浪<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>京东<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qyr1wr34j20t20cy3yt.jpg" alt="image-20220429223200398" style="zoom:50%;">
+
+<h3 id="6-图像标签"><a href="#6-图像标签" class="headerlink" title="6. 图像标签"></a>6. 图像标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>图像标签<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h4</span>&gt;</span>图像标签:<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./maomi_laoshi-001-2 2.jpg"</span> <span class="attr">alt</span>=<span class="string">"图片显示不出来时显示此文字"</span> <span class="attr">title</span>=<span class="string">"鼠标放到图片上显示此文字"</span> <span class="attr">width</span>=<span class="string">"500"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h4</span>&gt;</span>图像标签:<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./maomi_laoshi-001-2 2.jpg"</span> <span class="attr">alt</span>=<span class="string">"图片显示不出来时显示此文字"</span> <span class="attr">title</span>=<span class="string">"鼠标放到图片上显示此文字"</span> <span class="attr">height</span>=<span class="string">"100"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h4</span>&gt;</span>设定边框:<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./maomi_laoshi-001-2 2.jpg"</span> <span class="attr">alt</span>=<span class="string">"图片显示不出来时显示此文字"</span> <span class="attr">title</span>=<span class="string">"鼠标放到图片上显示此文字"</span> <span class="attr">height</span>=<span class="string">"100"</span> <span class="attr">border</span>=<span class="string">"15"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qysomsruj20xb0u0wh0.jpg" alt="image-20220429223333539"></p>
+<h3 id="7-链接标签"><a href="#7-链接标签" class="headerlink" title="7. 链接标签"></a>7. 链接标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>外部链接<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h4</span>&gt;</span>当前页面打开页面:<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.baidu.com"</span> <span class="attr">target</span>=<span class="string">"_self"</span>&gt;</span>访问百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h4</span>&gt;</span>新标签页打开页面:<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.baidu.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>访问百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>内部链接:<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"./yunzhihui.html"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>云智慧简介<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>空链接:<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>空链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>下载链接:<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"maomi_laoshi-001-2 2.jpg.zip"</span>&gt;</span>下载文件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>网页元素链接:<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.baidu.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./maomi_laoshi-001-2 2.jpg"</span> <span class="attr">alt</span>=<span class="string">"图片"</span> <span class="attr">width</span>=<span class="string">"500"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qyw578hhj20u016877m.jpg" alt="image-20220429223653111"></p>
+<h3 id="8-超链接标签"><a href="#8-超链接标签" class="headerlink" title="8. 超链接标签"></a>8. 超链接标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h4</span>&gt;</span>点击链接,跳转到当前页面中的另一个位置:<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#early"</span> <span class="attr">id</span>=<span class="string">"early_return"</span>&gt;</span>1 早年经历<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#act"</span> <span class="attr">id</span>=<span class="string">"act_return"</span>&gt;</span>2 演艺经历<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#life"</span> <span class="attr">id</span>=<span class="string">"life_return"</span>&gt;</span>3 个人生活<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#works"</span> <span class="attr">id</span>=<span class="string">"works_return"</span>&gt;</span>4 主要作品<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#early_return"</span>&gt;</span><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"early"</span>&gt;</span>早年经历<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">刘德华出生于香港新界，在家中排行老四，幼时随家人搬到了九龙钻石山的木屋区居住，并和姐弟一起帮助家里打理卖稀饭的生意 [20]  。1973年，刘德华随家人搬入香港蓝田邨第15座14楼 [21]  。刘德华从黄大仙天主教小学毕业后升读可立中学 [22]  。在可立中学读书期间，刘德华积极参加校内学校剧社的表演，在老师杜国威的指导下学习戏剧方面的知识。此外，他还参与包括编剧在内的幕后制作。刘德华在中五会考获得1B3D2E（中文读本A）的成绩。中六上学期后，他到香港电视广播有限公司的艺员训练班受训，从而开始了演艺之路 [23]  。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#act_return"</span>&gt;</span><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"act"</span>&gt;</span>演艺经历<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">港剧时代</span><br><span class="line">1981年，刘德华考进第10期无线电视艺员训练班 [24]  。同年，出演个人首部电视剧《江湖再见》，在剧中饰演以贩卖妇女为生的小混混阿龙；该剧获得美国电视节电视剧特别奖 [25]  。</span><br><span class="line">刘德华电视剧剧照</span><br><span class="line">刘德华电视剧剧照(11张)</span><br><span class="line">1982年，刘德华以甲级成绩从艺员训练班毕业后正式签约TVB [26]  。同年在喜剧《花艇小英雄》中饰演败家仔钱日添。12月，与叶德娴搭档主演时装警匪剧《猎鹰》，凭借卧底警察江大伟一角获得关注 [27]  。</span><br><span class="line">1983年，主演金庸武侠剧《神雕侠侣》，在剧中饰演外貌俊俏、倜傥不羁的杨过 [28]  ；该剧在香港播出后取得62点的收视纪录。同年，与黄日华、梁朝伟、苗侨伟、汤镇业组成“无线五虎将” [29]  。</span><br><span class="line">1984年，与赵雅芝合作主演古装武侠剧《魔域桃源》，在剧中饰演资质出众、武功高强的傅青云 [30]  。同年，与梁朝伟共同主演金庸武侠剧《鹿鼎记》，在剧中饰演英明果断的康熙 [31]  。</span><br><span class="line">1985年，在古装武侠剧《杨家将》中饰演骁勇善战的杨六郎 [32]  。同年，TVB向刘德华提出加签五年的合约，刘德华因拒绝而被TVB雪藏400天 [33-34]  。</span><br><span class="line">1986年，在邵逸夫的调解下，刘德华与TVB和解并签下合约。同年，主演古装剧《真命天子》。1988年，在出演了武侠剧《天狼劫》后，刘德华将演艺事业的重心转向影坛 [34]  。</span><br><span class="line">电影时代</span><br><span class="line">刘德华写真</span><br><span class="line">刘德华写真(4张)</span><br><span class="line">1981年，刘德华出演电影处女作《彩云曲》，在片中扮演一个音乐班的学员 [35]  。1982年，在剧情片《投奔怒海》中饰演美军翻译官祖名，并凭借该片获得第2届香港电影金像奖最佳新演员提名 [35]  。</span><br><span class="line">1983年，与朱海玲 [36]  搭档主演剧情片《家在香港》，在片中饰演急功近利的青年人亚伦 [37]  。同年，主演动作片《毁灭号地车》，在片中与一个越南少女演绎了一段爱情故事 [38]  。</span><br><span class="line">1984年，在爱情片《停不了的爱》中饰演富家公子Eric [39]  。1985年，在与叶德娴共同主演的剧情片《法外情》中饰演少年得志的青年律师刘志鹏 [40]  。</span><br><span class="line">1986年，主演科幻冒险片《魔翡翠》，在片中饰演冒险专家猎鹰一号，这也是他首度出演科幻题材的电影 [41]  。同年，出演喜剧片《最佳福星》，在片中饰演身手矫健的特警组警员蓝保 [42]  。1987年，主演警匪片《肝胆相照》，在片中饰演亦正亦邪的犯罪集团成员阿定 [43]  。</span><br><span class="line">1988年，主演王家卫执导的黑帮片《旺角卡门》，在片中饰演重情重义的江湖混混华仔，并凭借该片获得第8届香港电影金像奖最佳男主角奖提名 [44]  。同年，主演警匪片《猎鹰计划》，在片中饰演具有正义感的警员国华 [45]  。此外，他还再度与叶德娴合作，在剧情片《法内情》中与叶德娴饰演绎了一段母子情 [46]  。</span><br><span class="line">1989年，在动作片《至尊无上》中饰演有“亚洲第一快手”之称的陈亚蟹 [47]  。同年，主演剧情片《神行太保》，在片中饰演一名公正、能干、勇敢的太保。此外，他还主演了动作片《人海孤鸿》，在片中饰演没有接受过良好教育的古惑仔沙士 [48]  。12月，与周润发共同主演动作片《赌神》，在片中饰演赌神高进的徒弟刀仔 [49]  。</span><br><span class="line">刘德华</span><br><span class="line">刘德华(11张)</span><br><span class="line">1990年，主演爱情片《天若有情之追梦人》，在片中饰演善良热情、讲义气的黑社会混混华Dee [50]  。同年，主演剧情片《至尊计状元才》。12月，与周星驰合作主演赌片《赌侠》，在片中饰演身怀绝技的陈刀仔 [51]  。</span><br><span class="line">1991年，刘德华开始改变银幕形象，主演了传记题材的系列电影《五亿探长雷洛传》，并在片中首次诠释年龄跨度较大的人物，该系列中的两部作品《五亿探长雷洛传I雷老虎》、《五亿探长雷洛传2:父子情仇》在香港的累积票房达到5300万 [52]  。6月，主演犯罪题材的电影《至尊无上Ⅱ之永霸天下》。此外，他还主演了动作片《九一神雕侠侣》，该片是刘德华投资出品的首部电影作品 [53]  。同年，创办天幕电影公司 [3]  。</span><br><span class="line">1992年，凭借传记片《五亿探长雷洛传》获得第11届香港电影金像奖最佳男主角提名 [54]  。8月，与王祖贤、叶德娴合作出演剧情片《庙街十二少》。11月，与林青霞、叶德娴共同主演古装片《绝代双骄》，在片中饰演聪明绝顶的小鱼儿 [55]  。同年，主演爱情片《九二神雕侠侣之痴心情长剑》，在片中饰演痴情大侠情仁 [56]  。</span><br><span class="line">1993年，在古装片《战神传说》中扮演一个武功超群的渔民 [57]  。同年，主演动作喜剧片《至尊三十六计之偷天换日》，在片中饰演赌术高明的千门高手钱文迪。此外，他还主演了爱情片《天长地久》，在片中塑造了一个风流不羁的江湖浪子形象 [58]  。</span><br><span class="line">1994年，刘德华投资并主演了剧情片《天与地》 [4]  ，并担任电影的制片人 [4]  ，他在片中饰演面对恶势力却毫不退缩的禁毒专员张一鹏 [59]  。1995年，主演赛车励志片《烈火战车》，在片中饰演叛逆、倔强的阿祖，并凭借该片获得第15届香港电影金像奖最佳男主角提名 [60]  。同年，在动作片《大冒险家》中演绎了立仁从小时候父母双亡到长大后进入泰国空军的故事 [61]  。</span><br><span class="line">刘德华</span><br><span class="line">刘德华</span><br><span class="line">1996年，主演黑帮题材的电影《新上海滩》，在片中饰演对冯程程痴情一片的丁力。1997年，担任剧情片《香港制造》的制作人 [62]  。同年，主演爱情片《天若有情之烽火佳人》，在片中饰演家世显赫的空军少尉刘天伟 [63]  。12月，与梁家辉联袂主演警匪动作片《黑金》，在片中饰演精明干练、嫉恶如仇的调查局机动组组长方国辉 [64]  。</span><br><span class="line">1998年，主演动作片《龙在江湖》，饰演重义气的黑帮成员韦吉祥。同年，出演喜剧片《赌侠1999》 [65]  。此外，他还担任剧情片《去年烟花特别多》的制作人 [66]  。</span><br><span class="line">剧照海报</span><br><span class="line">剧照海报(3张)</span><br><span class="line">1999年1月，出演喜剧片《赌侠大战拉斯维加斯》。9月，刘德华与刘青云共同主演警匪片《暗战》；这部电影也成为刘德华表演生涯的转型之作，他在片中改变表演模式，饰演一个身患绝症却不颓废的大盗；并凭借该片获得第19届香港电影金像奖最佳男主角奖 [5]  。10月，在黑帮片《龙在边缘》中饰演决心改邪归正的洪兴帮大哥飞龙。同年，主演爱情片《黑马王子》，在片中饰演出身贫寒、不拘小节的阿华 [67]  。</span><br><span class="line">2000年，在动作片《阿虎》中饰演性感开朗、直爽的自由搏击拳手阿虎；该片是刘德华从影以来的第100部电影 [68]  ；刘德华凭借该片获得第20届香港电影金像奖最佳男主角提名以及第6届香港电影金紫荆奖最佳男主角奖 [69-70]  。</span><br><span class="line">2001年8月3日，刘德华与日本演员反町隆史共同主演的动作片《全职杀手》上映，他在片中饰演为名誉而生的职业杀手Tok [71]  ，并担任该片的制片人 [72]  。</span><br><span class="line">2002年，刘德华开始拓宽戏路，在与梁朝伟共同主演的警匪片《无间道》中饰混饰演个性复杂的反派人物刘建明 [73-74]  ；该片在香港上映两周票房突破3000万港币，最终票房达到5505万港币 [75]  ，刘德华凭借该片获得第22届香港电影金像奖最佳男主角提名以及第40届台湾电影金马奖最佳男主角奖提名 [76-77]  。3月28日，刘德华主演的科学幻想片《卫斯理之蓝血人》上映，他在片中饰演功夫出色的冒险家卫斯理 [78]  。</span><br><span class="line">2003年2月1日，刘德华主演的爱情喜剧片《老鼠爱上猫》上映，他在片中饰演风流倜傥、热爱自由的大侠展昭 [79]  。3月，主演剧情片《大块头有大智慧》，在片中饰演表面放荡不羁，但内心善良的武僧大块头 [80]  。12月，与梁朝伟共同主演强调正邪对峙、角色互换的警匪片《无间道Ⅲ终极无间》，在片中饰演被派到警队当内鬼的警员刘建明 [81]  ；并凭借该片获得第41届台湾电影金马奖最佳男主角奖 [6]  。</span><br><span class="line">刘德华获奖照片</span><br><span class="line">刘德华获奖照片(2张)</span><br><span class="line">2004年1月，凭借剧情片《大块头有大智慧》获得第10届香港电影评论学会大奖最佳男主角奖 [82]  。4月，主演由冯小刚执导的剧情片《天下无贼》，在片中突破固有的银幕形象，饰演痞子气十足的盗贼王薄 [83]  。7月16日，刘德华与金城武、章子怡共同主演的武侠片《十面埋伏》在中国内地上映，他在片中饰演飞刀门在官府的卧底刘捕头 [84]  。同年，他还凭借剧情片《大块头有大智慧》获得第23届香港电影金像奖最佳男主角奖 [85]  。</span><br><span class="line">2005年，担任爱情片《再说一次我爱你》的制片人以及男主角，并在片中一人分饰两角，扮演抑郁消沉的高医生以及外向张扬的发型师DEREK [86]  。9月29日，刘德华主演的奇幻剧情片《童梦奇缘》上映 [87]  。同年，担任华语电影传媒大奖中国电影百年形象大使 [88]  。2006年，主演古装动作片《墨攻》 [89]  ，在片中饰演用各种计策出奇制胜的革离；该片在中国内地上映三周票房超过6000万元 [90]  。</span><br><span class="line">2007年，与李连杰、金城武共同主演古装动作片《投名状》，在片中塑造了赵二虎率性而为的草莽英雄形象 [91]  。2月13日，在剧情片《门徒》中饰演为人低调的毒贩林昆，并凭借该片获得第27届香港电影金像奖最佳男配角奖 [92]  。同年，在香港国际电影节主办的首届亚洲电影大奖颁奖礼上，获得亚洲电影票房巨星大奖 [93]  。</span><br><span class="line">2008年，主演古装动作片《三国志之见龙卸甲》，在片中饰演智勇双全的常山赵子龙 [94]  。2009年1月20日，刘德华与舒淇联袂主演的爱情片《游龙戏凤》在中国内地上映；片中他首度扮演钻石王老五的角色，饰演事业成功的程仲森 [95]  。同年，参演战争片《建国大业》 [96]  。</span><br><span class="line">刘德华主演的电影</span><br><span class="line">刘德华主演的电影(7张)</span><br><span class="line">2010年，刘德华主演了由徐克执导的古装片《狄仁杰之通天帝国》，他在片中塑造了一个文武双全的大唐神探形象 [97]  。3月30日，刘德华与范冰冰合作主演的科幻警匪片《未来警察》在中国内地上映；他在片中饰演处事果断的未来警察周志豪 [98]  。5月，获得第十二届世界杰出华人奖 [99]  。</span><br><span class="line">2011年2月3日，刘德华与巩俐主演的都市爱情片《我知女人心》上映，他在片中饰演一位游走在美女间的风云人物；同年，在动作片《新少林寺》中饰演骁勇善战的军阀少帅侯杰 [100]  。2012年3月8日，与叶德娴搭档主演的文艺片《桃姐》上映，刘德华在片中饰演生长于大家庭的少爷罗杰 [101]  [262]  ，并凭借该片获得第48届台湾电影金马奖最佳男主角奖、第31届香港电影金像奖最佳男主角奖 [9]  [102]  。</span><br><span class="line">2013年1月16日，担任第7届亚洲电影大奖评审团主席 [103]  。6月9日，主演3D特工电影《天机·富春山居图》，在片中饰演身陷不白之冤的国际特工肖锦汉 [104]  。 [105]  同年，主演3D警匪动作片《风暴》在中国内地上映。</span><br><span class="line">2014年5月，主演中国首部打拐题材的电影《失孤》，在片中饰演倔强善良的农民雷泽宽。2015年3月20日，主演的电影《失孤》上映 [263]  。9月30日，刘德华主演的警匪片《解救吾先生》上映，他在片中饰演冷静、机智的电影明星吾先生 [106]  。同年，与周润发、张学友共同主演动作喜剧片《澳门风云3》 [107]  。</span><br><span class="line">2016年4月1日，刘德华参演的动作片《我的特工爷爷》上映，他在片中饰演嗜赌成性且脾气暴躁的小混混李政久 [108]  。同年，参演魔幻类型的3D动作片《长城》 [109]  。6月，凭借剧情片《失孤》获得第16届中国电影华表奖优秀男演员奖 [110]  。10月1日，刘德华主演的喜剧动作片《王牌逗王牌》上映 [111]  ，他在片中饰演破案能力与闯祸能力都很强的囧探宝爷 [112]  。此外，刘德华客串了电影《铁道飞虎》 [113]  。</span><br><span class="line">2017年4月28日，主演的警匪动作片《拆弹专家》在中国内地上映 [114]  ，他在片中饰演一名卧底拆弹专家，并担任影片的制作人 [115]  。7月，主演由冯德伦执导的动作冒险片《侠盗联盟》，在片中饰演温文尔雅的江洋大盗张丹 [116]  。9月30日，与甄子丹共同主演的动作犯罪片《追龙》上映，刘德华在片中饰演头脑精明的“五亿探长”雷洛 [117]  。</span><br><span class="line">2018年2月，凭借警匪片《拆弹专家》获得第37届香港电影金像奖最佳男主角奖提名 [118]  。此外，他还以监制、主演的身份参加《扫毒2》的拍摄 [119]  。5月，担任监制的迷你剧《东方华尔街》播出 [120]  。</span><br><span class="line">2019年1月，主演电影《香港地》 [121]  。3月，主演警匪片《拆弹专家2》 [122]  。9月12日，其友情客串的电影《花椒之味》上映 [123]  。同年，与葛优、张涵予主演电影《莫斯科大劫案》，同时他也是该片编剧 [124]  。</span><br><span class="line">2020年1月19日，取材经典神话故事的《七圣》系列电影正式启动，刘德华担任监制及主演，在片中饰演孙悟空 [125]  。同年，参与录制的全球户外生活文化实境秀节目《周游记》在浙江卫视播出 [126]  。11月13日，刘德华监制并领衔主演的青春励志电影《热血合唱团》上映 [127]  。12月24日，与刘青云、倪妮共同主演的动作犯罪片《拆弹专家2》上映，在片中饰演一边逃亡一边查明爆炸案真相的前拆弹专家潘乘风，刘德华凭借该片获得第30届华鼎奖最佳男主角奖、最佳专业精神奖 [270]  。</span><br><span class="line">2021年，主演庄文强执导的犯罪片《金手指》 [130]  。同年，参演悬疑喜剧片《唐人街探案3》，在片中饰演Q [247]  。2月12日，与肖央、万茜合作主演的犯罪喜剧电影《人潮汹涌》上映，他在片中饰演冷血杀手周全 [129]  。</span><br><span class="line">2022年2月，领衔主演宁浩执导的喜剧电影《红毯先生》，在片中饰演过气香港明星刘伟驰 [306]  。</span><br><span class="line">刘德华</span><br><span class="line">刘德华</span><br><span class="line">刘德华</span><br><span class="line">刘德华</span><br><span class="line">刘德华</span><br><span class="line">刘德华</span><br><span class="line">音乐时代</span><br><span class="line">1985年，加入华星唱片公司；同年，发行首张个人专辑《只知道此刻爱你》，从而正式进入歌坛 [131]  。1987年，加入百代唱片公司。同年，发行粤语专辑《情感的禁区》，其中收录了电影《肝胆相照》的主题曲《当中究竟》以及电影《中国最后一个太监》的主题曲《错觉》 [272]  。</span><br><span class="line">1988年2月，发行第三张个人专辑《回到你身边》；这张专辑拓展了歌曲题材的表达范围，专辑所收录的歌曲也不再局限于爱情类型的歌曲 [132]  。1989年2月，发行个人首张普通话专辑《回到你身边·法内情》 [273]  。10月，发行普通话专辑《爱的连线》，收录了包括情歌《在我的胸前安歇》、《忘了爱》在内的8首歌曲 [286]  。</span><br><span class="line">1990年，凭借专辑《可不可以》奠定其在歌坛的地位 [133]  ；专辑中的歌曲《可不可以》获得第13届十大中文金曲奖 [274]  。6月，发行普通话专辑《如果你是我的传说》 [284]  ；专辑发行后在东南亚的销售量达150万张；这张专辑收录的歌曲多数采用了近似的题材与曲式，同名主打歌《如果你是我的传说》由刘德华个人填词 [134]  。12月，发行粤语专辑《再会了》 [285]  ；其中主打歌《再会了》获得十大劲歌金曲奖 [276]  。</span><br><span class="line">杂志封面</span><br><span class="line">杂志封面(7张)</span><br><span class="line">1991年2月，发行粤语专辑《爱不完》 [283]  ；该专辑发行首日录音带的销量达到16万张，而激光唱片的销量则有7.2万张 [135]  。6月，发行普通话专辑《我和我追逐的梦》，收录了《把今生忘掉》、《不甘寂寞》等10首歌曲 [277]  。8月，发行专辑《一起走过的日子》 [282]  ，其中主打歌《一起走过的日子》获得十大劲歌金曲奖以及十大中文金曲奖 [274-275]  。12月，推出普通话专辑《来生缘》，收录了《风中的歌》、《为了你请留下我》、《来生缘》等11首歌曲 [287]  。同年，获得十大劲歌金曲奖最受欢迎男歌手奖 [275]  。</span><br><span class="line">1992年，获得十大劲歌金曲奖最受欢迎男歌手奖 [278]  。2月，在提前录制的央视春晚视频中，刘德华与毛阿敏、张雨生合唱歌曲《心中常驻芳华》 [136]  ，随后在洛杉矶、旧金山等地举行美加巡回演唱会。7月10日，推出粤语专辑《爱的空间》，其中收录了时装剧《巨人》的主题曲《你震撼我的心灵》 [281]  。7月22日，发行普通话专辑《谢谢你的爱》 [248]  ，其中主打歌《谢谢你的爱》成为刘德华音乐生涯的代表作 [249]  。9月，发行加入华纳唱片公司后的首张粤语专辑《真我的风采》；该专辑销量达到40万张 [135]  ，其中粤语版的《谢谢你的爱》获得第16届十大中文金曲奖 [279]  ，专辑中的歌曲《真我的风采》获得第15届十大中文金曲奖以及十大劲歌金曲奖 [278]  [280]  。</span><br><span class="line">1993年1月至2月，在香港红磡体育馆举行20场“真我的风采演唱会”。3月，推出加入飞碟唱片公司后的首张专辑《真情难收》 [288]  ，其中主打歌曲《一辈子的错》由刘德华个人作词 [289]  。7月，推出粤语专辑《答案就是你》 [290]  ，专辑中的歌曲《永远寂寞》获得第16届十大中文金曲奖 [279]  。9月，发行普通话专辑《一生一次》 [297]  ，其中歌曲《不能没有你》获得第16届十大中文金曲优秀普通话歌曲奖 [299]  。</span><br><span class="line">1994年4月，发行普通话专辑《忘情水》，其中主打歌《忘情水》获得第17届十大中文金曲奖、十大劲歌金曲最受欢迎国语歌曲金奖、第1届华语榜中榜Channel [V]中文Top 20榜中榜歌曲奖 [137]  [291-292]  。8月6日至25日，在香港红磡体育馆举行20场演唱会。11月25日，发行普通话专辑《天意》；专辑中表达友情的主打歌曲《友谊历久一样浓》是刘德华个人填词的作品 [293]  。同年，获得十大劲歌金曲奖最受欢迎男歌手奖 [292]  。</span><br><span class="line">1995年，加入艺能动音唱片公司。同年，首次登上央视春晚舞台，并演唱歌曲《忘情水》 [13]  。8月，发行普通话专辑《真永远》，其中的代表作是具有励志色彩的歌曲《今天》；该专辑是刘德华在音乐视角上的一个分水岭，从这张专辑开始，刘德华歌唱爱的角度开始变得多元化。此外，他还在洛杉矶、芝加哥等地举行“刘德华真永远美加巡回演唱会”。12月，发行粤语专辑《情未鸟》，同名主打歌《情未鸟》获得十大劲歌金曲奖以及第19届十大中文金曲奖。</span><br><span class="line">1996年，发行普通话专辑《相思成灾》，其中主打歌《相思成灾》获得第19届十大中文金曲奖优秀国语歌曲银奖。同年，在香港红磡体育馆举行20场“刘德华反转红馆倒转地球演唱会”。</span><br><span class="line">1997年4月，发行普通话专辑《爱如此神奇》，其中爱国主义题材的歌曲《中国人》获得十大中文金曲优秀国语歌曲金奖以及十大劲歌金曲奖。12月，发行普通话专辑《爱在刻骨铭心时》，其中的代表作《世界第一等》是刘德华第一首闽南语歌曲。同年，为迎接香港回归，刘德华与那英合唱《东方之珠》 [138-139]  ；在香港回归庆典晚会上，刘德华演唱了代表作《中国人》。</span><br><span class="line">刘德华</span><br><span class="line">刘德华(12张)</span><br><span class="line">1998年，在中央电视台春节联欢晚会上，刘德华与张信哲、毛宁合唱歌曲《大中国》 [140]  。3月，发行粤语专辑《你是我的女人》。11月，发行曲风多元的普通话专辑《笨小孩》；其中与柯受良、吴宗宪合唱的同名主打歌《笨小孩》获得第21届十大中文金曲最受欢迎国语歌曲金奖。</span><br><span class="line">1999年5月，发行普通话专辑《人间爱》，并在专辑中融入中国内地的流行音乐元素。8月7日-21日，在香港红磡体育馆举行举行15场“爱你一万年演唱会”。同年，受迈克尔·杰克逊私人邀请，参加“迈克尔·杰克逊与他的好友韩国汉城慈善音乐会” [141]  。</span><br><span class="line">2000年8月，发行国语专辑《男人的爱》；专辑主打歌《男人哭吧不是罪》是刘德华个人填词的作品。2001年6月，发行普通话专辑《天开了》 [142]  ；其中主打歌《我的心只可容纳你》由刘德华个人填词；而在演唱歌曲《偷听女孩心》时，刘德华还初次尝试了Rap曲风 [143]  。8月17日至31日，在香港红磡体育馆举行15场“夏日Fiesta演唱会”，并在演唱会现场表演了拉丁舞 [144]  。</span><br><span class="line">2002年7月，加入加际娱乐后的首张专辑《美丽的一天》，专辑中歌曲的灵感全部来自10个真实故事 [145]  ；其中歌曲《练习》获得第二届全球华语歌曲排行榜20大金曲奖以及第25届香港十大中文金曲奖优秀国语歌曲奖 [146]  。同年，在南昌、西安等地举行中国巡回演唱会 [141]  。</span><br><span class="line">2003年6月，发行粤语专辑《如果有一天》，同名主打歌《如果有一天》是由刘德华个人填词的作品 [147]  。2004年8月，推出粤语专辑《Coffee or Tea》，刘德华参与其中五首歌曲的创作 [148]  ；其中主打歌曲《常言道》获得第27届十大中文金曲奖 [149]  。同年，在香港十大劲歌金曲颁奖典礼上，获得最受欢迎男歌星奖。</span><br><span class="line">2005年，刘德华在央视春晚舞台上演唱歌曲《恭喜发财》 [150]  。8月4日，发行了普通话专辑《再说一次我爱你》 [264]  ；该专辑以纯爱故事为架构，用十首歌诠释不同角色对爱情的感受 [151]  。12月13日，发行专辑《继续谈情》，其中爱情片《童梦奇缘》的主题曲《下次不敢》是刘德华个人填词的作品 [152]  。</span><br><span class="line">2006年8月8日，刘德华发行了粤语专辑《声音》 [265]  ，这是一张关注人性的唱片 [153]  ；他在该专辑中改变抒情歌曲的风格，尝试演唱摇滚曲风的歌曲《累斗累》以及R&amp;B风格的歌曲《心肝宝贝》。同年，获得十大中文金曲奖优秀流行歌手奖。</span><br><span class="line">2007年7月，刘德华推出了涉及爱情、环保、人生态度等主题的普通话专辑《一只牛的异想世界》 [154]  。12月5日，加入寰亚集团旗下的东亚唱片 [155]  。12月21日起，在香港红馆举行16场Wonderful World香港跨年演唱会，并在现场演唱了《一起走过的日子》、《17岁》等不同时期的代表作。同年，发行专辑《Everyone Is No.1》 [156]  。</span><br><span class="line">刘德华</span><br><span class="line">刘德华</span><br><span class="line">刘德华</span><br><span class="line">刘德华</span><br><span class="line">刘德华</span><br><span class="line">刘德华</span><br><span class="line">刘德华</span><br><span class="line">刘德华</span><br><span class="line">刘德华</span><br><span class="line">2008年1月，获得第30届十大中文金曲全国最佳男歌手奖、最优秀男歌手大奖、优秀流行歌手大奖 [157]  。2月，发行演唱会专辑《Wonderful World 香港演唱会2007》 [158]  。</span><br><span class="line">2009年2月，推出唱片《希望·爱》，专辑收录了励志作品《一晚长大》、情歌《未到伤心处》等作品。7月，发行粤语精选集《长途伴侣》 [159]  。同年，在广州、长沙等地举行“Wonderful World 中国巡回演唱会” [160]  。8月，为浙江卫视中国蓝打造并演唱台歌《海阔天空一路是蓝》 [161]  。同年，获得第31届十大中文金曲优秀流行歌手大奖 [162]  。</span><br><span class="line">2010年10月，刘德华在入行30周年之际，推出了以翻唱其他歌手歌曲为主的怀旧专辑《忘不了的》 [163]  。12月20日起，在香港红馆举行20场“Unforgettable Concert跨年演唱会”，并演唱了《谢谢你的爱》、《中国人》等代表作 [164]  。</span><br><span class="line">刘德华</span><br><span class="line">刘德华(3张)</span><br><span class="line">2011年，发行原声带专辑《悟》。同年，在上海、郑州等地举行Unforgettable中国巡回演唱会 [165]  。2012年，发行精选专辑《我们的刘德华》。2013年，在北京、上海等地举行“Always刘德华中国巡回演唱会” [166]  。2015年2月18日，刘德华第五次参加中央电视台春节联欢晚会，并演唱歌曲《回家的路》 [167]  。</span><br><span class="line">2016年，由刘德华填词并演唱的歌曲《原谅我》正式发行，这首歌曲是动作片《我的特工爷爷》的主题曲 [168]  。同年，演唱喜剧动作片《王牌逗王牌》的主题曲《笑一笑》，并为这首歌曲创作了歌词 [169]  。2017年，作词并演唱歌曲《慢慢习惯》。</span><br><span class="line">2020年2月，刘德华填词创作粤语歌曲《我知道》 [170]  。5月11日，参与由人民日报客户端、国家人文历史等联合发起的“致敬白衣天使”线上音乐会 [171]  。6月25日，参与中央广播电视总台端午特别节目《端午道安康》，与周笔畅演唱《我知道》 [172]  。10月27日，刘德华发行了单曲《继续美丽》，这首歌曲由刘德华亲自作词 [173]  。11月13日，刘德华演唱的电影《热血合唱团》片尾曲《谁能明白我》上线 [174]  。12月15日，刘德华发行了专辑《演·唱》，该专辑是刘德华的第一张数字专辑，其中所有原创作品均由刘德华亲自作词 [175]  。</span><br><span class="line">2021年2月1日，刘德华与肖央为电影《人潮汹涌》演唱的推广曲《新的一年》发布 [176]  。2月11日，参加中央广播电视总台春节联欢晚会，以云录制的方式与关晓彤、王一博表演创意节目《牛起来》 [128]  。5月6日，演唱电影《总是有爱在隔离》的主题曲《如果心里是爱》 [250]  。7月30日，发行出道40周年纪念单曲《奉陪到底》 [269]  。11月4日，发行为电影《铁道英雄》演唱的片尾主题曲《又弹起心爱的土琵琶》 [296]  。</span><br><span class="line">2022年1月7日，刘德华与易烊千玺演唱的电影《奇迹》宣传主题曲《还是笨小孩》正式上线。 [302-303]  2月，加盟献唱香港无线电视台推出抗疫歌曲《狮子山下同心抗疫》 [307]  。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#life_return"</span>&gt;</span><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"life"</span>&gt;</span>个人生活<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">家庭</span><br><span class="line">刘德华的父亲刘礼在启德机场做过消防员的工作。20世纪60年代，刘礼开了一间小吃杂货店以赚钱维持家用。刘德华在家中还有三位姐姐，一位妹妹以及一位弟弟（刘德盛）。</span><br><span class="line">刘德华获香港树仁大学颁予荣誉文学博士</span><br><span class="line">刘德华获香港树仁大学颁予荣誉文学博士(7张)</span><br><span class="line">感情</span><br><span class="line">1986年，刘德华随香港明星足球队赴吉隆坡时，结识了朱丽倩。2008年6月23日，刘德华与朱丽倩在美国拉斯维加斯注册结婚 [177]  。2012年5月9日，刘德华的妻子朱丽倩生下一个女儿 [178-179]  。</span><br><span class="line">学历</span><br><span class="line">2006年7月，香港演艺学院第20届毕业典礼上，刘德华获颁香港演艺学院荣誉院士 [181]  。2017年12月14日，刘德华获香港树仁大学颁予荣誉文学博士 [180]  。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#works_return"</span>&gt;</span><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"works"</span>&gt;</span>主要作品<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">参演电影</span><br><span class="line"> </span><br><span class="line">流浪地球2[295] 2023-1-22</span><br><span class="line">导演郭帆 主演吴京</span><br><span class="line"> </span><br><span class="line">红毯先生2023</span><br><span class="line">饰演刘伟驰 导演宁浩 主演刘德华</span><br><span class="line"> </span><br><span class="line">危机航线2022</span><br><span class="line">饰演高皓军 导演彭顺 主演张子枫</span><br><span class="line"> </span><br><span class="line">人潮汹涌2021-2-12</span><br><span class="line">饰演周全 导演饶晓志 主演肖央、万茜</span><br><span class="line"> </span><br><span class="line">唐人街探案32021-2-12</span><br><span class="line">饰演Q（客串） 导演陈思诚 主演王宝强、刘昊然</span><br><span class="line"> </span><br><span class="line">战疫天使[182] 2021</span><br><span class="line">导演邱礼涛 主演刘德华</span><br><span class="line"> </span><br><span class="line">金手指[183] 2021</span><br><span class="line">导演庄文强 主演梁朝伟、任达华</span><br><span class="line"> </span><br><span class="line">拆弹专家22020-12-24</span><br><span class="line">饰演潘乘风 导演邱礼涛 主演刘青云、倪妮</span><br><span class="line"> </span><br><span class="line">热血合唱团2020-11-13</span><br><span class="line">饰演严梓朗 导演关信辉 主演李丽珍</span><br><span class="line"> </span><br><span class="line">莫斯科大劫案2020</span><br><span class="line">饰演—— 导演—— 主演葛优、张涵予</span><br><span class="line"> </span><br><span class="line">香港地2020</span><br><span class="line">饰演—— 导演—— 主演——</span><br><span class="line"> </span><br><span class="line">花椒之味2019-09-12</span><br><span class="line">饰演郭天恩 导演麦曦茵 主演郑秀文、赖雅妍、李晓峰</span><br><span class="line"> </span><br><span class="line">扫毒2：天地对决2019-07-05</span><br><span class="line">饰演余顺天 导演邱礼涛 主演古天乐、苗侨伟、林嘉欣</span><br><span class="line"> </span><br><span class="line">追龙2017-09-30</span><br><span class="line">饰演雷诺 导演刘伟强 主演甄子丹、郑则仕、胡然</span><br><span class="line"> </span><br><span class="line">侠盗联盟2017-08-11</span><br><span class="line">饰演张丹 导演冯德伦 主演张静初、舒淇、杨佑宁</span><br><span class="line"> </span><br><span class="line">拆弹专家2017-4-28</span><br><span class="line">饰演章在山 导演邱礼涛 主演姜武、小宋佳、黄宗泽</span><br><span class="line"> </span><br><span class="line">铁道飞虎2016-12-23</span><br><span class="line">饰演特别出演 导演丁晟 主演成龙、黄子韬、王凯</span><br><span class="line"> </span><br><span class="line">长城2016-12-18</span><br><span class="line">饰演王军师 导演张艺谋 主演马特·达蒙、景甜、张涵予</span><br><span class="line"> </span><br><span class="line">王牌逗王牌2016-10-01</span><br><span class="line">饰演宝爷 导演王晶 主演黄晓明、王祖蓝、沈腾</span><br><span class="line"> </span><br><span class="line">我的特工爷爷2016-04-01</span><br><span class="line">饰演李政玖 导演洪金宝 主演洪金宝、朱雨辰、李勤勤</span><br><span class="line"> </span><br><span class="line">澳门风云32016-02-08</span><br><span class="line">饰演刀仔 导演王晶 主演周润发、张家辉、刘嘉玲、李宇春</span><br><span class="line"> </span><br><span class="line">我的少女时代[191] 2015-11-19</span><br><span class="line">饰演刘德华（客串） 导演陈玉珊 主演宋芸桦、王大陆</span><br><span class="line"> </span><br><span class="line">解救吾先生2015-09-30</span><br><span class="line">饰演吾先生 导演丁晟 主演刘烨、王千源、吴若普</span><br><span class="line"> </span><br><span class="line">失孤2015-03-21</span><br><span class="line">饰演雷泽宽 导演彭三源 主演井柏然、梁家辉</span><br><span class="line"> </span><br><span class="line">风暴2013-12-12</span><br><span class="line">饰演吕明哲 导演袁锦麟 主演姚晨、林家栋</span><br><span class="line"> </span><br><span class="line">盲探2013-07-04</span><br><span class="line">饰演庄士敦 导演杜琪峰 主演郑秀文</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qywz9nrfj21ib0u04ea.jpg" alt="image-20220429223741680"></p>
+<h3 id="9-注释和特殊字符"><a href="#9-注释和特殊字符" class="headerlink" title="9. 注释和特殊字符"></a>9. 注释和特殊字符</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 我想喝咖啡 --&gt;</span></span><br><span class="line">  讲 &amp;nbsp;&amp;nbsp;&amp;nbsp; 究 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  &amp;lt;p&amp;gt;是一个段落标签</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h1qyxecnckj20oc0cgaa8.jpg" alt="image-20220429223806059" style="zoom:50%;">
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>HTML-基础篇</p>
+  <p><span>文章作者:</span>尚先森</p>
+  <p><span>发布时间:</span>2022年04月20日 - 15:31:05</p>
+  <p><span>最后更新:</span>2022年07月27日 - 13:55:43</p>
+  <p><span>原始链接:</span><a href="/2022/04/20/HTML-基础篇/" title="HTML-基础篇">https://imauu.gitee.io/2022/04/20/HTML-基础篇/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://imauu.gitee.io/2022/04/20/HTML-基础篇/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+    
+    </div>
+
+    
+        
+        <div>
+            <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/syz.png" alt="尚先森 wechat" style="width: 200px; max-width: 100%;">
+    <div>有任何问题可以扫描上方二维码私聊我哦😊</div>
+</div>
+
+        </div>
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持是我创作的最大动力^_^</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.png" alt="尚先森 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubao.png" alt="尚先森 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag"><img src="/images/tag.png"> HTML</a>
+          
+            <a href="/tags/前端/" rel="tag"><img src="/images/tag.png"> 前端</a>
+          
+            <a href="/tags/开发/" rel="tag"><img src="/images/tag.png"> 开发</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/03/24/vim的使用方法-相关配置/" rel="next" title="vim的使用方法&相关配置">
+                <i class="fa fa-chevron-left"></i> vim的使用方法&相关配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/05/01/Linux运维常见问题/" rel="prev" title="Linux运维常见问题">
+                Linux运维常见问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tva1.sinaimg.cn/large/e6c9d24ely1h4nm4ry4apj205i05ia9y.jpg" alt="尚先森">
+            
+              <p class="site-author-name" itemprop="name">尚先森</p>
+              <p class="site-description motion-element" itemprop="description">最后一刻，都不可以放弃希望！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shang-code" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:syz15822409222@126.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://a4.qpic.cn/psb?/V10taC184UP7Xd/DBrT8JfiC4.Cbt9gOoLq3EMz6VxjKNILvuMgpLI*L80!/c/dJ8AAAAAAAAA&ek=1&kp=1&pt=0&bo=rgGuAa4BrgERFyA!&tl=1&vuin=1093999475&tm=1566439200&sce=60-2-2&rf=0-0" target="_blank" title="微信">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微信</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://a4.qpic.cn/psb?/V10taC184UP7Xd/ZzGxvjixd59IA0smjXXNRNqr.iYN*upaiO01bWSzGWE!/c/dJ8AAAAAAAAA&ek=1&kp=1&pt=0&bo=HALkAhwC5AIRFyA!&tl=1&vuin=1093999475&tm=1566439200&sce=60-2-2&rf=0-0" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-globe"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.imooc.com/" title="慕课网" target="_blank">慕课网</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#相关链接"><span class="nav-number">1.</span> <span class="nav-text">相关链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标签"><span class="nav-number">2.</span> <span class="nav-text">标签</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础标签"><span class="nav-number">2.1.</span> <span class="nav-text">基础标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-整体架构"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. 整体架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-标题标签"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. 标题标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-段落和换行标签"><span class="nav-number">2.1.3.</span> <span class="nav-text">3. 段落和换行标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-文本格式化标签"><span class="nav-number">2.1.4.</span> <span class="nav-text">4. 文本格式化标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-div和span标签"><span class="nav-number">2.1.5.</span> <span class="nav-text">5. div和span标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-图像标签"><span class="nav-number">2.1.6.</span> <span class="nav-text">6. 图像标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-链接标签"><span class="nav-number">2.1.7.</span> <span class="nav-text">7. 链接标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-超链接标签"><span class="nav-number">2.1.8.</span> <span class="nav-text">8. 超链接标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-注释和特殊字符"><span class="nav-number">2.1.9.</span> <span class="nav-text">9. 注释和特殊字符</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <img src="http://www.icosky.com/icon/48/Cartoon/Bleach%20Chibi%20Icons%20for%20mac/Bleach%20Chibi%20Nr%20%206%20Rukia%20by%20rukichen.png">
+  </span>
+  <span class="author" itemprop="copyrightHolder">尚先森</span>
+
+  
+</div>
+
+<!-- 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+ -->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'hU7o1mDSLSyDeK4wE4hDgcIG-gzGzoHsz',
+        appKey: 'SezjNE3ljsOzb5og8uQs51FR',
+        placeholder: '回复时请填写个人邮箱和昵称，网址选填。',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+  
+  
+<!-- 自定义的js文件 -->
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+
+<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/kesyoban.model.json"},"display":{"superSample":2,"width":150,"height":200,"position":"left","hOffset":10,"vOffset":25},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

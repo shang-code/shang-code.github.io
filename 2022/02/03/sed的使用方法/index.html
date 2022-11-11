@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="sed,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="寿司卷code" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="sed的使用方法sed文本处理：正则选定文本 -&amp;gt; sed进行处理 sed处理后并不会改变其内容 格式命令行格式1sed [options] &apos;command&apos; file(s)  主要参数：  options: -e,-n command: 行定位（正则）+ sed命令（操作）  示例： 123sed -n &apos;/root/p&apos;sed -e &apos;10,20d&apos; -e &apos;s/false/true/">
+<meta name="keywords" content="sed">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sed的使用方法">
+<meta property="og:url" content="https://imauu.gitee.io/2022/02/03/sed的使用方法/index.html">
+<meta property="og:site_name" content="寿司卷code">
+<meta property="og:description" content="sed的使用方法sed文本处理：正则选定文本 -&amp;gt; sed进行处理 sed处理后并不会改变其内容 格式命令行格式1sed [options] &apos;command&apos; file(s)  主要参数：  options: -e,-n command: 行定位（正则）+ sed命令（操作）  示例： 123sed -n &apos;/root/p&apos;sed -e &apos;10,20d&apos; -e &apos;s/false/true/">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2022-07-27T05:58:01.902Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sed的使用方法">
+<meta name="twitter:description" content="sed的使用方法sed文本处理：正则选定文本 -&amp;gt; sed进行处理 sed处理后并不会改变其内容 格式命令行格式1sed [options] &apos;command&apos; file(s)  主要参数：  options: -e,-n command: 行定位（正则）+ sed命令（操作）  示例： 123sed -n &apos;/root/p&apos;sed -e &apos;10,20d&apos; -e &apos;s/false/true/">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":14,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://imauu.gitee.io/2022/02/03/sed的使用方法/">
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "1db79efd"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "1db79efd"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  <title>sed的使用方法 | 寿司卷code</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <!--
+    <a href="https://github.com/shang-code/" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+    -->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">寿司卷code</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不拼尽全力试一下，又怎么会知道啊。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://imauu.gitee.io/2022/02/03/sed的使用方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="尚先森">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h4nm4ry4apj205i05ia9y.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="寿司卷code">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">sed的使用方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-03T20:23:03+08:00">
+                2022-02-03
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2022-07-27T13:58:01+08:00">
+                2022-07-27
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/命令/" itemprop="url" rel="index">
+                    <span itemprop="name">命令</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2022/02/03/sed的使用方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2022/02/03/sed的使用方法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.9k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="sed的使用方法"><a href="#sed的使用方法" class="headerlink" title="sed的使用方法"></a>sed的使用方法</h1><p>sed文本处理：正则选定文本 -&gt; sed进行处理</p>
+<p>sed处理后并不会改变其内容</p>
+<h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><h3 id="命令行格式"><a href="#命令行格式" class="headerlink" title="命令行格式"></a>命令行格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed [options] <span class="string">'command'</span> file(s)</span><br></pre></td></tr></table></figure>
+
+<p>主要参数：</p>
+<ul>
+<li>options: -e,-n</li>
+<li>command: 行定位（正则）+ sed命令（操作）</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sed -n <span class="string">'/root/p'</span></span><br><span class="line"></span><br><span class="line">sed -e <span class="string">'10,20d'</span> -e <span class="string">'s/false/true/g'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="脚本格式"><a href="#脚本格式" class="headerlink" title="脚本格式"></a>脚本格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -f scriptfile file(s)</span><br></pre></td></tr></table></figure>
+
+<h2 id="基本操作命令"><a href="#基本操作命令" class="headerlink" title="基本操作命令"></a>基本操作命令</h2><p><code>注意：增删改查等操作并不会真的修改文件本身，只是对输出进行修改而已</code></p>
+<ul>
+<li>p : 打印相关的行</li>
+<li>a : 新增行并输出（与vim的命令类似）</li>
+<li>i : 插入行（与vim的命令类似）</li>
+<li>c : 代替行（与vim的命令类似）</li>
+<li>d : 删除行（与vim的命令类似）</li>
+<li>s : 替换（核心参数） | g : 全局</li>
+</ul>
+<h3 id="p"><a href="#p" class="headerlink" title="p"></a>p</h3><p>对<code>passwd</code>文件进行打印</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'p'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<p>但是你会发现这样直接打印出的结果所有行会被<code>输出两次</code></p>
+<p>应该加上<code>-n</code>参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -n <span class="string">'p'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<h3 id="a（后）"><a href="#a（后）" class="headerlink" title="a（后）"></a>a（后）</h3><p>在<code>第5行</code>后添加分隔符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed <span class="string">'5a========================='</span></span><br></pre></td></tr></table></figure>
+
+<p>在<code>第1-4行</code>后添加分隔符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed <span class="string">'1,4a========================='</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="i（前）"><a href="#i（前）" class="headerlink" title="i（前）"></a>i（前）</h3><p>在<code>第5行</code>前添加分隔符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed <span class="string">'5i========================='</span></span><br></pre></td></tr></table></figure>
+
+<p>在<code>第1-4行</code>前添加分隔符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed <span class="string">'1,4i========================='</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="c"><a href="#c" class="headerlink" title="c"></a>c</h3><p>对<code>第10行</code>进行替换</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed <span class="string">'10c hello'</span></span><br></pre></td></tr></table></figure>
+
+<p>对<code>第1-10行</code>进行替换</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed <span class="string">'1,10c hello'</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">hello</span><br><span class="line">    11  games:x:12:100:games:/usr/games:/sbin/nologin</span><br><span class="line">    12  ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin</span><br><span class="line">    13  nobody:x:99:99:Nobody:/:/sbin/nologin</span><br><span class="line">    14  systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin</span><br><span class="line">    15  dbus:x:81:81:System message bus:/:/sbin/nologin</span><br><span class="line">    16  polkitd:x:999:997:User for polkitd:/:/sbin/nologin</span><br><span class="line">    17  abrt:x:173:173::/etc/abrt:/sbin/nologin</span><br><span class="line">    18  tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin</span><br><span class="line">    19  postfix:x:89:89::/var/spool/postfix:/sbin/nologin</span><br><span class="line">    20  chrony:x:998:996::/var/lib/chrony:/sbin/nologin</span><br><span class="line">    21  sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin</span><br><span class="line">    22  mysql:x:27:27:MySQL Server:/var/lib/mysql:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p><code>你会发现并不是一行行的进行替换，而是整体的替换为一个</code></p>
+<h3 id="d"><a href="#d" class="headerlink" title="d"></a>d</h3><p>删除第10行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed <span class="string">'10d'</span></span><br></pre></td></tr></table></figure>
+
+<p>###s</p>
+<p>将passwd文件每一行中的<code>nologin</code>替换为<code>login</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'s/nologin/login/'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<p><code>注意</code>：不要忽略上面示例命令中的每一个<code>/</code></p>
+<p>将passwd文件中的每一个<code>:</code>替换为<code>%</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'s/:/%/'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<p>结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">root%x:0:0:root:/root:/bin/bash</span><br><span class="line">bin%x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">daemon%x:2:2:daemon:/sbin:/sbin/nologin</span><br><span class="line">adm%x:3:4:adm:/var/adm:/sbin/nologin</span><br><span class="line">lp%x:4:7:lp:/var/spool/lpd:/sbin/nologin</span><br><span class="line">sync%x:5:0:sync:/sbin:/bin/sync</span><br><span class="line">shutdown%x:6:0:shutdown:/sbin:/sbin/shutdown</span><br><span class="line">halt%x:7:0:halt:/sbin:/sbin/halt</span><br><span class="line">mail%x:8:12:mail:/var/spool/mail:/sbin/nologin</span><br><span class="line">operator%x:11:0:operator:/root:/sbin/nologin</span><br><span class="line">games%x:12:100:games:/usr/games:/sbin/nologin</span><br><span class="line">ftp%x:14:50:FTP User:/var/ftp:/sbin/nologin</span><br><span class="line">nobody%x:99:99:Nobody:/:/sbin/nologin</span><br><span class="line">systemd-network%x:192:192:systemd Network Management:/:/sbin/nologin</span><br><span class="line">dbus%x:81:81:System message bus:/:/sbin/nologin</span><br><span class="line">polkitd%x:999:997:User for polkitd:/:/sbin/nologin</span><br><span class="line">abrt%x:173:173::/etc/abrt:/sbin/nologin</span><br><span class="line">tss%x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin</span><br><span class="line">postfix%x:89:89::/var/spool/postfix:/sbin/nologin</span><br><span class="line">chrony%x:998:996::/var/lib/chrony:/sbin/nologin</span><br><span class="line">sshd%x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin</span><br><span class="line">mysql%x:27:27:MySQL Server:/var/lib/mysql:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>每一行只替换了开头第一个冒号，这并不是我们想要得到的最后结果<br>怎么解决？<br>需要进行全局的替换操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'s/:/%/g'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<p>结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">root%x%0%0%root%/root%/bin/bash</span><br><span class="line">bin%x%1%1%bin%/bin%/sbin/nologin</span><br><span class="line">daemon%x%2%2%daemon%/sbin%/sbin/nologin</span><br><span class="line">adm%x%3%4%adm%/var/adm%/sbin/nologin</span><br><span class="line">lp%x%4%7%lp%/var/spool/lpd%/sbin/nologin</span><br><span class="line">sync%x%5%0%sync%/sbin%/bin/sync</span><br><span class="line">shutdown%x%6%0%shutdown%/sbin%/sbin/shutdown</span><br><span class="line">halt%x%7%0%halt%/sbin%/sbin/halt</span><br><span class="line">mail%x%8%12%mail%/var/spool/mail%/sbin/nologin</span><br><span class="line">operator%x%11%0%operator%/root%/sbin/nologin</span><br><span class="line">games%x%12%100%games%/usr/games%/sbin/nologin</span><br><span class="line">ftp%x%14%50%FTP User%/var/ftp%/sbin/nologin</span><br><span class="line">nobody%x%99%99%Nobody%/%/sbin/nologin</span><br><span class="line">systemd-network%x%192%192%systemd Network Management%/%/sbin/nologin</span><br><span class="line">dbus%x%81%81%System message bus%/%/sbin/nologin</span><br><span class="line">polkitd%x%999%997%User for polkitd%/%/sbin/nologin</span><br><span class="line">abrt%x%173%173%%/etc/abrt%/sbin/nologin</span><br><span class="line">tss%x%59%59%Account used by the trousers package to sandbox the tcsd daemon%/dev/null%/sbin/nologin</span><br><span class="line">postfix%x%89%89%%/var/spool/postfix%/sbin/nologin</span><br><span class="line">chrony%x%998%996%%/var/lib/chrony%/sbin/nologin</span><br><span class="line">sshd%x%74%74%Privilege-separated SSH%/var/empty/sshd%/sbin/nologin</span><br><span class="line">mysql%x%27%27%MySQL Server%/var/lib/mysql%/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>ok,这样就解决了（形式跟vim的替换神似啊朋友们🤯）</p>
+<h2 id="行定位"><a href="#行定位" class="headerlink" title="行定位"></a>行定位</h2><h3 id="定位一行："><a href="#定位一行：" class="headerlink" title="定位一行："></a>定位一行：</h3><ul>
+<li>x（行号）</li>
+<li>/pattern/（正则）</li>
+</ul>
+<h4 id="x（行号）"><a href="#x（行号）" class="headerlink" title="x（行号）"></a>x（行号）</h4><p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -n <span class="string">'10p'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<p>如何确认是不是第十行呢？<br>可以这样做：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'10p'</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="pattern-（正则）"><a href="#pattern-（正则）" class="headerlink" title="/pattern/（正则）"></a>/pattern/（正则）</h4><p>如何打印包含特定字符有关的行呢？<br>比如你想在passwd文件中找到有<code>root</code>的行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -n <span class="string">'/root/p'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<h3 id="定位n行："><a href="#定位n行：" class="headerlink" title="定位n行："></a>定位n行：</h3><ul>
+<li>x,y（行号）</li>
+<li>/pattern/,/root/</li>
+<li>x,y!（取反）</li>
+<li>first~step（first表示从第几行开始，step表示间隔几行输出）</li>
+</ul>
+<h4 id="x-y（行号）"><a href="#x-y（行号）" class="headerlink" title="x,y（行号）"></a>x,y（行号）</h4><p>假如你想打印<code>第10-20行</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'10,20p'</span></span><br></pre></td></tr></table></figure>
+
+<p>结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">10  operator:x:11:0:operator:/root:/sbin/nologin</span><br><span class="line">11  games:x:12:100:games:/usr/games:/sbin/nologin</span><br><span class="line">12  ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin</span><br><span class="line">13  nobody:x:99:99:Nobody:/:/sbin/nologin</span><br><span class="line">14  systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin</span><br><span class="line">15  dbus:x:81:81:System message bus:/:/sbin/nologin</span><br><span class="line">16  polkitd:x:999:997:User for polkitd:/:/sbin/nologin</span><br><span class="line">17  abrt:x:173:173::/etc/abrt:/sbin/nologin</span><br><span class="line">18  tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin</span><br><span class="line">19  postfix:x:89:89::/var/spool/postfix:/sbin/nologin</span><br><span class="line">20  chrony:x:998:996::/var/lib/chrony:/sbin/nologin</span><br></pre></td></tr></table></figure>
+
+<h4 id="pattern-root"><a href="#pattern-root" class="headerlink" title="/pattern/,/root/"></a>/pattern/,/root/</h4><p>如果想要通过<code>正则表达式</code>的方式输出<code>第10-20行</code><br>可以这样做：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'/operator/,/chrony/p'</span></span><br></pre></td></tr></table></figure>
+
+<p>你会发现，结果跟上面的命令结果一样<br>OK</p>
+<h4 id="x-y-（取反）"><a href="#x-y-（取反）" class="headerlink" title="x,y!（取反）"></a>x,y!（取反）</h4><p>其实也可以通过<code>取反</code>的方式输出行</p>
+<p>比如你不想输出第十行<br>可以这样写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'10!p'</span></span><br></pre></td></tr></table></figure>
+
+<p>或者说你不想输出第10-20行<br>可以这样写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'10,20!p'</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="first-step"><a href="#first-step" class="headerlink" title="first~step"></a>first~step</h4><p>间隔指定行数进行输出<br>比如从第一行开始每隔一行进行输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'1~2p'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="练习（1）"><a href="#练习（1）" class="headerlink" title="练习（1）"></a>练习（1）</h2><h3 id="案例一：增加文件内容"><a href="#案例一：增加文件内容" class="headerlink" title="案例一：增加文件内容"></a>案例一：增加文件内容</h3><p>在qq.txt文件中加入相应文本：<br>Port 52113<br>PermitRootLogin no<br>PermitEmptyPasswords no</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'$a port52113 \npermitrootlogin no'</span> qq.txt</span><br></pre></td></tr></table></figure>
+
+<p>假如说加入的这两行没有跟文本<code>对齐</code><br>可以这样做：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'$a \    port52113 \n    permitrootlogin no'</span> qq.txt</span><br></pre></td></tr></table></figure>
+
+<p>这样就在两行的前面各加上了四个空格<br>其中<code>$a</code>后面的<code>\</code>是转义字符，是为了与语句的空格区别开,<code>\n</code>表示换行</p>
+<h3 id="案例二：文本处理"><a href="#案例二：文本处理" class="headerlink" title="案例二：文本处理"></a>案例二：文本处理</h3><p>删除文本中的<code>空行</code></p>
+<p>在qq.txt文件中随便加上几个空行，保存退出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'/^$/d'</span> qq.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="案例三：服务器日志处理"><a href="#案例三：服务器日志处理" class="headerlink" title="案例三：服务器日志处理"></a>案例三：服务器日志处理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /var/<span class="built_in">log</span>/yum.log</span><br></pre></td></tr></table></figure>
+
+<p>找出install信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -n <span class="string">'/install/p'</span> /var/<span class="built_in">log</span>/yum.log</span><br></pre></td></tr></table></figure>
+
+<h3 id="案例四：数据筛选"><a href="#案例四：数据筛选" class="headerlink" title="案例四：数据筛选"></a>案例四：数据筛选</h3><p>获取网卡的ip信息</p>
+<p>首先看一下网卡的信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+
+<p>结果为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">ens33: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500</span><br><span class="line">        inet 192.168.43.254  netmask 255.255.255.0  broadcast 192.168.43.255</span><br><span class="line">        inet6 2409:8910:608:bee0:43c2:af5d:e823:ff1b  prefixlen 64  scopeid 0x0&lt;global&gt;</span><br><span class="line">        inet6 fe80::d127:5715:bfe1:fad8  prefixlen 64  scopeid 0x20&lt;link&gt;</span><br><span class="line">        ether 00:0c:29:d2:af:1d  txqueuelen 1000  (Ethernet)</span><br><span class="line">        RX packets 564525  bytes 625035188 (596.0 MiB)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 280887  bytes 24583679 (23.4 MiB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br><span class="line"></span><br><span class="line">lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536</span><br><span class="line">        inet 127.0.0.1  netmask 255.0.0.0</span><br><span class="line">        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;</span><br><span class="line">        loop  txqueuelen 1  (Local Loopback)</span><br><span class="line">        RX packets 44  bytes 3964 (3.8 KiB)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 44  bytes 3964 (3.8 KiB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br></pre></td></tr></table></figure>
+
+<p>然后利用替换把不需要的部分替换为空</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig ens33 | sed -n <span class="string">'/inet /p'</span> | sed <span class="string">'s/inet //'</span> | sed <span class="string">'s/ net.*//'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="高级操作命令"><a href="#高级操作命令" class="headerlink" title="高级操作命令"></a>高级操作命令</h2><ul>
+<li>{} : 允许同时使用多个sed命令，用<code>;</code>分隔</li>
+<li>n : 读取下一个输入行（用下一个命令处理）</li>
+<li>&amp; : 具体作用看示例</li>
+<li>() : 与替换操作结合使用效果更佳呦</li>
+<li>r : 复制指定文件插入到匹配行</li>
+<li>w : 复制匹配行拷贝指定文件里</li>
+<li>q : 退出sed</li>
+</ul>
+<h3 id><a href="#" class="headerlink" title="{}"></a>{}</h3><p>将第10-20行删除并且把所有<code>nologin</code>替换为<code>login</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed <span class="string">'&#123;10,20d;s/nologin/login/g&#125;'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="n"><a href="#n" class="headerlink" title="n"></a>n</h3><p>其实<code>n</code>的用处跟first~step类似，只不过比它高级（装逼）😏</p>
+<p>示例：</p>
+<p>输出偶数行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'&#123;n;p&#125;'</span></span><br><span class="line">nl passwd | sed -n <span class="string">'2~2p'</span></span><br></pre></td></tr></table></figure>
+
+<p>输出奇数行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'&#123;p;n&#125;'</span></span><br><span class="line">nl passwd | sed -n <span class="string">'1~2p'</span></span><br></pre></td></tr></table></figure>
+
+<p>按照1，4，7，10进行输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'&#123;p;n;n&#125;'</span></span><br><span class="line">nl passwd | sed -n <span class="string">'1~3p'</span></span><br></pre></td></tr></table></figure>
+
+<p>按照3，6，9，12进行输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'n;n;p'</span></span><br><span class="line">nl passwd | sed -n <span class="string">'3~3p'</span></span><br></pre></td></tr></table></figure>
+
+<p>按照2，5，8，11进行输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed -n <span class="string">'n;p;n'</span></span><br><span class="line">nl passwd | sed -n <span class="string">'2~3p'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="amp"><a href="#amp" class="headerlink" title="&amp;"></a>&amp;</h3><p>将passwd文件中的用户名称后面加上一些空格</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed <span class="string">'s/[a-zA-Z_-]\+/&amp;      /'</span></span><br></pre></td></tr></table></figure>
+
+<p>结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">1  root      :x:0:0:root:/root:/bin/bash</span><br><span class="line">     2  bin      :x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">     3  daemon      :x:2:2:daemon:/sbin:/sbin/nologin</span><br><span class="line">     4  adm      :x:3:4:adm:/var/adm:/sbin/nologin</span><br><span class="line">     5  lp      :x:4:7:lp:/var/spool/lpd:/sbin/nologin</span><br><span class="line">     6  sync      :x:5:0:sync:/sbin:/bin/sync</span><br><span class="line">     7  shutdown      :x:6:0:shutdown:/sbin:/sbin/shutdown</span><br><span class="line">     8  halt      :x:7:0:halt:/sbin:/sbin/halt</span><br><span class="line">     9  mail      :x:8:12:mail:/var/spool/mail:/sbin/nologin</span><br><span class="line">    10  operator      :x:11:0:operator:/root:/sbin/nologin</span><br><span class="line">    11  games      :x:12:100:games:/usr/games:/sbin/nologin</span><br><span class="line">    12  ftp      :x:14:50:FTP User:/var/ftp:/sbin/nologin</span><br><span class="line">    13  nobody      :x:99:99:Nobody:/:/sbin/nologin</span><br><span class="line">    14  systemd-network      :x:192:192:systemd Network Management:/:/sbin/nologin</span><br><span class="line">    15  dbus      :x:81:81:System message bus:/:/sbin/nologin</span><br><span class="line">    16  polkitd      :x:999:997:User for polkitd:/:/sbin/nologin</span><br><span class="line">    17  abrt      :x:173:173::/etc/abrt:/sbin/nologin</span><br><span class="line">    18  tss      :x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin</span><br><span class="line">    19  postfix      :x:89:89::/var/spool/postfix:/sbin/nologin</span><br><span class="line">    20  chrony      :x:998:996::/var/lib/chrony:/sbin/nologin</span><br><span class="line">    21  sshd      :x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin</span><br><span class="line">    22  mysql      :x:27:27:MySQL Server:/var/lib/mysql:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>案例一：大小写转换</p>
+<p>将用户名的首字母转换为大写/小写</p>
+<p><code>知识点</code>：<br>元字符\u\I\U\L : 转换为大写/小写</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed <span class="string">'s/[a-z_-]\+/\u&amp;/'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<p>案例二：大小写转换</p>
+<p>将文件夹下的<code>.txt</code>文件名转换为大写</p>
+<p>首先看一下我的当前目录下有什么.txt文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls *.txt</span><br></pre></td></tr></table></figure>
+
+<p>结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qq.txt  test.txt</span><br></pre></td></tr></table></figure>
+
+<p>那么接下来进行操作吧</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls *.txt | sed <span class="string">'s/\w\+/\U&amp;/'</span></span><br></pre></td></tr></table></figure>
+
+<p>结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QQ.txt</span><br><span class="line">TEST.txt</span><br></pre></td></tr></table></figure>
+
+<p>也许你会奇怪为什么后面的txt没有被大写<br>其实是因为<code>\w</code>并不包括<code>.</code>，所以后面的内容便不再进行替换</p>
+<h3 id="-1"><a href="#-1" class="headerlink" title="()"></a>()</h3><p>与练习（1）中的案例四一样，获取网卡的ip<br>只不过方式有一些不同<br>究竟不同在哪里<br>请看例子(其实是我也迷迷糊糊，说不明白)…</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig ens33 | sed -n <span class="string">'/inet /p'</span> | sed <span class="string">'s/inet \([0-9.]\+\).*$/\1/'</span></span><br></pre></td></tr></table></figure>
+
+<p>大概来说一下吧，我的理解是被<code>()</code>括起来的部分会被保留，其余的会被替换为空白<br>此处只有一对<code>()</code>，所以后面要替换的位置只有一个<code>\1</code><br>假如命令中有两处被括号括起来，也就是说<br>有两个地方想要被保留下来，那么后面要替换的位置就要这样写<code>\1\2</code><br>究竟如何，我也不知道，先这样吧。</p>
+<p>看一个案例吧…</p>
+<p>案例：获取passwd文件信息</p>
+<p>获取用户的名字，id，和组id</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'s/^\([a-z_-]\+\):x:\([0-9]\+\):\([0-9]\+\).*$/USER:\1 \t ID:\2 \t  UID:\3/'</span> passwd</span><br></pre></td></tr></table></figure>
+
+<h3 id="r"><a href="#r" class="headerlink" title="r"></a>r</h3><p>在开始解析<code>r</code>的使用方法之前，首先创建两个文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> -e <span class="string">'3253152514\n12425352\n124135532355'</span> &gt; 123.txt</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">'sdafaefasf\nfsafsffef\nsffdaawwa'</span> &gt; abc.txt</span><br></pre></td></tr></table></figure>
+
+<p>目标：将<code>123.txt</code>中的内容放入到<code>abc.txt</code>的内容的第一行后进行输出（不会改变原文件的内容）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'1r 123.txt'</span> abc.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="w"><a href="#w" class="headerlink" title="w"></a>w</h3><p>目标1：将abc.txt中的第一行文件改写到123.txt文件中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'1w 123.txt'</span> abc.txt</span><br></pre></td></tr></table></figure>
+
+<p>目标2:将<code>abc.txt</code>中的全部内容文件改写到<code>123.txt</code>文件中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'w 123.txt'</span> abc.txt</span><br></pre></td></tr></table></figure>
+
+<p>你有没有发现<code>w</code>的写入操作是将被改写的文件内容全部覆盖？</p>
+<h3 id="q"><a href="#q" class="headerlink" title="q"></a>q</h3><p>目标：passwd文件中找到第一个nologin就停止输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl passwd | sed <span class="string">'/nologin/q'</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>sed的使用方法</p>
+  <p><span>文章作者:</span>尚先森</p>
+  <p><span>发布时间:</span>2022年02月03日 - 20:23:03</p>
+  <p><span>最后更新:</span>2022年07月27日 - 13:58:01</p>
+  <p><span>原始链接:</span><a href="/2022/02/03/sed的使用方法/" title="sed的使用方法">https://imauu.gitee.io/2022/02/03/sed的使用方法/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://imauu.gitee.io/2022/02/03/sed的使用方法/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+    
+    </div>
+
+    
+        
+        <div>
+            <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/syz.png" alt="尚先森 wechat" style="width: 200px; max-width: 100%;">
+    <div>有任何问题可以扫描上方二维码私聊我哦😊</div>
+</div>
+
+        </div>
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持是我创作的最大动力^_^</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.png" alt="尚先森 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubao.png" alt="尚先森 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/sed/" rel="tag"><img src="/images/tag.png"> sed</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/10/31/Linux-top命令详解/" rel="next" title="Linux - top命令详解">
+                <i class="fa fa-chevron-left"></i> Linux - top命令详解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/03/24/vim的使用方法-相关配置/" rel="prev" title="vim的使用方法&相关配置">
+                vim的使用方法&相关配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://tva1.sinaimg.cn/large/e6c9d24ely1h4nm4ry4apj205i05ia9y.jpg" alt="尚先森">
+            
+              <p class="site-author-name" itemprop="name">尚先森</p>
+              <p class="site-description motion-element" itemprop="description">最后一刻，都不可以放弃希望！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shang-code" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:syz15822409222@126.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://a4.qpic.cn/psb?/V10taC184UP7Xd/DBrT8JfiC4.Cbt9gOoLq3EMz6VxjKNILvuMgpLI*L80!/c/dJ8AAAAAAAAA&ek=1&kp=1&pt=0&bo=rgGuAa4BrgERFyA!&tl=1&vuin=1093999475&tm=1566439200&sce=60-2-2&rf=0-0" target="_blank" title="微信">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微信</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://a4.qpic.cn/psb?/V10taC184UP7Xd/ZzGxvjixd59IA0smjXXNRNqr.iYN*upaiO01bWSzGWE!/c/dJ8AAAAAAAAA&ek=1&kp=1&pt=0&bo=HALkAhwC5AIRFyA!&tl=1&vuin=1093999475&tm=1566439200&sce=60-2-2&rf=0-0" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-globe"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.imooc.com/" title="慕课网" target="_blank">慕课网</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sed的使用方法"><span class="nav-number">1.</span> <span class="nav-text">sed的使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#格式"><span class="nav-number">1.1.</span> <span class="nav-text">格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行格式"><span class="nav-number">1.1.1.</span> <span class="nav-text">命令行格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本格式"><span class="nav-number">1.1.2.</span> <span class="nav-text">脚本格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本操作命令"><span class="nav-number">1.2.</span> <span class="nav-text">基本操作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#p"><span class="nav-number">1.2.1.</span> <span class="nav-text">p</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a（后）"><span class="nav-number">1.2.2.</span> <span class="nav-text">a（后）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#i（前）"><span class="nav-number">1.2.3.</span> <span class="nav-text">i（前）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c"><span class="nav-number">1.2.4.</span> <span class="nav-text">c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d"><span class="nav-number">1.2.5.</span> <span class="nav-text">d</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行定位"><span class="nav-number">1.3.</span> <span class="nav-text">行定位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定位一行："><span class="nav-number">1.3.1.</span> <span class="nav-text">定位一行：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#x（行号）"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">x（行号）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pattern-（正则）"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">/pattern/（正则）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定位n行："><span class="nav-number">1.3.2.</span> <span class="nav-text">定位n行：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#x-y（行号）"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">x,y（行号）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pattern-root"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">/pattern/,/root/</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#x-y-（取反）"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">x,y!（取反）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#first-step"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">first~step</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练习（1）"><span class="nav-number">1.4.</span> <span class="nav-text">练习（1）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#案例一：增加文件内容"><span class="nav-number">1.4.1.</span> <span class="nav-text">案例一：增加文件内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例二：文本处理"><span class="nav-number">1.4.2.</span> <span class="nav-text">案例二：文本处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例三：服务器日志处理"><span class="nav-number">1.4.3.</span> <span class="nav-text">案例三：服务器日志处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例四：数据筛选"><span class="nav-number">1.4.4.</span> <span class="nav-text">案例四：数据筛选</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级操作命令"><span class="nav-number">1.5.</span> <span class="nav-text">高级操作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.5.1.</span> <span class="nav-text">{}</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n"><span class="nav-number">1.5.2.</span> <span class="nav-text">n</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#amp"><span class="nav-number">1.5.3.</span> <span class="nav-text">&amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-1"><span class="nav-number">1.5.4.</span> <span class="nav-text">()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#r"><span class="nav-number">1.5.5.</span> <span class="nav-text">r</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w"><span class="nav-number">1.5.6.</span> <span class="nav-text">w</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q"><span class="nav-number">1.5.7.</span> <span class="nav-text">q</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <img src="http://www.icosky.com/icon/48/Cartoon/Bleach%20Chibi%20Icons%20for%20mac/Bleach%20Chibi%20Nr%20%206%20Rukia%20by%20rukichen.png">
+  </span>
+  <span class="author" itemprop="copyrightHolder">尚先森</span>
+
+  
+</div>
+
+<!-- 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+ -->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'hU7o1mDSLSyDeK4wE4hDgcIG-gzGzoHsz',
+        appKey: 'SezjNE3ljsOzb5og8uQs51FR',
+        placeholder: '回复时请填写个人邮箱和昵称，网址选填。',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+  
+  
+<!-- 自定义的js文件 -->
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+
+<!-- 页面点击小红心，在末尾添加，避免找不到 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/kesyoban.model.json"},"display":{"superSample":2,"width":150,"height":200,"position":"left","hOffset":10,"vOffset":25},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
