@@ -88,13 +88,14 @@
 
 
 
+<meta name="description" content="面试题可以参考:面试题总结 查看系统相关信息查看网卡流量watch123456789101112[root@3 ~]# watch ifconfig eth0Every 2.0s: ifconfig eth0                         Sun May  1 21:53:10 2022eth0: flags=4163&amp;lt;UP,BROADCAST,RUNNING,MULT">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux运维常见问题">
 <meta property="og:url" content="https://imauu.gitee.io/2022/05/01/Linux运维常见问题/index.html">
 <meta property="og:site_name" content="寿司卷code">
+<meta property="og:description" content="面试题可以参考:面试题总结 查看系统相关信息查看网卡流量watch123456789101112[root@3 ~]# watch ifconfig eth0Every 2.0s: ifconfig eth0                         Sun May  1 21:53:10 2022eth0: flags=4163&amp;lt;UP,BROADCAST,RUNNING,MULT">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gixjr757h0j30sg0lc0tx.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h1ta05y5ijj21440aowhm.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h1t9yzafvnj21fs0fsjvu.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h1t9rze7sbj216u0joac7.jpg">
@@ -114,10 +115,11 @@
 <meta property="og:image" content="https://pic1.zhimg.com/80/v2-e2b95d909d2c82d9320faef7a4e30484_1440w.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/80/v2-5689efac56e639b1688abd2cb3b9bc9c_1440w.jpg">
 <meta property="og:image" content="https://pic2.zhimg.com/80/v2-a68f90cbe319f0cf041340ccc3b319cd_1440w.jpg">
-<meta property="og:updated_time" content="2022-09-28T04:41:19.344Z">
+<meta property="og:updated_time" content="2023-02-20T10:08:49.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux运维常见问题">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gixjr757h0j30sg0lc0tx.jpg">
+<meta name="twitter:description" content="面试题可以参考:面试题总结 查看系统相关信息查看网卡流量watch123456789101112[root@3 ~]# watch ifconfig eth0Every 2.0s: ifconfig eth0                         Sun May  1 21:53:10 2022eth0: flags=4163&amp;lt;UP,BROADCAST,RUNNING,MULT">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h1ta05y5ijj21440aowhm.jpg">
 
 
 
@@ -390,8 +392,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-09-28T12:41:19+08:00">
-                2022-09-28
+              <time title="更新于" itemprop="dateModified" datetime="2023-02-20T18:08:49+08:00">
+                2023-02-20
               </time>
             
           </span>
@@ -487,9 +489,7 @@
       
 
       
-        <img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gixjr757h0j30sg0lc0tx.jpg" alt="linux_tubiao" style="zoom:67%;">
-
-<a id="more"></a>
+        <a id="more"></a>
 
 <p>面试题可以参考:<a href="https://blog.csdn.net/weixin_45548465/article/details/104986399" target="_blank" rel="noopener">面试题总结</a></p>
 <h1 id="查看系统相关信息"><a href="#查看系统相关信息" class="headerlink" title="查看系统相关信息"></a>查看系统相关信息</h1><h2 id="查看网卡流量"><a href="#查看网卡流量" class="headerlink" title="查看网卡流量"></a>查看网卡流量</h2><h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@3 ~]# watch ifconfig eth0</span><br><span class="line"></span><br><span class="line">Every 2.0s: ifconfig eth0                         Sun May  1 21:53:10 2022</span><br><span class="line"></span><br><span class="line">eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500</span><br><span class="line">        inet 10.2.3.101  netmask 255.255.255.0  broadcast 10.2.3.255</span><br><span class="line">        inet6 fe80::546f:77ff:fe6f:78  prefixlen 64  scopeid 0x20&lt;link&gt;</span><br><span class="line">        ether 56:6f:77:6f:00:78  txqueuelen 1000  (Ethernet)</span><br><span class="line">        RX packets 980997  bytes 63958819 (60.9 MiB)</span><br><span class="line">        RX errors 0  dropped 140820  overruns 0  frame 0</span><br><span class="line">        TX packets 109994  bytes 6171909 (5.8 MiB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br></pre></td></tr></table></figure>
@@ -1036,8 +1036,8 @@
 </ul>
 <h3 id="Tomcat优化"><a href="#Tomcat优化" class="headerlink" title="Tomcat优化"></a>Tomcat优化</h3><ol>
 <li>Tomcat的运行模式 : bio,nio, apr<br> 一般使用nio模式，bio效率低，apr对系统配置有一些更高的要求</li>
-<li>关键配置<br>maxThreads: 最大线程数，默认是200，<br>minspareThread: 最小活跃线程数，默认是25<br>maxqueuesize: 最大等待队列个数 </li>
-<li>影响性能的配置:<br>compression 设置成on，开启压缩<br>禁用AJP连接器: 用nginx+Tomcat的架构，用不到AJP<br>enableLookups=false 关闭反查域名，直接返回ip，提高效率<br>disableUploadTimeou=false 上传是否使用超时机制<br>acceptCount=300 , 当前所有可以使用的处理请求都被使用时，传入请求连接最大队列长队，超过个数不予处理，默认是100<br>keepalive timeout=120000 场链接保持时间</li>
+<li>关键配置<br> maxThreads: 最大线程数，默认是200，<br> minspareThread: 最小活跃线程数，默认是25<br> maxqueuesize: 最大等待队列个数 </li>
+<li>影响性能的配置:<br> compression 设置成on，开启压缩<br> 禁用AJP连接器: 用nginx+Tomcat的架构，用不到AJP<br> enableLookups=false 关闭反查域名，直接返回ip，提高效率<br> disableUploadTimeou=false 上传是否使用超时机制<br> acceptCount=300 , 当前所有可以使用的处理请求都被使用时，传入请求连接最大队列长队，超过个数不予处理，默认是100<br> keepalive timeout=120000 场链接保持时间</li>
 <li>优化jvm<br> /bin/catalina.sh</li>
 </ol>
 <blockquote>
@@ -2323,7 +2323,7 @@
   <p><span>本文标题:</span>Linux运维常见问题</p>
   <p><span>文章作者:</span>尚先森</p>
   <p><span>发布时间:</span>2022年05月01日 - 21:42:58</p>
-  <p><span>最后更新:</span>2022年09月28日 - 12:41:19</p>
+  <p><span>最后更新:</span>2023年02月20日 - 18:08:49</p>
   <p><span>原始链接:</span><a href="/2022/05/01/Linux运维常见问题/" title="Linux运维常见问题">https://imauu.gitee.io/2022/05/01/Linux运维常见问题/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://imauu.gitee.io/2022/05/01/Linux运维常见问题/" aria-label="复制成功！"></i></span>
   </p>
